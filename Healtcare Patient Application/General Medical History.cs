@@ -13,6 +13,8 @@ namespace Healtcare_Patient_Application
 {
     public partial class GMH : Form
     {
+        //This is to test Git commits
+
 
         public string MaritalStatus
         {   get { return MaritalStatusTB.Text; }   } 
