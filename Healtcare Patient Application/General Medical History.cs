@@ -46,7 +46,7 @@ namespace Healtcare_Patient_Application
 
         public GMH()
         {
-            InitializeComponent();
+            InitializeComponent();  // Initialize Components
 
             MensesMonthlyYeschoice.CheckedChanged += MensesMonthlyOption_CheckedChanged;
             MensesMonthlyNochoice.CheckedChanged += MensesMonthlyOption_CheckedChanged;
