@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace Healthcare_Patient_Application.DataOperations
 {
-    internal class DBOperations
+    internal class GMHDBOperations
     {
         public static MySqlConnection MakeConnection()
         {

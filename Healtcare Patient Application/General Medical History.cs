@@ -246,7 +246,7 @@ namespace Healtcare_Patient_Application
         {
             try
             {
-                DBOperations.AddGeneralMedicalInfo(this);
+                GMHDBOperations.AddGeneralMedicalInfo(this);
 
             }
             catch (Exception ex)

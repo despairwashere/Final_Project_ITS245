@@ -12,6 +12,19 @@ namespace Healtcare_Patient_Application
 {
     public partial class Family_History_Form : Form
     {
+        public string FamilyName { get { return FamilyNameTB.Text; } }
+        public string Relation { get { return FamilyRelationTB.Text; } }
+
+        public bool Alive { get { return AliveCB.Checked; } }
+        public bool LivesWith { get { return LivesWithPatientCB.Checked; } }
+
+        public bool Deleted { get { return deletedCB.Checked; } }
+
+        public string MajorDisorders {  get {  return MajorDisordersTB.Text; } }
+        public string SpecificDisorderType { get { return SpecificDisorderTypeTB.Text; } }
+
+
+
         public Family_History_Form()
         {
             InitializeComponent();
@@ -31,11 +44,11 @@ namespace Healtcare_Patient_Application
             FamilyRelationTB.Enabled = false;
             FamilyRelationTB.BackColor = Color.LightGray;
 
-            AliveTB.Enabled = false;
-            AliveTB.BackColor = Color.LightGray;
+            AliveCB.Enabled = false;
+            AliveCB.BackColor = Color.LightGray;
 
-            LiveswithPatientTB.Enabled = false;
-            LiveswithPatientTB.BackColor = Color.LightGray;
+            LivesWithPatientCB.Enabled = false;
+            LivesWithPatientCB.BackColor = Color.LightGray;
 
             MajorDisordersTB.Enabled = false;
             MajorDisordersTB.BackColor = Color.LightGray;
@@ -43,8 +56,8 @@ namespace Healtcare_Patient_Application
             SpecificDisorderTypeTB.Enabled = false;
             SpecificDisorderTypeTB.BackColor = Color.LightGray;
 
-            RecordDeletedTB.Enabled = false;
-            RecordDeletedTB.BackColor = Color.LightGray;
+            deletedCB.Enabled = false;
+            deletedCB.BackColor = Color.LightGray;
 
         }
 
@@ -62,11 +75,11 @@ namespace Healtcare_Patient_Application
             FamilyRelationTB.Enabled = true;
             FamilyRelationTB.BackColor = Color.White;
 
-            AliveTB.Enabled = true;
-            AliveTB.BackColor = Color.White;
+            AliveCB.Enabled = true;
+            AliveCB.BackColor = Color.White;
 
-            LiveswithPatientTB.Enabled = true;
-            LiveswithPatientTB.BackColor = Color.White;
+            LivesWithPatientCB.Enabled = true;
+            LivesWithPatientCB.BackColor = Color.White;
 
             MajorDisordersTB.Enabled = true;
             MajorDisordersTB.BackColor = Color.White;
@@ -74,8 +87,8 @@ namespace Healtcare_Patient_Application
             SpecificDisorderTypeTB.Enabled = true;
             SpecificDisorderTypeTB.BackColor = Color.White;
 
-            RecordDeletedTB.Enabled = true;
-            RecordDeletedTB.BackColor = Color.White;
+            deletedCB.Enabled = true;
+            deletedCB.BackColor = Color.White;
 
         }
 

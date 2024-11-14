@@ -98,7 +98,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataOperations\DBOperations.cs" />
+    <Compile Include="DataOperations\FHDBOperations.cs" />
+    <Compile Include="DataOperations\GMHDBOperations.cs" />
     <Compile Include="Family History Form.cs">
       <SubType>Form</SubType>
     </Compile>
