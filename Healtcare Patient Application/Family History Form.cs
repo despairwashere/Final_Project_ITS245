@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Healtcare_Patient_Application.DataOperations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Healtcare_Patient_Application
 {
@@ -116,6 +118,16 @@ namespace Healtcare_Patient_Application
 
         private void FamHisSaveBT_Click(object sender, EventArgs e)
         {
+            try
+            {
+                FHDBOperations.AddFamilyHistory(this);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding record: {ex.Message}");
+            }
+
             SetViewMode();
         }
 
