@@ -144,5 +144,45 @@ namespace Healtcare_Patient_Application
             Login.Show();
             this.Hide();
         }
+
+        private void FamHisUndoBT_Click(object sender, EventArgs e)
+        {
+            UndoChanges();
+
+        }
+
+        private List<string> originalValues = new List<string>();
+
+        private void StoreOriginalValues()
+        {
+            originalValues.Clear();
+            originalValues.Add(FamilyNameTB.Text);
+            originalValues.Add(MajorDisordersTB.Text);
+            originalValues.Add(SpecificDisorderTypeTB.Text);
+            originalValues.Add(FamilyRelationTB.Text);
+            originalValues.Add(AliveCB.Checked.ToString());
+            originalValues.Add(deletedCB.Checked.ToString());
+            originalValues.Add(LivesWithPatientCB.Checked.ToString());
+
+        }
+
+        private void UndoChanges()
+        {
+            if (originalValues.Count == 7)
+            {
+                FamilyNameTB.Text = originalValues[0];
+                MajorDisordersTB.Text = originalValues[1];
+                SpecificDisorderTypeTB.Text = originalValues[2];
+                FamilyRelationTB.Text = originalValues[3];
+                AliveCB.Checked = bool.Parse(originalValues[4]);
+                deletedCB.Checked = bool.Parse(originalValues[5]);
+                LivesWithPatientCB.Checked = bool.Parse(originalValues[6]);
+            }
+            else
+            {
+                MessageBox.Show("No changes to undo.");
+            }
+
+        }
     }
 }

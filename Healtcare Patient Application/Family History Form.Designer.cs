@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LivesWithPatientCB = new System.Windows.Forms.CheckBox();
+            this.deletedCB = new System.Windows.Forms.CheckBox();
+            this.AliveCB = new System.Windows.Forms.CheckBox();
             this.RecDeletedLB = new System.Windows.Forms.Label();
             this.SpecificDisorderTypeTB = new System.Windows.Forms.TextBox();
             this.SpecificTypeDisorderLB = new System.Windows.Forms.Label();
@@ -54,9 +57,6 @@
             this.PatientAgeLB = new System.Windows.Forms.Label();
             this.GoToLoginPageBT = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.AliveCB = new System.Windows.Forms.CheckBox();
-            this.deletedCB = new System.Windows.Forms.CheckBox();
-            this.LivesWithPatientCB = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(688, 369);
             this.panel1.TabIndex = 1;
+            // 
+            // LivesWithPatientCB
+            // 
+            this.LivesWithPatientCB.AutoSize = true;
+            this.LivesWithPatientCB.Location = new System.Drawing.Point(139, 77);
+            this.LivesWithPatientCB.Name = "LivesWithPatientCB";
+            this.LivesWithPatientCB.Size = new System.Drawing.Size(15, 14);
+            this.LivesWithPatientCB.TabIndex = 20;
+            this.LivesWithPatientCB.UseVisualStyleBackColor = true;
+            // 
+            // deletedCB
+            // 
+            this.deletedCB.AutoSize = true;
+            this.deletedCB.Location = new System.Drawing.Point(139, 268);
+            this.deletedCB.Name = "deletedCB";
+            this.deletedCB.Size = new System.Drawing.Size(15, 14);
+            this.deletedCB.TabIndex = 19;
+            this.deletedCB.UseVisualStyleBackColor = true;
+            // 
+            // AliveCB
+            // 
+            this.AliveCB.AutoSize = true;
+            this.AliveCB.Location = new System.Drawing.Point(365, 50);
+            this.AliveCB.Name = "AliveCB";
+            this.AliveCB.Size = new System.Drawing.Size(15, 14);
+            this.AliveCB.TabIndex = 18;
+            this.AliveCB.UseVisualStyleBackColor = true;
             // 
             // RecDeletedLB
             // 
@@ -278,6 +305,7 @@
             this.FamHisUndoBT.TabIndex = 6;
             this.FamHisUndoBT.Text = "Undo Family Changes";
             this.FamHisUndoBT.UseVisualStyleBackColor = true;
+            this.FamHisUndoBT.Click += new System.EventHandler(this.FamHisUndoBT_Click);
             // 
             // FamHisDeleteBT
             // 
@@ -328,33 +356,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(248, 355);
             this.listBox1.TabIndex = 14;
-            // 
-            // AliveCB
-            // 
-            this.AliveCB.AutoSize = true;
-            this.AliveCB.Location = new System.Drawing.Point(365, 50);
-            this.AliveCB.Name = "AliveCB";
-            this.AliveCB.Size = new System.Drawing.Size(15, 14);
-            this.AliveCB.TabIndex = 18;
-            this.AliveCB.UseVisualStyleBackColor = true;
-            // 
-            // deletedCB
-            // 
-            this.deletedCB.AutoSize = true;
-            this.deletedCB.Location = new System.Drawing.Point(139, 268);
-            this.deletedCB.Name = "deletedCB";
-            this.deletedCB.Size = new System.Drawing.Size(15, 14);
-            this.deletedCB.TabIndex = 19;
-            this.deletedCB.UseVisualStyleBackColor = true;
-            // 
-            // LivesWithPatientCB
-            // 
-            this.LivesWithPatientCB.AutoSize = true;
-            this.LivesWithPatientCB.Location = new System.Drawing.Point(139, 77);
-            this.LivesWithPatientCB.Name = "LivesWithPatientCB";
-            this.LivesWithPatientCB.Size = new System.Drawing.Size(15, 14);
-            this.LivesWithPatientCB.TabIndex = 20;
-            this.LivesWithPatientCB.UseVisualStyleBackColor = true;
             // 
             // Family_History_Form
             // 
