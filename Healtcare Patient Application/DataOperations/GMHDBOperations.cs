@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Drawing.Text;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -40,7 +41,12 @@ namespace Healthcare_Patient_Application.DataOperations
                     {
                         command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        // Use GetParameterValue for parameters
+                        // Add PatientID parameter
+
+                        int? patientID = int.TryParse(form.PatientID, out int Number) ? Number : (int?)null;
+                        command.Parameters.AddWithValue("p_PatientID", patientID.HasValue ? (object)patientID.Value : DBNull.Value);
+
+                        // Add other parameters
                         command.Parameters.AddWithValue("p_MaritalStatus", GetParameterValue(form.MaritalStatus));
                         command.Parameters.AddWithValue("p_Education", GetParameterValue(form.EducationLevel));
                         command.Parameters.AddWithValue("p_BehavioralHistory", GetParameterValue(form.BehavioralHistory));
@@ -78,10 +84,34 @@ namespace Healthcare_Patient_Application.DataOperations
                 {
                     MessageBox.Show($"An error occurred while adding medical info: {ex.Message}");
                 }
-
-                
             }
-           
+        }
+
+
+        public static DataTable PatientData()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection connection = MakeConnection())
+            {
+                try
+                {
+                    using (MySqlCommand command = new MySqlCommand("GetPatientData", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                            
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while retrieving patient data: {ex.Message}");
+                }
+            }
+            return dt;
         }
     }
 }

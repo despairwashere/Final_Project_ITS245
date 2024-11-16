@@ -15,6 +15,9 @@ namespace Healtcare_Patient_Application
     {
         //This is to test Git commits
 
+        private string patientID; // Holds patient id 
+
+        public string PatientID { get { return patientID; }  }
 
         public string MaritalStatus
         {   get { return MaritalStatusTB.Text; }   } 
@@ -58,6 +61,10 @@ namespace Healtcare_Patient_Application
         private void GMH_Load(object sender, EventArgs e)
         {
             SetViewMode();
+            LoadPatientData();
+            
+
+
         }
 
         private void SetViewMode()
@@ -350,6 +357,61 @@ namespace Healtcare_Patient_Application
                 MessageBox.Show("No changes to undo.");
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure that a valid row is clicked (excluding the header).
+            if (e.RowIndex >= 0)
+            {
+                // Retrieve the selected row.
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                // Get the patient's name and age from the row.
+                string patientName = row.Cells["FullName"].Value.ToString();
+                string age = row.Cells["Age"].Value.ToString();
+                patientID = row.Cells["PatientID"].Value.ToString();
+
+                // Update the labels to display the name and age.
+                Patient_Name.Text = patientName;
+                PatientAgeLB.Text = "Age: " + age; 
+
+
+
+            }
+
+
+
+        }
+
+        private void LoadPatientData()
+        {
+            DataTable patientData = GMHDBOperations.PatientData();
+
+            if (patientData.Columns.Contains("DOB"))
+                patientData.Columns["DOB"].ColumnMapping = MappingType.Hidden;
+
+            // Set the DataGridView's data source
+            dataGridView1.DataSource = patientData;
+
+            // Ensure DataGridView contains the columns before hiding
+            if (dataGridView1.Columns.Contains("PatientID"))
+            {
+                dataGridView1.Columns["PatientID"].Visible = false;
+            }
+
+            // Change header text for FullName
+            if (dataGridView1.Columns["FullName"] != null)
+                dataGridView1.Columns["FullName"].HeaderText = "Patient Name";
+
+            // Hide "Age" column if it exists
+            if (dataGridView1.Columns.Contains("Age"))
+                dataGridView1.Columns["Age"].Visible = false;
+
+
+        }
+
+        
+
 
 
 
