@@ -20,32 +20,142 @@ namespace Healtcare_Patient_Application
         public string PatientID { get { return patientID; }  }
 
         public string MaritalStatus
-        {   get { return MaritalStatusTB.Text; }   } 
-        public string EducationLevel { get { return EducationLevelTB.Text; } }
+        {
+            get { return MaritalStatusTB.Text; }
+            set { MaritalStatusTB.Text = value; }
+        }
 
-        public string BehavioralHistory { get { return BehavioralHistoryTB.Text; } }
+        public string EducationLevel
+        {
+            get { return EducationLevelTB.Text; }
+            set { EducationLevelTB.Text = value; }
+        }
 
-        public string Tobacco { get { return TobaccoTB.Text; } }
-        public string TobaccoQuantity {  get { return TobaccoQuanTB.Text; } }
-        public string TobaccoDuration { get { return TobaccoDurationTB.Text; } }
-        public string Alcohol { get { return DrinkAlcoholTB.Text; } }
-        public string AlcoholQuantity { get {  return AlcoholQuanTB.Text; } }
-        public string AlcoholDuration { get { return AlcoholDurTB.Text; } }
-        public string Drug { get { return DrugTB.Text; } }
-        public string DrugType { get { return DrugTypeTB.Text; } }
-        public string DrugDuration {  get {  return DrugDurationTB.Text;} }
-        public string Dietary {  get {  return DietaryTB.Text; } }
-        public string BloodType {  get {  return BloodTypeTB.Text; } }
-        public string RH {  get {  return RHTB.Text; } }
-        public string LMP {  get {  return LMPTB.Text; } }
-        public string NumberOfChildren { get { return NumChildrenTB.Text; } }
-        public bool MensesMonthlyYes {  get { return MensesMonthlyYeschoice.Checked; } }
-        public bool MensesMonthlyNo {  get { return MensesMonthlyNochoice.Checked; } }
-        public string MensesFrequency {  get { return MensesFreqTB.Text; } }
-        public string MedicalHistoryNotes {  get { return MedHistoryTB.Text; } }
-        public string HX {  get { return HXTB.Text; } }
-        public bool IsDeleted {  get { return DeletedCB.Checked; } }
+        public string BehavioralHistory
+        {
+            get { return BehavioralHistoryTB.Text; }
+            set { BehavioralHistoryTB.Text = value; }
+        }
 
+        public string Tobacco
+        {
+            get { return TobaccoTB.Text; }
+            set { TobaccoTB.Text = value; }
+        }
+
+        public string TobaccoQuantity
+        {
+            get { return TobaccoQuanTB.Text; }
+            set { TobaccoQuanTB.Text = value; }
+        }
+
+        public string TobaccoDuration
+        {
+            get { return TobaccoDurationTB.Text; }
+            set { TobaccoDurationTB.Text = value; }
+        }
+
+        public string Alcohol
+        {
+            get { return DrinkAlcoholTB.Text; }
+            set { DrinkAlcoholTB.Text = value; }
+        }
+
+        public string AlcoholQuantity
+        {
+            get { return AlcoholQuanTB.Text; }
+            set { AlcoholQuanTB.Text = value; }
+        }
+
+        public string AlcoholDuration
+        {
+            get { return AlcoholDurTB.Text; }
+            set { AlcoholDurTB.Text = value; }
+        }
+
+        public string Drug
+        {
+            get { return DrugTB.Text; }
+            set { DrugTB.Text = value; }
+        }
+
+        public string DrugType
+        {
+            get { return DrugTypeTB.Text; }
+            set { DrugTypeTB.Text = value; }
+        }
+
+        public string DrugDuration
+        {
+            get { return DrugDurationTB.Text; }
+            set { DrugDurationTB.Text = value; }
+        }
+
+        public string Dietary
+        {
+            get { return DietaryTB.Text; }
+            set { DietaryTB.Text = value; }
+        }
+
+        public string BloodType
+        {
+            get { return BloodTypeTB.Text; }
+            set { BloodTypeTB.Text = value; }
+        }
+
+        public string RH
+        {
+            get { return RHTB.Text; }
+            set { RHTB.Text = value; }
+        }
+
+        public string LMP
+        {
+            get { return LMPTB.Text; }
+            set { LMPTB.Text = value; }
+        }
+
+        public string NumberOfChildren
+        {
+            get { return NumChildrenTB.Text; }
+            set { NumChildrenTB.Text = value; }
+        }
+
+        public bool MensesMonthlyYes
+        {
+            get { return MensesMonthlyYeschoice.Checked; }
+            set { MensesMonthlyYeschoice.Checked = value; }
+        }
+
+        public bool MensesMonthlyNo
+        {
+            get { return MensesMonthlyNochoice.Checked; }
+            set { MensesMonthlyNochoice.Checked = value; }
+        }
+
+        public string MensesFrequency
+        {
+            get { return MensesFreqTB.Text; }
+            set { MensesFreqTB.Text = value; }
+        }
+
+        public string MedicalHistoryNotes
+        {
+            get { return MedHistoryTB.Text; }
+            set { MedHistoryTB.Text = value; }
+        }
+
+        public string HX
+        {
+            get { return HXTB.Text; }
+            set { HXTB.Text = value; }
+        }
+
+        public bool IsDeleted
+        {
+            get { return DeletedCB.Checked; }
+            set { DeletedCB.Checked = value; }
+        }
 
         public GMH()
         {
@@ -205,7 +315,7 @@ namespace Healtcare_Patient_Application
             DrugDurationTB.Enabled = true;
             DrugDurationTB.BackColor = Color.White;
 
-            MensesFreqTB.Enabled = false;
+            MensesFreqTB.Enabled = true;
             MensesFreqTB.BackColor = Color.White;
 
             DeletedCB.Enabled = true;
@@ -235,30 +345,52 @@ namespace Healtcare_Patient_Application
             }
         }
 
-
+        private bool Add_New_Rec = false;
 
         private void AddBT_Click(object sender, EventArgs e)
         {
+            Add_New_Rec = true;
             StoreOriginalValues();
             SetEditMode();
         }
 
         private void ModifyBT_Click(object sender, EventArgs e)
         {
+            Add_New_Rec = false;
             StoreOriginalValues();
             SetEditMode();
+            
         }
 
         private void SaveBT_Click(object sender, EventArgs e)
         {
-            try
+
+            if (Add_New_Rec == true)
             {
-                GMHDBOperations.AddGeneralMedicalInfo(this);
+                try
+                {
+                    GMHDBOperations.AddGeneralMedicalInfo(this);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error adding record: {ex.Message}");
+                }
 
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error adding record: {ex.Message}");
+                try
+                {
+                    GMHDBOperations.UpdateGeneralMedicalInfo(this);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating record: {ex.Message}");
+                }
+
+                
             }
 
             SetViewMode();
@@ -373,8 +505,17 @@ namespace Healtcare_Patient_Application
 
                 // Update the labels to display the name and age.
                 Patient_Name.Text = patientName;
-                PatientAgeLB.Text = "Age: " + age; 
+                PatientAgeLB.Text = "Age: " + age;
 
+                try
+                {
+                    GMHDBOperations.GetGeneralMedicalInfo(this);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error retr record: {ex.Message}");
+                }
 
 
             }
