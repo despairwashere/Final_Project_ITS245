@@ -113,6 +113,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllergyHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllergyHistoryForm.Designer.cs">
+      <DependentUpon>AllergyHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataOperations\FHDBOperations.cs" />
     <Compile Include="DataOperations\GMHDBOperations.cs" />
     <Compile Include="Family History Form.cs">
@@ -147,6 +153,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllergyHistoryForm.resx">
+      <DependentUpon>AllergyHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Family History Form.resx">
       <DependentUpon>Family History Form.cs</DependentUpon>
     </EmbeddedResource>
