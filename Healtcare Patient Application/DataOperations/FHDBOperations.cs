@@ -48,6 +48,9 @@ namespace Healtcare_Patient_Application.DataOperations
                     {
                         command.CommandType = System.Data.CommandType.StoredProcedure;
 
+                        int? patientID = int.TryParse(form.PatientIDFB, out int Number) ? Number : (int?)null;
+                        command.Parameters.AddWithValue("p_PatientID", patientID.HasValue ? (object)patientID.Value : DBNull.Value);
+
                         // Use GetParameterValue for parameters
                         command.Parameters.AddWithValue("p_Name", GetParameterValue(form.FamilyName));
                         command.Parameters.AddWithValue("p_Relation", GetParameterValue(form.Relation));

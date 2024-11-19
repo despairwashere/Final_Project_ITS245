@@ -16,8 +16,14 @@ namespace Healtcare_Patient_Application
         //This is to test Git commits
 
         private string patientID; // Holds patient id 
+        private string patientName;
+        private string age;
 
-        public string PatientID { get { return patientID; }  }
+        public string PatientID { get { return patientID; } }
+        public string PatientName { get; set; }
+        public string PatientAge { get; set; }
+    
+
 
         public string MaritalStatus
         {
@@ -398,8 +404,11 @@ namespace Healtcare_Patient_Application
 
         private void GoToFamilyHistoryBT_Click(object sender, EventArgs e)
         {
-            Form Family_History = new Family_History_Form();
-            Family_History.Show();
+            Family_History_Form family = new Family_History_Form();
+            family.PatientIDFB = patientID;
+            family.PatientNameFB = patientName;
+            family.PatientAgeFB = age;
+            family.Show();
             this.Hide();
         }
 
@@ -499,8 +508,8 @@ namespace Healtcare_Patient_Application
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
                 // Get the patient's name and age from the row.
-                string patientName = row.Cells["FullName"].Value.ToString();
-                string age = row.Cells["Age"].Value.ToString();
+                patientName = row.Cells["FullName"].Value.ToString();
+                age = row.Cells["Age"].Value.ToString();
                 patientID = row.Cells["PatientID"].Value.ToString();
 
                 // Update the labels to display the name and age.

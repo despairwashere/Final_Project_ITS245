@@ -47,7 +47,7 @@
             this.FamilyIDTB = new System.Windows.Forms.TextBox();
             this.PatientIDLB = new System.Windows.Forms.Label();
             this.FamilyIDLB = new System.Windows.Forms.Label();
-            this.PatientName = new System.Windows.Forms.Label();
+            this.PatientNameLB = new System.Windows.Forms.Label();
             this.FamHisAddBT = new System.Windows.Forms.Button();
             this.FamHisModifyBT = new System.Windows.Forms.Button();
             this.FamHisSaveBT = new System.Windows.Forms.Button();
@@ -252,16 +252,16 @@
             this.FamilyIDLB.Text = "FamilyID";
             this.FamilyIDLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PatientName
+            // PatientNameLB
             // 
-            this.PatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PatientName.Location = new System.Drawing.Point(472, 30);
-            this.PatientName.Name = "PatientName";
-            this.PatientName.Size = new System.Drawing.Size(448, 45);
-            this.PatientName.TabIndex = 2;
-            this.PatientName.Text = "Patient Name";
-            this.PatientName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PatientName.Click += new System.EventHandler(this.PatientName_Click);
+            this.PatientNameLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientNameLB.Location = new System.Drawing.Point(472, 30);
+            this.PatientNameLB.Name = "PatientNameLB";
+            this.PatientNameLB.Size = new System.Drawing.Size(448, 45);
+            this.PatientNameLB.TabIndex = 2;
+            this.PatientNameLB.Text = "Patient Name";
+            this.PatientNameLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientNameLB.Click += new System.EventHandler(this.PatientName_Click);
             // 
             // FamHisAddBT
             // 
@@ -372,7 +372,7 @@
             this.Controls.Add(this.FamHisSaveBT);
             this.Controls.Add(this.FamHisModifyBT);
             this.Controls.Add(this.FamHisAddBT);
-            this.Controls.Add(this.PatientName);
+            this.Controls.Add(this.PatientNameLB);
             this.Controls.Add(this.panel1);
             this.Name = "Family_History_Form";
             this.Text = "Family History Form";
@@ -386,7 +386,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label PatientName;
+        private System.Windows.Forms.Label PatientNameLB;
         private System.Windows.Forms.Label FamilyIDLB;
         private System.Windows.Forms.Label PatientIDLB;
         private System.Windows.Forms.TextBox PatientIDTB;

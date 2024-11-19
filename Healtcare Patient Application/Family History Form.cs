@@ -25,11 +25,22 @@ namespace Healtcare_Patient_Application
         public string MajorDisorders {  get {  return MajorDisordersTB.Text; } }
         public string SpecificDisorderType { get { return SpecificDisorderTypeTB.Text; } }
 
+        public string PatientNameFB { get; set; }
+        public string PatientAgeFB { get; set; }
+        public string PatientIDFB { get; set; }
+
 
 
         public Family_History_Form()
         {
             InitializeComponent();
+        }
+
+        private void DisplayFamilyData()
+        {
+            PatientAgeLB.Text = PatientAgeFB;
+            PatientNameLB.Text = PatientNameFB;
+            
         }
 
         private void SetViewMode()
@@ -97,6 +108,7 @@ namespace Healtcare_Patient_Application
         private void Family_History_Form_Load(object sender, EventArgs e)
         {
             SetViewMode();
+            DisplayFamilyData();
         }
 
         private void PatientName_Click(object sender, EventArgs e)
@@ -133,8 +145,9 @@ namespace Healtcare_Patient_Application
 
         private void GoToGenMedicalHistoryBT_Click(object sender, EventArgs e)
         {
-            Form Gen_Medical_History = new GMH();
-            Gen_Medical_History.Show();
+            GMH Gen_history = new GMH();
+           // Gen_history.PatientName =    // Still working on this part
+           //  Gen_history.Show();
             this.Hide();
         }
 
