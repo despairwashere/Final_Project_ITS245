@@ -148,6 +148,7 @@ namespace Healtcare_Patient_Application
         {
             SetEditMode();
 
+
         }
 
         private void FamHisModifyBT_Click(object sender, EventArgs e)
@@ -161,6 +162,7 @@ namespace Healtcare_Patient_Application
             try
             {
                 FHDBOperations.AddFamilyHistory(this);
+                LoadFamilyHistory();
 
             }
             catch (Exception ex)
