@@ -56,8 +56,11 @@
             this.GoToGenMedicalHistoryBT = new System.Windows.Forms.Button();
             this.PatientAgeLB = new System.Windows.Forms.Label();
             this.GoToLoginPageBT = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -349,21 +352,32 @@
             this.GoToLoginPageBT.UseVisualStyleBackColor = true;
             this.GoToLoginPageBT.Click += new System.EventHandler(this.GoToLoginPageBT_Click);
             // 
-            // listBox1
+            // dataGridView1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(986, 98);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(248, 355);
-            this.listBox1.TabIndex = 14;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(1273, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 353);
+            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(972, 100);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 353);
+            this.dataGridView2.TabIndex = 16;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Family_History_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1452, 597);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(1535, 597);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.GoToLoginPageBT);
             this.Controls.Add(this.PatientAgeLB);
             this.Controls.Add(this.GoToGenMedicalHistoryBT);
@@ -379,6 +393,8 @@
             this.Load += new System.EventHandler(this.Family_History_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,9 +426,10 @@
         private System.Windows.Forms.Button GoToGenMedicalHistoryBT;
         private System.Windows.Forms.Label PatientAgeLB;
         private System.Windows.Forms.Button GoToLoginPageBT;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.CheckBox AliveCB;
         private System.Windows.Forms.CheckBox deletedCB;
         private System.Windows.Forms.CheckBox LivesWithPatientCB;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

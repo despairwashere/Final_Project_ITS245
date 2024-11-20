@@ -19,7 +19,7 @@ namespace Healtcare_Patient_Application
         private string patientName;
         private string age;
 
-        public string PatientID { get { return patientID; } }
+        public string PatientID { get; set; }
         public string PatientName { get; set; }
         public string PatientAge { get; set; }
     
@@ -178,8 +178,16 @@ namespace Healtcare_Patient_Application
         {
             SetViewMode();
             LoadPatientData();
+            DisplayPatientData();
             
 
+
+        }
+
+        private void DisplayPatientData()
+        {
+            PatientAgeLB.Text = PatientAge;
+            Patient_Name.Text = PatientName;
 
         }
 

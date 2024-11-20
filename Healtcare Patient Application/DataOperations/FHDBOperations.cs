@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,37 @@ namespace Healtcare_Patient_Application.DataOperations
             }
 
         }
+
+        public static DataTable LoadFamilyHistoryRecords(string patientIDFB)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection connection = GMHDBOperations.MakeConnection())
+            {
+                try
+                {
+                    int patientid = Convert.ToInt32(patientIDFB);
+                    // Use the appropriate stored procedure name for fetching family history records
+                    using (MySqlCommand command = new MySqlCommand("GetFamilyHistory", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.Add(new MySqlParameter("p_PatientID", MySqlDbType.Int32) { Value = patientIDFB });
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while retrieving family history records: {ex.Message}");
+                }
+            }
+            return dt;
+        }
+
+
     }
 
 
