@@ -105,6 +105,51 @@ namespace Healtcare_Patient_Application.DataOperations
             return dt;
         }
 
+        public static void UpdateFamilyHistoryInfo(Family_History_Form form)
+        {
+            if (form == null)
+            {
+                MessageBox.Show("Form is null.");
+                return; // Prevent further execution
+            }
+
+            using (MySqlConnection connection = GMHDBOperations.MakeConnection())
+            {
+                try
+                {
+                    using (MySqlCommand command = new MySqlCommand("UpdateFamilyInfo", connection))
+                    {
+                        command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        // Add PatientID parameter
+                        int? patientID = int.TryParse(form.PatientIDFB, out int Number) ? Number : (int?)null;
+                        command.Parameters.AddWithValue("p_PatientID", patientID.HasValue ? (object)patientID.Value : DBNull.Value);
+
+                        int? familyID = int.TryParse(form.FamilyID, out int familyNumber) ? familyNumber : (int?)null;
+                        command.Parameters.AddWithValue("p_FamilyID", familyID.HasValue ? (object)familyID.Value : DBNull.Value);
+
+                        // Add other parameters
+                        command.Parameters.AddWithValue("p_Name", GetParameterValue(form.FamilyName));
+                        command.Parameters.AddWithValue("p_Relation", GetParameterValue(form.Relation));
+                        command.Parameters.AddWithValue("p_MajorDisorder", GetParameterValue(form.MajorDisorders));
+                        command.Parameters.AddWithValue("p_SpecificTypeDisorder", GetParameterValue(form.SpecificDisorderType));
+                        
+
+                        
+                        command.Parameters.AddWithValue("p_Alive", form.Alive);
+                        command.Parameters.AddWithValue("p_Liveswithpatient", form.LivesWith);
+                        
+                        // Execute the command
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while updating medical info: {ex.Message}");
+                }
+            }
+        }
+
 
     }
 

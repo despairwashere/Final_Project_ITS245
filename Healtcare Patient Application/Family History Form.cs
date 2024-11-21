@@ -50,10 +50,14 @@ namespace Healtcare_Patient_Application
         public string PatientNameFB { get; set; }
         public string PatientAgeFB { get; set; }
         public string PatientIDFB { get; set; }
+        public string FamilyID {  get; set; }
+        
 
         private string patientID; // Holds patient id 
         private string patientName;
         private string age;
+        private string familyID;
+        
 
 
 
@@ -144,8 +148,10 @@ namespace Healtcare_Patient_Application
 
         }
 
+        private bool Add_New_Rec = false;
         private void FamHisAddBT_Click(object sender, EventArgs e)
         {
+            Add_New_Rec = true;
             SetEditMode();
 
 
@@ -153,24 +159,43 @@ namespace Healtcare_Patient_Application
 
         private void FamHisModifyBT_Click(object sender, EventArgs e)
         {
+            Add_New_Rec = false;
             SetEditMode();
 
         }
 
         private void FamHisSaveBT_Click(object sender, EventArgs e)
         {
-            try
+            if (Add_New_Rec == true)
             {
-                FHDBOperations.AddFamilyHistory(this);
-                LoadFamilyHistory();
+                try
+                {
+                    FHDBOperations.AddFamilyHistory(this);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error adding record: {ex.Message}");
+                }
 
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error adding record: {ex.Message}");
+                try
+                {
+                    FHDBOperations.UpdateFamilyHistoryInfo(this);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating record: {ex.Message}");
+                }
+
+
             }
 
             SetViewMode();
+            LoadFamilyHistory();
         }
 
         private void GoToGenMedicalHistoryBT_Click(object sender, EventArgs e)
@@ -241,12 +266,14 @@ namespace Healtcare_Patient_Application
                 patientName = row.Cells["FullName"].Value.ToString();
                 age = row.Cells["Age"].Value.ToString();
                 patientID = row.Cells["PatientID"].Value.ToString();
+                
 
                 // Update the labels to display the name and age.
                 PatientNameLB.Text = patientName;
                 PatientAgeLB.Text = "Age: " + age;
 
                 PatientIDFB = patientID;
+                
 
                 LoadFamilyHistory();
                
@@ -312,6 +339,8 @@ namespace Healtcare_Patient_Application
             if (dataGridView2.Columns.Contains("MajorDisorder"))
                 dataGridView2.Columns["MajorDisorder"].Visible = true;
 
+            if (dataGridView2.Columns.Contains("FamilyID"))
+                dataGridView2.Columns["FamilyID"].Visible = false;
 
 
         }
@@ -338,6 +367,9 @@ namespace Healtcare_Patient_Application
                 SpecificDisorderTypeTB.Text = row.Cells["SpecificTypeDisorder"].Value.ToString();
                 AliveCB.Checked = Convert.ToBoolean(row.Cells["Alive"].Value);
                 LivesWithPatientCB.Checked = Convert.ToBoolean(row.Cells["Liveswithpatient"].Value);
+
+                familyID = row.Cells["familyID"].Value.ToString();
+                FamilyID = familyID;
 
 
 

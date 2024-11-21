@@ -18,10 +18,13 @@ namespace Healtcare_Patient_Application
         private string patientID; // Holds patient id 
         private string patientName;
         private string age;
+        private string generalMedicalHistoryID;
 
         public string PatientID { get; set; }
         public string PatientName { get; set; }
         public string PatientAge { get; set; }
+        public string GeneralMedicalHistoryID { get; set; }
+
     
 
 
@@ -519,6 +522,8 @@ namespace Healtcare_Patient_Application
                 patientName = row.Cells["FullName"].Value.ToString();
                 age = row.Cells["Age"].Value.ToString();
                 patientID = row.Cells["PatientID"].Value.ToString();
+                PatientID = patientID;
+               
 
                 // Update the labels to display the name and age.
                 Patient_Name.Text = patientName;
@@ -568,10 +573,9 @@ namespace Healtcare_Patient_Application
 
         }
 
-        
-
-
-
-
+        private void DeleteBT_Click(object sender, EventArgs e)
+        {
+            GMHDBOperations.DeleteGeneralMedicalInfo(this);
+        }
     }
 }

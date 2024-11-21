@@ -74,7 +74,7 @@ namespace Healthcare_Patient_Application.DataOperations
                         command.Parameters.AddWithValue("p_MensesFreq", GetParameterValue(form.MensesFrequency));
                         command.Parameters.AddWithValue("p_MedicalHistoryNotes", GetParameterValue(form.MedicalHistoryNotes));
                         command.Parameters.AddWithValue("p_HxObtainedBy", GetParameterValue(form.HX));
-                        command.Parameters.AddWithValue("p_deleted", form.IsDeleted);
+                       
 
                         // Execute the command
                         command.ExecuteNonQuery();
@@ -135,7 +135,7 @@ namespace Healthcare_Patient_Application.DataOperations
                         command.Parameters.AddWithValue("p_MensesFreq", GetParameterValue(form.MensesFrequency));
                         command.Parameters.AddWithValue("p_MedicalHistoryNotes", GetParameterValue(form.MedicalHistoryNotes));
                         command.Parameters.AddWithValue("p_HxObtainedBy", GetParameterValue(form.HX));
-                        command.Parameters.AddWithValue("p_deleted", form.IsDeleted);
+                        
 
                         // Execute the command
                         command.ExecuteNonQuery();
@@ -226,6 +226,7 @@ namespace Healthcare_Patient_Application.DataOperations
                                 form.MedicalHistoryNotes = reader["MedicalHistoryNotes"] as string ?? string.Empty;
                                 form.HX = reader["HxObtainedBy"] as string ?? string.Empty;
                                 form.IsDeleted = reader["deleted"] != DBNull.Value && Convert.ToBoolean(reader["deleted"]);
+                                form.GeneralMedicalHistoryID = reader["GeneralMedicalHistoryID"] != DBNull.Value ? reader["GeneralMedicalHistoryID"].ToString() : string.Empty;
                             }
                             else
                             {
@@ -241,6 +242,46 @@ namespace Healthcare_Patient_Application.DataOperations
             }
 
         }
+
+        public static void DeleteGeneralMedicalInfo(GMH form)
+        {
+            using (MySqlConnection connection = MakeConnection())
+            {
+                try
+                {
+                    
+                    using (MySqlCommand command = new MySqlCommand("DeleteGeneralMedicalInfo", connection))
+                    {
+                        command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        // Add parameters for the stored procedure
+                        // Add PatientID parameter
+                        int? patientID = int.TryParse(form.PatientID, out int Number) ? Number : (int?)null;
+                        command.Parameters.AddWithValue("p_PatientID", patientID.HasValue ? (object)patientID.Value : DBNull.Value);
+
+                        int? generalMedicalHistoryID = int.TryParse(form.GeneralMedicalHistoryID, out int medicalHistoryNumber) ? medicalHistoryNumber : (int?)null;
+                        command.Parameters.AddWithValue("p_GeneralMedicalHistoryID", generalMedicalHistoryID.HasValue ? (object)generalMedicalHistoryID.Value : DBNull.Value);
+
+
+                        command.Parameters.AddWithValue("p_deleted", 1); // Set the deleted flag to 1
+
+                        // Execute the stored procedure
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("General medical information marked as deleted successfully.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
 
 
     }
