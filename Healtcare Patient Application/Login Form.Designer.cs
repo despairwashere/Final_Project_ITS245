@@ -38,11 +38,15 @@
             this.PatientAgeLB = new System.Windows.Forms.Label();
             this.GoToFamilyHistory = new System.Windows.Forms.Button();
             this.GoToGenMedicalHistoryBT = new System.Windows.Forms.Button();
+            this.LoginBT = new System.Windows.Forms.Button();
+            this.LogOutBT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.LogOutBT);
+            this.panel1.Controls.Add(this.LoginBT);
             this.panel1.Controls.Add(this.PasswordTB);
             this.panel1.Controls.Add(this.UserNameTB);
             this.panel1.Controls.Add(this.PasswordLB);
@@ -142,6 +146,28 @@
             this.GoToGenMedicalHistoryBT.UseVisualStyleBackColor = true;
             this.GoToGenMedicalHistoryBT.Click += new System.EventHandler(this.GoToGenMedicalHistoryBT_Click);
             // 
+            // LoginBT
+            // 
+            this.LoginBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginBT.Location = new System.Drawing.Point(154, 156);
+            this.LoginBT.Name = "LoginBT";
+            this.LoginBT.Size = new System.Drawing.Size(179, 50);
+            this.LoginBT.TabIndex = 15;
+            this.LoginBT.Text = "Login";
+            this.LoginBT.UseVisualStyleBackColor = true;
+            this.LoginBT.Click += new System.EventHandler(this.LoginBT_Click);
+            // 
+            // LogOutBT
+            // 
+            this.LogOutBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutBT.Location = new System.Drawing.Point(154, 241);
+            this.LogOutBT.Name = "LogOutBT";
+            this.LogOutBT.Size = new System.Drawing.Size(179, 50);
+            this.LogOutBT.TabIndex = 16;
+            this.LogOutBT.Text = "Login Out";
+            this.LogOutBT.UseVisualStyleBackColor = true;
+            this.LogOutBT.Click += new System.EventHandler(this.LogOutBT_Click);
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,5 +200,7 @@
         private System.Windows.Forms.Label PatientAgeLB;
         private System.Windows.Forms.Button GoToFamilyHistory;
         private System.Windows.Forms.Button GoToGenMedicalHistoryBT;
+        private System.Windows.Forms.Button LoginBT;
+        private System.Windows.Forms.Button LogOutBT;
     }
 }

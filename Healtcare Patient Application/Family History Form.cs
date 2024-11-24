@@ -64,6 +64,7 @@ namespace Healtcare_Patient_Application
         public Family_History_Form()
         {
             InitializeComponent();
+            LogAccessForm.FormAccessLogger.LogFormAccess(LoginSession.GlobalSession.LoginID, "Family History Form");
         }
 
         private void DisplayFamilyData()
@@ -75,42 +76,41 @@ namespace Healtcare_Patient_Application
 
         private void SetViewMode()
         {
-            FamilyIDTB.Enabled = false;
-            FamilyIDTB.BackColor = Color.LightGray;
-
-            PatientIDTB.Enabled = false;
-            PatientIDTB.BackColor = Color.LightGray;
+            
 
             FamilyNameTB.Enabled = false;
             FamilyNameTB.BackColor = Color.LightGray;
+            FamilyNameTB.Clear();
 
             FamilyRelationTB.Enabled = false;
             FamilyRelationTB.BackColor = Color.LightGray;
+            FamilyRelationTB.Clear();
 
             AliveCB.Enabled = false;
             AliveCB.BackColor = Color.LightGray;
+            AliveCB.Checked = false;
 
             LivesWithPatientCB.Enabled = false;
             LivesWithPatientCB.BackColor = Color.LightGray;
+            LivesWithPatientCB.Checked = false;
 
             MajorDisordersTB.Enabled = false;
             MajorDisordersTB.BackColor = Color.LightGray;
+            MajorDisordersTB.Clear();
 
             SpecificDisorderTypeTB.Enabled = false;
             SpecificDisorderTypeTB.BackColor = Color.LightGray;
+            SpecificDisorderTypeTB.Clear();
 
             deletedCB.Enabled = false;
             deletedCB.BackColor = Color.LightGray;
+            deletedCB.Checked = false;
 
         }
 
         private void SetEditMode()
         {
-            FamilyIDTB.Enabled = true;
-            FamilyIDTB.BackColor = Color.White;
-
-            PatientIDTB.Enabled = true;
-            PatientIDTB.BackColor = Color.White;
+            
 
             FamilyNameTB.Enabled = true;
             FamilyNameTB.BackColor = Color.White;
@@ -153,6 +153,8 @@ namespace Healtcare_Patient_Application
         {
             Add_New_Rec = true;
             SetEditMode();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
+                "User clicked the Add Button");
 
 
         }
@@ -161,6 +163,8 @@ namespace Healtcare_Patient_Application
         {
             Add_New_Rec = false;
             SetEditMode();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form", 
+                "User clicked the Modify Buttion");
 
         }
 
@@ -171,11 +175,14 @@ namespace Healtcare_Patient_Application
                 try
                 {
                     FHDBOperations.AddFamilyHistory(this);
+                    LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
+                "User saved a new family history record");
 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error adding record: {ex.Message}");
+                   
                 }
 
             }
@@ -184,6 +191,8 @@ namespace Healtcare_Patient_Application
                 try
                 {
                     FHDBOperations.UpdateFamilyHistoryInfo(this);
+                    LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
+                "User modified a family history record.");
 
                 }
                 catch (Exception ex)
@@ -213,11 +222,15 @@ namespace Healtcare_Patient_Application
             Form Login = new Login_Form();
             Login.Show();
             this.Hide();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
+                "User went to the Login Form");
         }
 
         private void FamHisUndoBT_Click(object sender, EventArgs e)
         {
             UndoChanges();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
+                "User clicked the UnDo Button");
 
         }
 
@@ -375,6 +388,16 @@ namespace Healtcare_Patient_Application
 
 
             }
+
+        }
+
+        private void FamHisDeleteBT_Click(object sender, EventArgs e)
+        {
+            FHDBOperations.DeleteFamilyHistoryInfo(this);
+            SetViewMode();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
+                "User marked the family history record as deleted");
+
 
         }
     }

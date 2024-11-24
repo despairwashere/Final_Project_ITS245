@@ -43,10 +43,6 @@
             this.RelationLB = new System.Windows.Forms.Label();
             this.FamilyNameTB = new System.Windows.Forms.TextBox();
             this.FamilyNameLB = new System.Windows.Forms.Label();
-            this.PatientIDTB = new System.Windows.Forms.TextBox();
-            this.FamilyIDTB = new System.Windows.Forms.TextBox();
-            this.PatientIDLB = new System.Windows.Forms.Label();
-            this.FamilyIDLB = new System.Windows.Forms.Label();
             this.PatientNameLB = new System.Windows.Forms.Label();
             this.FamHisAddBT = new System.Windows.Forms.Button();
             this.FamHisModifyBT = new System.Windows.Forms.Button();
@@ -79,10 +75,6 @@
             this.panel1.Controls.Add(this.RelationLB);
             this.panel1.Controls.Add(this.FamilyNameTB);
             this.panel1.Controls.Add(this.FamilyNameLB);
-            this.panel1.Controls.Add(this.PatientIDTB);
-            this.panel1.Controls.Add(this.FamilyIDTB);
-            this.panel1.Controls.Add(this.PatientIDLB);
-            this.panel1.Controls.Add(this.FamilyIDLB);
             this.panel1.Location = new System.Drawing.Point(211, 89);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(688, 369);
@@ -204,7 +196,7 @@
             // FamilyNameTB
             // 
             this.FamilyNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FamilyNameTB.Location = new System.Drawing.Point(458, 10);
+            this.FamilyNameTB.Location = new System.Drawing.Point(82, 12);
             this.FamilyNameTB.Name = "FamilyNameTB";
             this.FamilyNameTB.Size = new System.Drawing.Size(215, 22);
             this.FamilyNameTB.TabIndex = 5;
@@ -212,48 +204,12 @@
             // FamilyNameLB
             // 
             this.FamilyNameLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FamilyNameLB.Location = new System.Drawing.Point(398, 9);
+            this.FamilyNameLB.Location = new System.Drawing.Point(19, 11);
             this.FamilyNameLB.Name = "FamilyNameLB";
             this.FamilyNameLB.Size = new System.Drawing.Size(66, 23);
             this.FamilyNameLB.TabIndex = 4;
             this.FamilyNameLB.Text = "Name";
             this.FamilyNameLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PatientIDTB
-            // 
-            this.PatientIDTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PatientIDTB.Location = new System.Drawing.Point(287, 11);
-            this.PatientIDTB.Name = "PatientIDTB";
-            this.PatientIDTB.Size = new System.Drawing.Size(100, 22);
-            this.PatientIDTB.TabIndex = 3;
-            // 
-            // FamilyIDTB
-            // 
-            this.FamilyIDTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FamilyIDTB.Location = new System.Drawing.Point(82, 10);
-            this.FamilyIDTB.Name = "FamilyIDTB";
-            this.FamilyIDTB.Size = new System.Drawing.Size(100, 22);
-            this.FamilyIDTB.TabIndex = 2;
-            // 
-            // PatientIDLB
-            // 
-            this.PatientIDLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PatientIDLB.Location = new System.Drawing.Point(197, 10);
-            this.PatientIDLB.Name = "PatientIDLB";
-            this.PatientIDLB.Size = new System.Drawing.Size(100, 23);
-            this.PatientIDLB.TabIndex = 1;
-            this.PatientIDLB.Text = "PatientID";
-            this.PatientIDLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FamilyIDLB
-            // 
-            this.FamilyIDLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FamilyIDLB.Location = new System.Drawing.Point(3, 9);
-            this.FamilyIDLB.Name = "FamilyIDLB";
-            this.FamilyIDLB.Size = new System.Drawing.Size(82, 23);
-            this.FamilyIDLB.TabIndex = 0;
-            this.FamilyIDLB.Text = "FamilyID";
-            this.FamilyIDLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientNameLB
             // 
@@ -319,6 +275,7 @@
             this.FamHisDeleteBT.TabIndex = 7;
             this.FamHisDeleteBT.Text = "Delete Family History Record";
             this.FamHisDeleteBT.UseVisualStyleBackColor = true;
+            this.FamHisDeleteBT.Click += new System.EventHandler(this.FamHisDeleteBT_Click);
             // 
             // GoToGenMedicalHistoryBT
             // 
@@ -403,10 +360,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label PatientNameLB;
-        private System.Windows.Forms.Label FamilyIDLB;
-        private System.Windows.Forms.Label PatientIDLB;
-        private System.Windows.Forms.TextBox PatientIDTB;
-        private System.Windows.Forms.TextBox FamilyIDTB;
         private System.Windows.Forms.TextBox FamilyNameTB;
         private System.Windows.Forms.Label FamilyNameLB;
         private System.Windows.Forms.Label RelationLB;

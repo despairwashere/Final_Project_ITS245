@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Healtcare_Patient_Application.DataOperations;
 using Healthcare_Patient_Application.DataOperations;
 
 namespace Healtcare_Patient_Application 
@@ -169,6 +170,7 @@ namespace Healtcare_Patient_Application
         public GMH()
         {
             InitializeComponent();  // Initialize Components
+            LogAccessForm.FormAccessLogger.LogFormAccess(LoginSession.GlobalSession.LoginID, "General Medical History Form");
 
             MensesMonthlyYeschoice.CheckedChanged += MensesMonthlyOption_CheckedChanged;
             MensesMonthlyNochoice.CheckedChanged += MensesMonthlyOption_CheckedChanged;
@@ -198,72 +200,95 @@ namespace Healtcare_Patient_Application
         {
             TobaccoTB.Enabled = false;
             TobaccoTB.BackColor = Color.LightGray;
+            TobaccoTB.Clear();
 
             TobaccoDurationTB.Enabled = false;
             TobaccoDurationTB.BackColor = Color.LightGray;
+            TobaccoDurationTB.Clear();
 
             TobaccoQuanTB.Enabled = false;
             TobaccoQuanTB.BackColor = Color.LightGray;
+            TobaccoQuanTB.Clear();
 
             DrinkAlcoholTB.Enabled = false;
             DrinkAlcoholTB.BackColor = Color.LightGray;
+            DrinkAlcoholTB.Clear();
 
             AlcoholQuanTB.Enabled = false;
             AlcoholQuanTB.BackColor = Color.LightGray;
+            AlcoholQuanTB.Clear();
 
             AlcoholDurTB.Enabled = false;
             AlcoholDurTB.BackColor = Color.LightGray;
+            AlcoholDurTB.Clear();
 
             DrugTB.Enabled = false;
             DrugTB.BackColor = Color.LightGray;
+            DrugTB.Clear();
 
             DrugTypeTB.Enabled = false;
             DrugTypeTB.BackColor = Color.LightGray;
+            DrugTypeTB.Clear();
 
             BloodTypeTB.Enabled = false;
             BloodTypeTB.BackColor = Color.LightGray;
+            BloodTypeTB.Clear();
 
             RHTB.Enabled = false;
             RHTB.BackColor = Color.LightGray;
+            RHTB.Clear();
 
             LMPTB.Enabled = false;
             LMPTB.BackColor = Color.LightGray;
+            LMPTB.Clear();
 
             MaritalStatusTB.Enabled = false;
             MaritalStatusTB.BackColor = Color.LightGray;
+            MaritalStatusTB.Clear();
 
             NumChildrenTB.Enabled = false;
             NumChildrenTB.BackColor = Color.LightGray;
+            NumChildrenTB.Clear();
 
             EducationLevelTB.Enabled = false;
             EducationLevelTB.BackColor = Color.LightGray;
+            EducationLevelTB.Clear();
 
             DietaryTB.Enabled = false;
             DietaryTB.BackColor = Color.LightGray;
+            DietaryTB.Clear();
 
             BehavioralHistoryTB.Enabled = false;
             BehavioralHistoryTB.BackColor = Color.LightGray;
+            BehavioralHistoryTB.Clear();
 
             MensesMonthlyYeschoice.Enabled = false;
             MensesMonthlyYeschoice.BackColor = Color.LightGray;
+            MensesMonthlyYeschoice.Checked = false;
 
             MensesMonthlyNochoice.Enabled = false;
             MensesMonthlyNochoice.BackColor = Color.LightGray;
+            MensesMonthlyNochoice.Checked = false;
 
             HXTB.Enabled = false;
             HXTB.BackColor = Color.LightGray;
+            HXTB.Clear();
 
             MedHistoryTB.Enabled = false;
             MedHistoryTB.BackColor = Color.LightGray;
+            MedHistoryTB.Clear();
 
             DrugDurationTB.Enabled = false;
             DrugDurationTB.BackColor = Color.LightGray;
+            DrugDurationTB.Clear();
 
             MensesFreqTB.Enabled = false;
             MensesFreqTB.BackColor = Color.LightGray;
+            MensesFreqTB.Clear();
 
             DeletedCB.Enabled = false;
             DeletedCB.BackColor = Color.LightGray;
+            DeletedCB.Checked = false;
 
         }
 
@@ -369,6 +394,8 @@ namespace Healtcare_Patient_Application
             Add_New_Rec = true;
             StoreOriginalValues();
             SetEditMode();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "General Medical History Form",
+                "User clicked the Add Button");
         }
 
         private void ModifyBT_Click(object sender, EventArgs e)
@@ -376,7 +403,9 @@ namespace Healtcare_Patient_Application
             Add_New_Rec = false;
             StoreOriginalValues();
             SetEditMode();
-            
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "General Medical History Form",
+                "User clicked the Modify Button");
+
         }
 
         private void SaveBT_Click(object sender, EventArgs e)
@@ -387,6 +416,8 @@ namespace Healtcare_Patient_Application
                 try
                 {
                     GMHDBOperations.AddGeneralMedicalInfo(this);
+                    LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "General Medical History Form",
+                "User saved a new General Medical History Record.");
 
                 }
                 catch (Exception ex)
@@ -400,6 +431,8 @@ namespace Healtcare_Patient_Application
                 try
                 {
                     GMHDBOperations.UpdateGeneralMedicalInfo(this);
+                    LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "General Medical History Form",
+                "User modified a General Medical History Record.");
 
                 }
                 catch (Exception ex)
@@ -576,6 +609,9 @@ namespace Healtcare_Patient_Application
         private void DeleteBT_Click(object sender, EventArgs e)
         {
             GMHDBOperations.DeleteGeneralMedicalInfo(this);
+            SetViewMode();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "General Medical History Form",
+                "User deleted a General Medical History Record.");
         }
     }
 }

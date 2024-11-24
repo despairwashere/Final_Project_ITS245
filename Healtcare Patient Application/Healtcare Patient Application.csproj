@@ -121,6 +121,9 @@
     </Compile>
     <Compile Include="DataOperations\FHDBOperations.cs" />
     <Compile Include="DataOperations\GMHDBOperations.cs" />
+    <Compile Include="DataOperations\LogAccessForm.cs" />
+    <Compile Include="DataOperations\LoginDBOperations.cs" />
+    <Compile Include="DataOperations\LoginSession.cs" />
     <Compile Include="Family History Form.cs">
       <SubType>Form</SubType>
     </Compile>

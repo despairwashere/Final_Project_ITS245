@@ -150,6 +150,45 @@ namespace Healtcare_Patient_Application.DataOperations
             }
         }
 
+        public static void DeleteFamilyHistoryInfo(Family_History_Form form)
+        {
+            using (MySqlConnection connection = GMHDBOperations.MakeConnection())
+            {
+                try
+                {
+
+                    using (MySqlCommand command = new MySqlCommand("DeleteFamilyHistoryInfo", connection))
+                    {
+                        command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        // Add parameters for the stored procedure
+                        // Add PatientID parameter
+                        int? patientID = int.TryParse(form.PatientIDFB, out int Number) ? Number : (int?)null;
+                        command.Parameters.AddWithValue("p_PatientID", patientID.HasValue ? (object)patientID.Value : DBNull.Value);
+
+                        int? familyHistoryID = int.TryParse(form.FamilyID, out int familyHistoryNumber) ? familyHistoryNumber : (int?)null;
+                        command.Parameters.AddWithValue("p_FamilyID", familyHistoryID.HasValue ? (object)familyHistoryID.Value : DBNull.Value);
+
+
+                        command.Parameters.AddWithValue("p_deleted", form.Deleted); 
+
+                        // Execute the stored procedure
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Family History Record marked as deleted successfully.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
 
     }
 
