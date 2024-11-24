@@ -14,6 +14,7 @@ namespace Healtcare_Patient_Application
 {
     public partial class Login_Form : Form
     {
+        
 
         public string User
         {
@@ -33,9 +34,12 @@ namespace Healtcare_Patient_Application
             InitializeComponent();
         }
 
+       
+
         private void Login_Form_Load(object sender, EventArgs e)
         {
             PasswordTB.UseSystemPasswordChar = true;
+           
 
         }
 

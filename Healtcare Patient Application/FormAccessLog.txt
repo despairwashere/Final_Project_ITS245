@@ -1,2 +1,10 @@
 
 
+11/24/2024 2:54:33 PM: User 0 accessed General Medical History Form
+11/24/2024 3:05:26 PM: User 0 accessed General Medical History Form
+11/24/2024 3:06:32 PM: User 0 accessed General Medical History Form
+11/24/2024 3:06:45 PM: User 0 accessed Family History Form
+11/24/2024 3:06:49 PM: User 0 performed action: User went to the Login Form
+11/24/2024 3:10:55 PM: User 0 accessed General Medical History Form
+11/24/2024 3:10:59 PM: User 0 accessed Family History Form
+11/24/2024 3:11:01 PM: User 0 performed action: User went to the Login Form
