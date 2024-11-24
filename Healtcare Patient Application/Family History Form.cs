@@ -400,5 +400,10 @@ namespace Healtcare_Patient_Application
 
 
         }
+
+        private void MajorDisordersTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

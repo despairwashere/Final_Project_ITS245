@@ -12,7 +12,7 @@ namespace Healtcare_Patient_Application
 {
     public partial class PatientDemographicsForm : Form
     {
-        public PatientDemographicsForm()
+        public PatientDemographicsForm(int patientId)
         {
             InitializeComponent();
         }
