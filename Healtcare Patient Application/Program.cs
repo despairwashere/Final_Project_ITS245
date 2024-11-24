@@ -16,7 +16,7 @@ namespace Healtcare_Patient_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GMH());
+            Application.Run(new Login_Form());
         }
     }
 }

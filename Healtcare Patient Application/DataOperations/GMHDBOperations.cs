@@ -14,7 +14,7 @@ namespace Healthcare_Patient_Application.DataOperations
     {
         public static MySqlConnection MakeConnection()
         {
-            string connStr = "server=localhost; uid=root; pwd=password; database=healthdataapp";
+            string connStr = "server=127.0.0.1;port=3306; uid=root; pwd=password; database=healthcareapplication";
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             return conn;
