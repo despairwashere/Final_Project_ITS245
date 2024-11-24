@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Healtcare_Patient_Application.DataOperations;
 using MySql.Data.MySqlClient;
 
 namespace Healtcare_Patient_Application
@@ -38,7 +39,27 @@ namespace Healtcare_Patient_Application
 
         private void btnExitToLogin_Click(object sender, EventArgs e)
         {
+            // Display a confirmation dialog
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                // Hide the current form
+                this.Hide();
+
+                // Create an instance of LoginForm
+                Login_Form loginForm = new Login_Form();
+
+                // Show the LoginForm
+                loginForm.Show();
+
+                // Optionally, close the current form if it's no longer needed
+                // this.Close();
+            }
         }
 
         private void btnSearchPatient_Click(object sender, EventArgs e)

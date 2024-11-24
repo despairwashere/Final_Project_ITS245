@@ -84,5 +84,10 @@ namespace Healtcare_Patient_Application
             loginForm.Show();
             this.Hide();
         }
+
+        private void UserNameTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

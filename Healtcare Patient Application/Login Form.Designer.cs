@@ -50,17 +50,19 @@
             this.panel1.Controls.Add(this.PasswordLB);
             this.panel1.Controls.Add(this.UsernameLB);
             this.panel1.Controls.Add(this.MainLoginLB);
-            this.panel1.Location = new System.Drawing.Point(435, 102);
+            this.panel1.Location = new System.Drawing.Point(652, 157);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 321);
+            this.panel1.Size = new System.Drawing.Size(720, 494);
             this.panel1.TabIndex = 0;
             // 
             // LogOutBT
             // 
             this.LogOutBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutBT.Location = new System.Drawing.Point(154, 241);
+            this.LogOutBT.Location = new System.Drawing.Point(231, 371);
+            this.LogOutBT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LogOutBT.Name = "LogOutBT";
-            this.LogOutBT.Size = new System.Drawing.Size(179, 50);
+            this.LogOutBT.Size = new System.Drawing.Size(268, 77);
             this.LogOutBT.TabIndex = 16;
             this.LogOutBT.Text = "Login Out";
             this.LogOutBT.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             // LoginBT
             // 
             this.LoginBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginBT.Location = new System.Drawing.Point(154, 156);
+            this.LoginBT.Location = new System.Drawing.Point(231, 240);
+            this.LoginBT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoginBT.Name = "LoginBT";
-            this.LoginBT.Size = new System.Drawing.Size(179, 50);
+            this.LoginBT.Size = new System.Drawing.Size(268, 77);
             this.LoginBT.TabIndex = 15;
             this.LoginBT.Text = "Login";
             this.LoginBT.UseVisualStyleBackColor = true;
@@ -80,26 +83,30 @@
             // PasswordTB
             // 
             this.PasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTB.Location = new System.Drawing.Point(139, 108);
+            this.PasswordTB.Location = new System.Drawing.Point(208, 166);
+            this.PasswordTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PasswordTB.Name = "PasswordTB";
-            this.PasswordTB.Size = new System.Drawing.Size(296, 31);
+            this.PasswordTB.Size = new System.Drawing.Size(442, 43);
             this.PasswordTB.TabIndex = 14;
             this.PasswordTB.TextChanged += new System.EventHandler(this.PasswordTB_TextChanged);
             // 
             // UserNameTB
             // 
             this.UserNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameTB.Location = new System.Drawing.Point(139, 66);
+            this.UserNameTB.Location = new System.Drawing.Point(208, 102);
+            this.UserNameTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UserNameTB.Name = "UserNameTB";
-            this.UserNameTB.Size = new System.Drawing.Size(296, 31);
+            this.UserNameTB.Size = new System.Drawing.Size(442, 43);
             this.UserNameTB.TabIndex = 13;
+            this.UserNameTB.TextChanged += new System.EventHandler(this.UserNameTB_TextChanged);
             // 
             // PasswordLB
             // 
             this.PasswordLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLB.Location = new System.Drawing.Point(3, 108);
+            this.PasswordLB.Location = new System.Drawing.Point(4, 166);
+            this.PasswordLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordLB.Name = "PasswordLB";
-            this.PasswordLB.Size = new System.Drawing.Size(152, 23);
+            this.PasswordLB.Size = new System.Drawing.Size(228, 35);
             this.PasswordLB.TabIndex = 12;
             this.PasswordLB.Text = "Password:";
             this.PasswordLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,9 +114,10 @@
             // UsernameLB
             // 
             this.UsernameLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLB.Location = new System.Drawing.Point(3, 66);
+            this.UsernameLB.Location = new System.Drawing.Point(4, 102);
+            this.UsernameLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsernameLB.Name = "UsernameLB";
-            this.UsernameLB.Size = new System.Drawing.Size(152, 23);
+            this.UsernameLB.Size = new System.Drawing.Size(228, 35);
             this.UsernameLB.TabIndex = 11;
             this.UsernameLB.Text = "Username: ";
             this.UsernameLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,9 +125,10 @@
             // MainLoginLB
             // 
             this.MainLoginLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainLoginLB.Location = new System.Drawing.Point(134, 9);
+            this.MainLoginLB.Location = new System.Drawing.Point(201, 14);
+            this.MainLoginLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MainLoginLB.Name = "MainLoginLB";
-            this.MainLoginLB.Size = new System.Drawing.Size(158, 45);
+            this.MainLoginLB.Size = new System.Drawing.Size(237, 69);
             this.MainLoginLB.TabIndex = 3;
             this.MainLoginLB.Text = "User Login";
             this.MainLoginLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,9 +136,10 @@
             // GoToFamilyHistory
             // 
             this.GoToFamilyHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToFamilyHistory.Location = new System.Drawing.Point(91, 111);
+            this.GoToFamilyHistory.Location = new System.Drawing.Point(136, 171);
+            this.GoToFamilyHistory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GoToFamilyHistory.Name = "GoToFamilyHistory";
-            this.GoToFamilyHistory.Size = new System.Drawing.Size(119, 43);
+            this.GoToFamilyHistory.Size = new System.Drawing.Size(178, 66);
             this.GoToFamilyHistory.TabIndex = 13;
             this.GoToFamilyHistory.Text = "Go To Family History";
             this.GoToFamilyHistory.UseVisualStyleBackColor = true;
@@ -138,9 +148,10 @@
             // GoToGenMedicalHistoryBT
             // 
             this.GoToGenMedicalHistoryBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToGenMedicalHistoryBT.Location = new System.Drawing.Point(91, 190);
+            this.GoToGenMedicalHistoryBT.Location = new System.Drawing.Point(136, 292);
+            this.GoToGenMedicalHistoryBT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GoToGenMedicalHistoryBT.Name = "GoToGenMedicalHistoryBT";
-            this.GoToGenMedicalHistoryBT.Size = new System.Drawing.Size(119, 62);
+            this.GoToGenMedicalHistoryBT.Size = new System.Drawing.Size(178, 95);
             this.GoToGenMedicalHistoryBT.TabIndex = 14;
             this.GoToGenMedicalHistoryBT.Text = "Go To General Medical History";
             this.GoToGenMedicalHistoryBT.UseVisualStyleBackColor = true;
@@ -148,13 +159,14 @@
             // 
             // Login_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1400, 583);
+            this.ClientSize = new System.Drawing.Size(2100, 897);
             this.Controls.Add(this.GoToGenMedicalHistoryBT);
             this.Controls.Add(this.GoToFamilyHistory);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Login_Form";
             this.Text = "Login_Form";
             this.Load += new System.EventHandler(this.Login_Form_Load);
