@@ -16,5 +16,17 @@ namespace Healtcare_Patient_Application
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the previous form (e.g., MainForm or PatientSelectionForm)
+            PatientSelectionForm selectionForm = new PatientSelectionForm();
+
+            // Show the previous form
+            selectionForm.Show();
+
+            // Close or hide the current form
+            this.Close();
+        }
     }
 }

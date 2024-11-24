@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGoToDemographics = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -42,14 +43,15 @@
             this.comboBox1.Size = new System.Drawing.Size(504, 28);
             this.comboBox1.TabIndex = 0;
             // 
-            // button1
+            // btnGoToDemographics
             // 
-            this.button1.Location = new System.Drawing.Point(1439, 701);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(278, 66);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Go To Demographics";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGoToDemographics.Location = new System.Drawing.Point(1439, 701);
+            this.btnGoToDemographics.Name = "btnGoToDemographics";
+            this.btnGoToDemographics.Size = new System.Drawing.Size(278, 66);
+            this.btnGoToDemographics.TabIndex = 1;
+            this.btnGoToDemographics.Text = "Go To Demographics";
+            this.btnGoToDemographics.UseVisualStyleBackColor = true;
+            this.btnGoToDemographics.Click += new System.EventHandler(this.btnGoToDemographics_Click);
             // 
             // button2
             // 
@@ -67,15 +69,26 @@
             this.textBox1.Size = new System.Drawing.Size(285, 26);
             this.textBox1.TabIndex = 3;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(73, 701);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(180, 66);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // PatientSelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1790, 913);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGoToDemographics);
             this.Controls.Add(this.comboBox1);
             this.Name = "PatientSelectionForm";
             this.Text = "PatientSelectionForm";
@@ -87,8 +100,9 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGoToDemographics;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnBack;
     }
 }
