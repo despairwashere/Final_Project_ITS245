@@ -28,5 +28,10 @@ namespace Healtcare_Patient_Application
             // Close or hide the current form
             this.Close();
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
