@@ -33,7 +33,6 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtSSN = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -77,6 +76,8 @@
             this.txtMedications = new System.Windows.Forms.TextBox();
             this.lblMedicalConditions = new System.Windows.Forms.Label();
             this.txtMedicalConditions = new System.Windows.Forms.TextBox();
+            this.lblPatientID = new System.Windows.Forms.Label();
+            this.txtPatientID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -116,15 +117,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnModify
-            // 
-            this.btnModify.Location = new System.Drawing.Point(871, 207);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 40);
-            this.btnModify.TabIndex = 5;
-            this.btnModify.Text = "Modify";
-            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
@@ -138,12 +131,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(871, 306);
+            this.btnDelete.Location = new System.Drawing.Point(870, 249);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 40);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnBack
             // 
@@ -609,12 +603,31 @@
             this.txtMedicalConditions.Size = new System.Drawing.Size(317, 26);
             this.txtMedicalConditions.TabIndex = 50;
             // 
+            // lblPatientID
+            // 
+            this.lblPatientID.AutoSize = true;
+            this.lblPatientID.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientID.Location = new System.Drawing.Point(867, 48);
+            this.lblPatientID.Name = "lblPatientID";
+            this.lblPatientID.Size = new System.Drawing.Size(77, 18);
+            this.lblPatientID.TabIndex = 51;
+            this.lblPatientID.Text = "PatientID";
+            // 
+            // txtPatientID
+            // 
+            this.txtPatientID.Location = new System.Drawing.Point(807, 69);
+            this.txtPatientID.Name = "txtPatientID";
+            this.txtPatientID.Size = new System.Drawing.Size(204, 26);
+            this.txtPatientID.TabIndex = 52;
+            // 
             // PatientDemographicsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1802, 920);
+            this.Controls.Add(this.txtPatientID);
+            this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.txtMedicalConditions);
             this.Controls.Add(this.lblMedicalConditions);
             this.Controls.Add(this.txtMedications);
@@ -658,7 +671,6 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSSN);
             this.Controls.Add(this.txtLastName);
@@ -678,7 +690,6 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtSSN;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnBack;
@@ -722,5 +733,7 @@
         private System.Windows.Forms.TextBox txtMedications;
         private System.Windows.Forms.Label lblMedicalConditions;
         private System.Windows.Forms.TextBox txtMedicalConditions;
+        private System.Windows.Forms.Label lblPatientID;
+        private System.Windows.Forms.TextBox txtPatientID;
     }
 }
