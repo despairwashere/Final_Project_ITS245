@@ -313,6 +313,7 @@ namespace Healtcare_Patient_Application
             // Change header text for FullName
             if (dataGridView1.Columns["FullName"] != null)
                 dataGridView1.Columns["FullName"].HeaderText = "Patient Name";
+                dataGridView1.Columns["FullName"].ReadOnly = true;
 
             // Hide "Age" column if it exists
             if (dataGridView1.Columns.Contains("Age"))
@@ -339,6 +340,8 @@ namespace Healtcare_Patient_Application
 
             if (dataGridView2.Columns.Contains("Relation"))
                 dataGridView2.Columns["Relation"].Visible = true;
+                dataGridView2.Columns["Relation"].ReadOnly = true;
+
 
             if (dataGridView2.Columns.Contains("Liveswithpatient"))
                 dataGridView2.Columns["Liveswithpatient"].Visible = false;
@@ -351,6 +354,7 @@ namespace Healtcare_Patient_Application
 
             if (dataGridView2.Columns.Contains("MajorDisorder"))
                 dataGridView2.Columns["MajorDisorder"].Visible = true;
+                dataGridView2.Columns["MajorDisorder"].ReadOnly = true;
 
             if (dataGridView2.Columns.Contains("FamilyID"))
                 dataGridView2.Columns["FamilyID"].Visible = false;

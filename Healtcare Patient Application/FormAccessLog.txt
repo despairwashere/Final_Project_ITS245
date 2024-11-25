@@ -1,6 +1,2 @@
 
 
-11/24/2024 6:16:38 PM: User 1 accessed General Medical History Form
-11/24/2024 7:00:46 PM: User 1 accessed Login_Form
-11/24/2024 7:01:54 PM: User 1 accessed Login_Form
-11/24/2024 7:11:12 PM: User 1 accessed Login_Form
