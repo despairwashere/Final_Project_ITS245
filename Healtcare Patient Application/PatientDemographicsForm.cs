@@ -66,7 +66,6 @@ namespace Healtcare_Patient_Application
             string medicalConditions = txtMedicalConditions.Text;
 
             // Now, insert the data into the database (SQL code)
-            // Example:
             string query = "INSERT INTO patientdemographics (firstName, middleName, lastName, gender, dateOfBirth, ssn, phoneNumber, emailAddress, address, city, state, zipCode, emergencyContactName, emergencyContactRelationship, emergencyContactPhone, insuranceProvider, policyNumber, groupNumber, allergies, medications, medicalConditions) VALUES (@firstName, @middleName, @lastName, @gender, @dateOfBirth, @ssn, @phoneNumber, @emailAddress, @address, @city, @state, @zipCode, @emergencyContactName, @emergencyContactRelationship, @emergencyContactPhone, @insuranceProvider, @policyNumber, @groupNumber, @allergies, @medications, @medicalConditions)";
             // Use parameters to avoid SQL injection
         }
