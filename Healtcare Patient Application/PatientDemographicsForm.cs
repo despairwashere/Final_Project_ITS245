@@ -33,5 +33,40 @@ namespace Healtcare_Patient_Application
         {
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Collecting data from the controls
+            string firstName = txtFirstName.Text;
+            string middleName = txtMiddleName.Text;
+            string lastName = txtLastName.Text;
+            string gender = cboGender.SelectedItem.ToString();
+            DateTime dateOfBirth = dtpDateOfBirth.Value;
+            string ssn = txtSSN.Text;
+
+            string phoneNumber = txtPhoneNumber.Text;
+            string email = txtEmailAddress.Text;
+            string address = txtAddress.Text;
+            string city = txtCity.Text;
+            string state = cboState.SelectedItem.ToString();
+            string zipCode = txtZipCode.Text;
+
+            string emergencyContactName = txtEmergencyContactName.Text;
+            string emergencyContactRelationship = txtEmergencyContactRelationship.Text;
+            string emergencyContactPhone = txtEmergencyContactPhone.Text;
+
+            string insuranceProvider = txtInsuranceProvider.Text;
+            string policyNumber = txtPolicyNumber.Text;
+            string groupNumber = txtGroupNumber.Text;
+
+            string allergies = txtAllergies.Text;
+            string medications = txtMedications.Text;
+            string medicalConditions = txtMedicalConditions.Text;
+
+            // Now, insert the data into the database (SQL code)
+            // Example:
+            string query = "INSERT INTO patientdemographics (firstName, middleName, lastName, gender, dateOfBirth, ssn, phoneNumber, emailAddress, address, city, state, zipCode, emergencyContactName, emergencyContactRelationship, emergencyContactPhone, insuranceProvider, policyNumber, groupNumber, allergies, medications, medicalConditions) VALUES (@firstName, @middleName, @lastName, @gender, @dateOfBirth, @ssn, @phoneNumber, @emailAddress, @address, @city, @state, @zipCode, @emergencyContactName, @emergencyContactRelationship, @emergencyContactPhone, @insuranceProvider, @policyNumber, @groupNumber, @allergies, @medications, @medicalConditions)";
+            // Use parameters to avoid SQL injection
+        }
     }
 }

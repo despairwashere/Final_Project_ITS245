@@ -32,10 +32,10 @@
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtSSN = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,9 +43,9 @@
             this.lblMiddleName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboGender = new System.Windows.Forms.ComboBox();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.lblSSN = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -72,9 +72,9 @@
             this.lblGroupNumber = new System.Windows.Forms.Label();
             this.txtGroupNumber = new System.Windows.Forms.TextBox();
             this.lblKnownAllergies = new System.Windows.Forms.Label();
-            this.txtKnownAllergies = new System.Windows.Forms.TextBox();
+            this.txtAllergies = new System.Windows.Forms.TextBox();
             this.lblCurrentMedications = new System.Windows.Forms.Label();
-            this.txtCurrentMedications = new System.Windows.Forms.TextBox();
+            this.txtMedications = new System.Windows.Forms.TextBox();
             this.lblMedicalConditions = new System.Windows.Forms.Label();
             this.txtMedicalConditions = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -108,41 +108,42 @@
             this.txtSSN.TabIndex = 3;
             this.txtSSN.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(871, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(871, 123);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 40);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnModify
             // 
-            this.button2.Location = new System.Drawing.Point(871, 207);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 40);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Modify";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModify.Location = new System.Drawing.Point(871, 207);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 40);
+            this.btnModify.TabIndex = 5;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSave
             // 
-            this.button3.Location = new System.Drawing.Point(871, 408);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 40);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(871, 408);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 40);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button5
+            // btnDelete
             // 
-            this.button5.Location = new System.Drawing.Point(871, 306);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 40);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(871, 306);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 40);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnBack
             // 
@@ -213,17 +214,17 @@
             this.lblGender.TabIndex = 15;
             this.lblGender.Text = "Gender";
             // 
-            // comboBox1
+            // cboGender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboGender.FormattingEnabled = true;
+            this.cboGender.Items.AddRange(new object[] {
             "Male",
             "Female",
             "Prefer Not to Answer"});
-            this.comboBox1.Location = new System.Drawing.Point(0, 214);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(329, 28);
-            this.comboBox1.TabIndex = 16;
+            this.cboGender.Location = new System.Drawing.Point(0, 214);
+            this.cboGender.Name = "cboGender";
+            this.cboGender.Size = new System.Drawing.Size(329, 28);
+            this.cboGender.TabIndex = 16;
             // 
             // lblDateOfBirth
             // 
@@ -235,12 +236,12 @@
             this.lblDateOfBirth.TabIndex = 17;
             this.lblDateOfBirth.Text = "Date Of Birth";
             // 
-            // dateTimePicker1
+            // dtpDateOfBirth
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(-4, 273);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(333, 26);
-            this.dateTimePicker1.TabIndex = 18;
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(-4, 273);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(333, 26);
+            this.dtpDateOfBirth.TabIndex = 18;
             // 
             // lblSSN
             // 
@@ -567,12 +568,12 @@
             this.lblKnownAllergies.TabIndex = 45;
             this.lblKnownAllergies.Text = "Known Allergies";
             // 
-            // txtKnownAllergies
+            // txtAllergies
             // 
-            this.txtKnownAllergies.Location = new System.Drawing.Point(1483, 385);
-            this.txtKnownAllergies.Name = "txtKnownAllergies";
-            this.txtKnownAllergies.Size = new System.Drawing.Size(317, 26);
-            this.txtKnownAllergies.TabIndex = 46;
+            this.txtAllergies.Location = new System.Drawing.Point(1483, 385);
+            this.txtAllergies.Name = "txtAllergies";
+            this.txtAllergies.Size = new System.Drawing.Size(317, 26);
+            this.txtAllergies.TabIndex = 46;
             // 
             // lblCurrentMedications
             // 
@@ -584,12 +585,12 @@
             this.lblCurrentMedications.TabIndex = 47;
             this.lblCurrentMedications.Text = "Current Medications";
             // 
-            // txtCurrentMedications
+            // txtMedications
             // 
-            this.txtCurrentMedications.Location = new System.Drawing.Point(1483, 442);
-            this.txtCurrentMedications.Name = "txtCurrentMedications";
-            this.txtCurrentMedications.Size = new System.Drawing.Size(317, 26);
-            this.txtCurrentMedications.TabIndex = 48;
+            this.txtMedications.Location = new System.Drawing.Point(1483, 442);
+            this.txtMedications.Name = "txtMedications";
+            this.txtMedications.Size = new System.Drawing.Size(317, 26);
+            this.txtMedications.TabIndex = 48;
             // 
             // lblMedicalConditions
             // 
@@ -616,9 +617,9 @@
             this.ClientSize = new System.Drawing.Size(1802, 920);
             this.Controls.Add(this.txtMedicalConditions);
             this.Controls.Add(this.lblMedicalConditions);
-            this.Controls.Add(this.txtCurrentMedications);
+            this.Controls.Add(this.txtMedications);
             this.Controls.Add(this.lblCurrentMedications);
-            this.Controls.Add(this.txtKnownAllergies);
+            this.Controls.Add(this.txtAllergies);
             this.Controls.Add(this.lblKnownAllergies);
             this.Controls.Add(this.txtGroupNumber);
             this.Controls.Add(this.lblGroupNumber);
@@ -645,9 +646,9 @@
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.lblSSN);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.lblDateOfBirth);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboGender);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblMiddleName);
@@ -655,10 +656,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSSN);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtMiddleName);
@@ -676,10 +677,10 @@
         private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtSSN;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label1;
@@ -687,9 +688,9 @@
         private System.Windows.Forms.Label lblMiddleName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
         private System.Windows.Forms.Label lblSSN;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.TextBox txtPhoneNumber;
@@ -716,9 +717,9 @@
         private System.Windows.Forms.Label lblGroupNumber;
         private System.Windows.Forms.TextBox txtGroupNumber;
         private System.Windows.Forms.Label lblKnownAllergies;
-        private System.Windows.Forms.TextBox txtKnownAllergies;
+        private System.Windows.Forms.TextBox txtAllergies;
         private System.Windows.Forms.Label lblCurrentMedications;
-        private System.Windows.Forms.TextBox txtCurrentMedications;
+        private System.Windows.Forms.TextBox txtMedications;
         private System.Windows.Forms.Label lblMedicalConditions;
         private System.Windows.Forms.TextBox txtMedicalConditions;
     }
