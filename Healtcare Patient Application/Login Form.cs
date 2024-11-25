@@ -65,6 +65,7 @@ namespace Healtcare_Patient_Application
         private void LoginBT_Click(object sender, EventArgs e)
         {
             LoginDBOperations.GetLoginID(this);
+            
         }
 
         private void LogOutBT_Click(object sender, EventArgs e)

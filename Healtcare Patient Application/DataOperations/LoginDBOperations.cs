@@ -51,6 +51,11 @@ namespace Healtcare_Patient_Application.DataOperations
 
                             // Log the access
                             FormAccessLogger.LogFormAccess(GlobalSession.LoginID, "Login_Form");
+
+                            PatientSelectionForm patientselectform = new PatientSelectionForm();
+                            patientselectform.Show();
+                            form.Hide();
+
                         }
                         else
                         {
