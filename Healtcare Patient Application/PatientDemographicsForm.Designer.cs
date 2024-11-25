@@ -59,6 +59,24 @@
             this.lblZipCode = new System.Windows.Forms.Label();
             this.txtZipCode = new System.Windows.Forms.TextBox();
             this.cboState = new System.Windows.Forms.ComboBox();
+            this.lblEmergencyContactName = new System.Windows.Forms.Label();
+            this.txtEmergencyContactName = new System.Windows.Forms.TextBox();
+            this.lblEmergencyContactRelationship = new System.Windows.Forms.Label();
+            this.txtEmergencyContactRelationship = new System.Windows.Forms.TextBox();
+            this.lblEmergencyContactPhone = new System.Windows.Forms.Label();
+            this.txtEmergencyContactPhone = new System.Windows.Forms.TextBox();
+            this.lblInsuranceProvider = new System.Windows.Forms.Label();
+            this.txtInsuranceProvider = new System.Windows.Forms.TextBox();
+            this.lblPolicyNumber = new System.Windows.Forms.Label();
+            this.txtPolicyNumber = new System.Windows.Forms.TextBox();
+            this.lblGroupNumber = new System.Windows.Forms.Label();
+            this.txtGroupNumber = new System.Windows.Forms.TextBox();
+            this.lblKnownAllergies = new System.Windows.Forms.Label();
+            this.txtKnownAllergies = new System.Windows.Forms.TextBox();
+            this.lblCurrentMedications = new System.Windows.Forms.Label();
+            this.txtCurrentMedications = new System.Windows.Forms.TextBox();
+            this.lblMedicalConditions = new System.Windows.Forms.Label();
+            this.txtMedicalConditions = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -437,12 +455,183 @@
             this.cboState.Size = new System.Drawing.Size(329, 28);
             this.cboState.TabIndex = 32;
             // 
+            // lblEmergencyContactName
+            // 
+            this.lblEmergencyContactName.AutoSize = true;
+            this.lblEmergencyContactName.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmergencyContactName.Location = new System.Drawing.Point(1479, 22);
+            this.lblEmergencyContactName.Name = "lblEmergencyContactName";
+            this.lblEmergencyContactName.Size = new System.Drawing.Size(192, 18);
+            this.lblEmergencyContactName.TabIndex = 33;
+            this.lblEmergencyContactName.Text = "Emergency Contact Name";
+            // 
+            // txtEmergencyContactName
+            // 
+            this.txtEmergencyContactName.Location = new System.Drawing.Point(1483, 45);
+            this.txtEmergencyContactName.Name = "txtEmergencyContactName";
+            this.txtEmergencyContactName.Size = new System.Drawing.Size(317, 26);
+            this.txtEmergencyContactName.TabIndex = 34;
+            // 
+            // lblEmergencyContactRelationship
+            // 
+            this.lblEmergencyContactRelationship.AutoSize = true;
+            this.lblEmergencyContactRelationship.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmergencyContactRelationship.Location = new System.Drawing.Point(1483, 78);
+            this.lblEmergencyContactRelationship.Name = "lblEmergencyContactRelationship";
+            this.lblEmergencyContactRelationship.Size = new System.Drawing.Size(237, 18);
+            this.lblEmergencyContactRelationship.TabIndex = 35;
+            this.lblEmergencyContactRelationship.Text = "Emergency Contact Relationship";
+            // 
+            // txtEmergencyContactRelationship
+            // 
+            this.txtEmergencyContactRelationship.Location = new System.Drawing.Point(1483, 100);
+            this.txtEmergencyContactRelationship.Name = "txtEmergencyContactRelationship";
+            this.txtEmergencyContactRelationship.Size = new System.Drawing.Size(317, 26);
+            this.txtEmergencyContactRelationship.TabIndex = 36;
+            // 
+            // lblEmergencyContactPhone
+            // 
+            this.lblEmergencyContactPhone.AutoSize = true;
+            this.lblEmergencyContactPhone.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmergencyContactPhone.Location = new System.Drawing.Point(1483, 132);
+            this.lblEmergencyContactPhone.Name = "lblEmergencyContactPhone";
+            this.lblEmergencyContactPhone.Size = new System.Drawing.Size(194, 18);
+            this.lblEmergencyContactPhone.TabIndex = 37;
+            this.lblEmergencyContactPhone.Text = "Emergency Contact Phone";
+            // 
+            // txtEmergencyContactPhone
+            // 
+            this.txtEmergencyContactPhone.Location = new System.Drawing.Point(1483, 156);
+            this.txtEmergencyContactPhone.Name = "txtEmergencyContactPhone";
+            this.txtEmergencyContactPhone.Size = new System.Drawing.Size(317, 26);
+            this.txtEmergencyContactPhone.TabIndex = 38;
+            // 
+            // lblInsuranceProvider
+            // 
+            this.lblInsuranceProvider.AutoSize = true;
+            this.lblInsuranceProvider.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInsuranceProvider.Location = new System.Drawing.Point(1483, 190);
+            this.lblInsuranceProvider.Name = "lblInsuranceProvider";
+            this.lblInsuranceProvider.Size = new System.Drawing.Size(145, 18);
+            this.lblInsuranceProvider.TabIndex = 39;
+            this.lblInsuranceProvider.Text = "Insurance Provider";
+            // 
+            // txtInsuranceProvider
+            // 
+            this.txtInsuranceProvider.Location = new System.Drawing.Point(1483, 215);
+            this.txtInsuranceProvider.Name = "txtInsuranceProvider";
+            this.txtInsuranceProvider.Size = new System.Drawing.Size(317, 26);
+            this.txtInsuranceProvider.TabIndex = 40;
+            // 
+            // lblPolicyNumber
+            // 
+            this.lblPolicyNumber.AutoSize = true;
+            this.lblPolicyNumber.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPolicyNumber.Location = new System.Drawing.Point(1483, 249);
+            this.lblPolicyNumber.Name = "lblPolicyNumber";
+            this.lblPolicyNumber.Size = new System.Drawing.Size(113, 18);
+            this.lblPolicyNumber.TabIndex = 41;
+            this.lblPolicyNumber.Text = "Policy Number";
+            // 
+            // txtPolicyNumber
+            // 
+            this.txtPolicyNumber.Location = new System.Drawing.Point(1483, 272);
+            this.txtPolicyNumber.Name = "txtPolicyNumber";
+            this.txtPolicyNumber.Size = new System.Drawing.Size(317, 26);
+            this.txtPolicyNumber.TabIndex = 42;
+            // 
+            // lblGroupNumber
+            // 
+            this.lblGroupNumber.AutoSize = true;
+            this.lblGroupNumber.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGroupNumber.Location = new System.Drawing.Point(1483, 306);
+            this.lblGroupNumber.Name = "lblGroupNumber";
+            this.lblGroupNumber.Size = new System.Drawing.Size(116, 18);
+            this.lblGroupNumber.TabIndex = 43;
+            this.lblGroupNumber.Text = "Group Number";
+            // 
+            // txtGroupNumber
+            // 
+            this.txtGroupNumber.Location = new System.Drawing.Point(1483, 328);
+            this.txtGroupNumber.Name = "txtGroupNumber";
+            this.txtGroupNumber.Size = new System.Drawing.Size(317, 26);
+            this.txtGroupNumber.TabIndex = 44;
+            // 
+            // lblKnownAllergies
+            // 
+            this.lblKnownAllergies.AutoSize = true;
+            this.lblKnownAllergies.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKnownAllergies.Location = new System.Drawing.Point(1483, 362);
+            this.lblKnownAllergies.Name = "lblKnownAllergies";
+            this.lblKnownAllergies.Size = new System.Drawing.Size(122, 18);
+            this.lblKnownAllergies.TabIndex = 45;
+            this.lblKnownAllergies.Text = "Known Allergies";
+            // 
+            // txtKnownAllergies
+            // 
+            this.txtKnownAllergies.Location = new System.Drawing.Point(1483, 385);
+            this.txtKnownAllergies.Name = "txtKnownAllergies";
+            this.txtKnownAllergies.Size = new System.Drawing.Size(317, 26);
+            this.txtKnownAllergies.TabIndex = 46;
+            // 
+            // lblCurrentMedications
+            // 
+            this.lblCurrentMedications.AutoSize = true;
+            this.lblCurrentMedications.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentMedications.Location = new System.Drawing.Point(1483, 419);
+            this.lblCurrentMedications.Name = "lblCurrentMedications";
+            this.lblCurrentMedications.Size = new System.Drawing.Size(153, 18);
+            this.lblCurrentMedications.TabIndex = 47;
+            this.lblCurrentMedications.Text = "Current Medications";
+            // 
+            // txtCurrentMedications
+            // 
+            this.txtCurrentMedications.Location = new System.Drawing.Point(1483, 442);
+            this.txtCurrentMedications.Name = "txtCurrentMedications";
+            this.txtCurrentMedications.Size = new System.Drawing.Size(317, 26);
+            this.txtCurrentMedications.TabIndex = 48;
+            // 
+            // lblMedicalConditions
+            // 
+            this.lblMedicalConditions.AutoSize = true;
+            this.lblMedicalConditions.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedicalConditions.Location = new System.Drawing.Point(1483, 476);
+            this.lblMedicalConditions.Name = "lblMedicalConditions";
+            this.lblMedicalConditions.Size = new System.Drawing.Size(141, 18);
+            this.lblMedicalConditions.TabIndex = 49;
+            this.lblMedicalConditions.Text = "Medical Conditions";
+            // 
+            // txtMedicalConditions
+            // 
+            this.txtMedicalConditions.Location = new System.Drawing.Point(1483, 499);
+            this.txtMedicalConditions.Name = "txtMedicalConditions";
+            this.txtMedicalConditions.Size = new System.Drawing.Size(317, 26);
+            this.txtMedicalConditions.TabIndex = 50;
+            // 
             // PatientDemographicsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1802, 920);
+            this.Controls.Add(this.txtMedicalConditions);
+            this.Controls.Add(this.lblMedicalConditions);
+            this.Controls.Add(this.txtCurrentMedications);
+            this.Controls.Add(this.lblCurrentMedications);
+            this.Controls.Add(this.txtKnownAllergies);
+            this.Controls.Add(this.lblKnownAllergies);
+            this.Controls.Add(this.txtGroupNumber);
+            this.Controls.Add(this.lblGroupNumber);
+            this.Controls.Add(this.txtPolicyNumber);
+            this.Controls.Add(this.lblPolicyNumber);
+            this.Controls.Add(this.txtInsuranceProvider);
+            this.Controls.Add(this.lblInsuranceProvider);
+            this.Controls.Add(this.txtEmergencyContactPhone);
+            this.Controls.Add(this.lblEmergencyContactPhone);
+            this.Controls.Add(this.txtEmergencyContactRelationship);
+            this.Controls.Add(this.lblEmergencyContactRelationship);
+            this.Controls.Add(this.txtEmergencyContactName);
+            this.Controls.Add(this.lblEmergencyContactName);
             this.Controls.Add(this.cboState);
             this.Controls.Add(this.txtZipCode);
             this.Controls.Add(this.lblZipCode);
@@ -514,5 +703,23 @@
         private System.Windows.Forms.Label lblZipCode;
         private System.Windows.Forms.TextBox txtZipCode;
         private System.Windows.Forms.ComboBox cboState;
+        private System.Windows.Forms.Label lblEmergencyContactName;
+        private System.Windows.Forms.TextBox txtEmergencyContactName;
+        private System.Windows.Forms.Label lblEmergencyContactRelationship;
+        private System.Windows.Forms.TextBox txtEmergencyContactRelationship;
+        private System.Windows.Forms.Label lblEmergencyContactPhone;
+        private System.Windows.Forms.TextBox txtEmergencyContactPhone;
+        private System.Windows.Forms.Label lblInsuranceProvider;
+        private System.Windows.Forms.TextBox txtInsuranceProvider;
+        private System.Windows.Forms.Label lblPolicyNumber;
+        private System.Windows.Forms.TextBox txtPolicyNumber;
+        private System.Windows.Forms.Label lblGroupNumber;
+        private System.Windows.Forms.TextBox txtGroupNumber;
+        private System.Windows.Forms.Label lblKnownAllergies;
+        private System.Windows.Forms.TextBox txtKnownAllergies;
+        private System.Windows.Forms.Label lblCurrentMedications;
+        private System.Windows.Forms.TextBox txtCurrentMedications;
+        private System.Windows.Forms.Label lblMedicalConditions;
+        private System.Windows.Forms.TextBox txtMedicalConditions;
     }
 }
