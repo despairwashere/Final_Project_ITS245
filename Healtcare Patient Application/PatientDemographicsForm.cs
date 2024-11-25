@@ -135,7 +135,7 @@ namespace Healtcare_Patient_Application
                 }
 
                 // Create the SQL Command
-                using (SqlConnection conn = new SqlConnection("your_connection_string"))
+                using (SqlConnection conn = new SqlConnection("Server=127.0.0.1;Port=3306;Database=healthcareapplication;Uid=root;Pwd=password;"))
                 {
                     conn.Open();
                     cmd = new SqlCommand(query, conn);
