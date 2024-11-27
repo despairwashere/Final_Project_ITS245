@@ -8,16 +8,85 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Healthcare_Patient_Application.DataOperations;
 using MySql.Data.MySqlClient;
 
 namespace Healtcare_Patient_Application
 {
     public partial class PatientDemographicsForm : Form
     {
-        public PatientDemographicsForm(int patientId)
+        private int? _patientId = null;
+
+
+        public PatientDemographicsForm(int? patientId = null)
         {
             InitializeComponent();
+            this._patientId = patientId;
+
+            if (patientId.HasValue)
+            {
+                LoadPatientData(patientId.Value);
+            }
+
+
         }
+
+        private void LoadPatientData(int patientId)
+        {
+            try
+            {
+                // Define the SQL query to retrieve patient data based on the patientId
+                string query = "SELECT * FROM patientdemographics WHERE patientId = @patientId";
+
+                using (MySqlConnection connection = GMHDBOperations.MakeConnection())
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@patientId", patientId);
+
+                        // Execute the query and get a data reader
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Populate the form fields with the retrieved data
+                                txtPatientID.Text = reader["patientId"].ToString();
+                                txtFirstName.Text = reader["PTFirstName"].ToString();
+                                txtMiddleName.Text = reader["PTMiddleInitial"].ToString();
+                                txtLastName.Text = reader["PTLastName"].ToString();
+                                cboGender.SelectedItem = reader["Gender"].ToString();
+                                dtpDateOfBirth.Value = Convert.ToDateTime(reader["DOB"]);
+                                txtSSN.Text = reader["SSN"].ToString();
+                                txtPhoneNumber.Text = reader["PTHomePhone"].ToString();
+                                txtEmailAddress.Text = reader["EmailAddress"].ToString();
+                                txtAddress.Text = reader["HomeAddress"].ToString();
+                                txtCity.Text = reader["HomeCity"].ToString();
+                                cboState.SelectedItem = reader["HomeState/Province/Region"].ToString();
+                                txtZipCode.Text = reader["HomeZip"].ToString();
+                                //txtEmergencyContactName.Text = reader["emergencyContactName"].ToString();
+                                //txtEmergencyContactRelationship.Text = reader["emergencyContactRelationship"].ToString();
+                                //txtEmergencyContactPhone.Text = reader["EmergencyPhoneNumber"].ToString();
+                                //txtInsuranceProvider.Text = reader["insuranceProvider"].ToString();
+                                //txtPolicyNumber.Text = reader["policyNumber"].ToString();                       // Match to the specific column in Patient Demographics
+                                //txtGroupNumber.Text = reader["groupNumber"].ToString();
+                                //txtAllergies.Text = reader["allergies"].ToString();
+                                //txtMedications.Text = reader["medications"].ToString();
+                                //txtMedicalConditions.Text = reader["medicalConditions"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("To Enter new patient data, click ok.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading patient data: {ex.Message}");
+            }
+        }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -65,9 +134,7 @@ namespace Healtcare_Patient_Application
             string medications = txtMedications.Text;
             string medicalConditions = txtMedicalConditions.Text;
 
-            // Now, insert the data into the database (SQL code)
-            string query = "INSERT INTO patientdemographics (firstName, middleName, lastName, gender, dateOfBirth, ssn, phoneNumber, emailAddress, address, city, state, zipCode, emergencyContactName, emergencyContactRelationship, emergencyContactPhone, insuranceProvider, policyNumber, groupNumber, allergies, medications, medicalConditions) VALUES (@firstName, @middleName, @lastName, @gender, @dateOfBirth, @ssn, @phoneNumber, @emailAddress, @address, @city, @state, @zipCode, @emergencyContactName, @emergencyContactRelationship, @emergencyContactPhone, @insuranceProvider, @policyNumber, @groupNumber, @allergies, @medications, @medicalConditions)";
-            // Use parameters to avoid SQL injection
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -109,6 +176,7 @@ namespace Healtcare_Patient_Application
                 if (isEdit)
                 {
                     // Update existing patient record
+                    // Check the Patient Demographics table for the correct column names
                     query = @"UPDATE patientdemographics 
                       SET firstName = @firstName, middleName = @middleName, lastName = @lastName, gender = @gender,
                           dateOfBirth = @dateOfBirth, ssn = @ssn, phoneNumber = @phoneNumber, emailAddress = @emailAddress,
@@ -136,7 +204,7 @@ namespace Healtcare_Patient_Application
                 // Create the SQL Command
                 using (SqlConnection conn = new SqlConnection("Server=127.0.0.1;Port=3306;Database=healthcareapplication;Uid=root;Pwd=password;"))
                 {
-                    conn.Open();
+                    
                     cmd = new SqlCommand(query, conn);
 
                     // Add parameters to the query (same for insert and update)
@@ -274,6 +342,11 @@ namespace Healtcare_Patient_Application
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void PatientDemographicsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

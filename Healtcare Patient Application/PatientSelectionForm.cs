@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Healtcare_Patient_Application.DataOperations;
+using Healthcare_Patient_Application.DataOperations;
 using MySql.Data.MySqlClient;
 
 namespace Healtcare_Patient_Application
 {
     public partial class PatientSelectionForm : Form
     {
-        private string connectionString = "Server=127.0.0.1;Port=3306;Database=healthcareapplication;Uid=root;Pwd=password;";
+        
         public PatientSelectionForm()
         {
             InitializeComponent();
@@ -23,11 +24,12 @@ namespace Healtcare_Patient_Application
         private void btnGoToDemographics_Click(object sender, EventArgs e)
         {
             int patientId = GetSelectedPatientId();
-            if (patientId != -1)
+            if (patientId == -1)
             {
                 // Navigate to PatientDemographicsForm
                 PatientDemographicsForm demographicsForm = new PatientDemographicsForm(patientId);
                 demographicsForm.Show();
+                this.Hide();
             }
         }
 
@@ -86,9 +88,9 @@ namespace Healtcare_Patient_Application
         {
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                using (MySqlConnection conn = GMHDBOperations.MakeConnection())
                 {
-                    conn.Open();
+                    
                     string query = "SELECT PatientID, PtLastName, PtFirstName, PtHomePhone FROM patientdemographics";
                     if (!string.IsNullOrWhiteSpace(searchTerm))
                     {
@@ -122,7 +124,7 @@ namespace Healtcare_Patient_Application
             }
             else
             {
-                MessageBox.Show("Please select a patient.");
+                
                 return -1;
             }
         }

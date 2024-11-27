@@ -36,11 +36,6 @@
             this.btnSearchPatient = new System.Windows.Forms.Button();
             this.txtSearchPatient = new System.Windows.Forms.TextBox();
             this.dataGridViewPatients = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSelectPatient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatients)).BeginInit();
             this.SuspendLayout();
@@ -53,16 +48,18 @@
             "PtLastName",
             "HospitalMR#",
             "PtHomePhone"});
-            this.comboBox1.Location = new System.Drawing.Point(899, 201);
+            this.comboBox1.Location = new System.Drawing.Point(599, 131);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(330, 28);
+            this.comboBox1.Size = new System.Drawing.Size(221, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // btnGoToDemographics
             // 
-            this.btnGoToDemographics.Location = new System.Drawing.Point(1489, 826);
+            this.btnGoToDemographics.Location = new System.Drawing.Point(993, 537);
+            this.btnGoToDemographics.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGoToDemographics.Name = "btnGoToDemographics";
-            this.btnGoToDemographics.Size = new System.Drawing.Size(278, 66);
+            this.btnGoToDemographics.Size = new System.Drawing.Size(185, 43);
             this.btnGoToDemographics.TabIndex = 1;
             this.btnGoToDemographics.Text = "Go To Demographics";
             this.btnGoToDemographics.UseVisualStyleBackColor = true;
@@ -74,9 +71,10 @@
             this.txtFromName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFromName.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFromName.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtFromName.Location = new System.Drawing.Point(623, 31);
+            this.txtFromName.Location = new System.Drawing.Point(415, 20);
+            this.txtFromName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFromName.Name = "txtFromName";
-            this.txtFromName.Size = new System.Drawing.Size(646, 37);
+            this.txtFromName.Size = new System.Drawing.Size(431, 25);
             this.txtFromName.TabIndex = 5;
             this.txtFromName.Text = "Patient Selection";
             this.txtFromName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -87,18 +85,20 @@
             this.textBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(327, 199);
+            this.textBox3.Location = new System.Drawing.Point(218, 129);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(236, 28);
+            this.textBox3.Size = new System.Drawing.Size(157, 19);
             this.textBox3.TabIndex = 6;
             this.textBox3.Text = "Search Patients:";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnExitToLogin
             // 
-            this.btnExitToLogin.Location = new System.Drawing.Point(73, 826);
+            this.btnExitToLogin.Location = new System.Drawing.Point(49, 537);
+            this.btnExitToLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExitToLogin.Name = "btnExitToLogin";
-            this.btnExitToLogin.Size = new System.Drawing.Size(156, 66);
+            this.btnExitToLogin.Size = new System.Drawing.Size(104, 43);
             this.btnExitToLogin.TabIndex = 9;
             this.btnExitToLogin.Text = "Exit to Login";
             this.btnExitToLogin.UseVisualStyleBackColor = true;
@@ -106,9 +106,10 @@
             // 
             // btnSearchPatient
             // 
-            this.btnSearchPatient.Location = new System.Drawing.Point(1244, 202);
+            this.btnSearchPatient.Location = new System.Drawing.Point(829, 131);
+            this.btnSearchPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchPatient.Name = "btnSearchPatient";
-            this.btnSearchPatient.Size = new System.Drawing.Size(142, 27);
+            this.btnSearchPatient.Size = new System.Drawing.Size(95, 18);
             this.btnSearchPatient.TabIndex = 10;
             this.btnSearchPatient.Text = "Search";
             this.btnSearchPatient.UseVisualStyleBackColor = true;
@@ -116,9 +117,10 @@
             // 
             // txtSearchPatient
             // 
-            this.txtSearchPatient.Location = new System.Drawing.Point(555, 202);
+            this.txtSearchPatient.Location = new System.Drawing.Point(370, 131);
+            this.txtSearchPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearchPatient.Name = "txtSearchPatient";
-            this.txtSearchPatient.Size = new System.Drawing.Size(338, 26);
+            this.txtSearchPatient.Size = new System.Drawing.Size(227, 20);
             this.txtSearchPatient.TabIndex = 11;
             this.txtSearchPatient.TextChanged += new System.EventHandler(this.txtSearchPatient_TextChanged);
             // 
@@ -127,66 +129,22 @@
             this.dataGridViewPatients.AllowUserToAddRows = false;
             this.dataGridViewPatients.AllowUserToDeleteRows = false;
             this.dataGridViewPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPatients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridViewPatients.Location = new System.Drawing.Point(571, 263);
+            this.dataGridViewPatients.Location = new System.Drawing.Point(381, 171);
+            this.dataGridViewPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewPatients.Name = "dataGridViewPatients";
             this.dataGridViewPatients.ReadOnly = true;
             this.dataGridViewPatients.RowHeadersWidth = 62;
             this.dataGridViewPatients.RowTemplate.Height = 28;
-            this.dataGridViewPatients.Size = new System.Drawing.Size(815, 444);
+            this.dataGridViewPatients.Size = new System.Drawing.Size(543, 289);
             this.dataGridViewPatients.TabIndex = 12;
             this.dataGridViewPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPatients_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "PatientID";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "HospitalMR#";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "PtFirstName";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "PtLastName";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "PtHomePhone";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
-            // 
             // btnSelectPatient
             // 
-            this.btnSelectPatient.Location = new System.Drawing.Point(911, 713);
+            this.btnSelectPatient.Location = new System.Drawing.Point(607, 463);
+            this.btnSelectPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelectPatient.Name = "btnSelectPatient";
-            this.btnSelectPatient.Size = new System.Drawing.Size(139, 46);
+            this.btnSelectPatient.Size = new System.Drawing.Size(93, 30);
             this.btnSelectPatient.TabIndex = 13;
             this.btnSelectPatient.Text = "Select Patient";
             this.btnSelectPatient.UseVisualStyleBackColor = true;
@@ -194,10 +152,10 @@
             // 
             // PatientSelectionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1790, 913);
+            this.ClientSize = new System.Drawing.Size(1193, 593);
             this.Controls.Add(this.btnSelectPatient);
             this.Controls.Add(this.dataGridViewPatients);
             this.Controls.Add(this.txtSearchPatient);
@@ -207,6 +165,7 @@
             this.Controls.Add(this.txtFromName);
             this.Controls.Add(this.btnGoToDemographics);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PatientSelectionForm";
             this.Text = "PatientSelectionForm";
             this.Load += new System.EventHandler(this.PatientSelectionForm_Load_1);
@@ -226,11 +185,6 @@
         private System.Windows.Forms.Button btnSearchPatient;
         private System.Windows.Forms.TextBox txtSearchPatient;
         private System.Windows.Forms.DataGridView dataGridViewPatients;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btnSelectPatient;
     }
 }
