@@ -43,19 +43,7 @@ namespace Healtcare_Patient_Application
 
         }
 
-        private void GoToFamilyHistory_Click(object sender, EventArgs e)
-        {
-            Form Family_History = new Family_History_Form();
-            Family_History.Show();
-            this.Hide();
-        }
-
-        private void GoToGenMedicalHistoryBT_Click(object sender, EventArgs e)
-        {
-            Form Gen_Medical_History = new GMH();
-            Gen_Medical_History.Show();
-            this.Hide();
-        }
+        
 
         private void PasswordTB_TextChanged(object sender, EventArgs e)
         {
