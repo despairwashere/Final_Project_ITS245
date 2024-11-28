@@ -138,7 +138,6 @@ namespace Healtcare_Patient_Application
         private void Family_History_Form_Load(object sender, EventArgs e)
         {
             SetViewMode();
-            LoadPatientData();
             DisplayFamilyData();
             LoadFamilyHistory();
         }
@@ -268,59 +267,9 @@ namespace Healtcare_Patient_Application
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                // Retrieve the selected row.
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+        
 
-                // Get the patient's name and age from the row.
-                patientName = row.Cells["FullName"].Value.ToString();
-                age = row.Cells["Age"].Value.ToString();
-                patientID = row.Cells["PatientID"].Value.ToString();
-                
-
-                // Update the labels to display the name and age.
-                PatientNameLB.Text = patientName;
-                PatientAgeLB.Text = "Age: " + age;
-
-                PatientIDFB = patientID;
-                
-
-                LoadFamilyHistory();
-               
-            }
-
-        }
-
-        private void LoadPatientData()
-        {
-            DataTable patientData = GMHDBOperations.PatientData();
-
-            if (patientData.Columns.Contains("DOB"))
-                patientData.Columns["DOB"].ColumnMapping = MappingType.Hidden;
-
-            // Set the DataGridView's data source
-            dataGridView1.DataSource = patientData;
-
-            // Ensure DataGridView contains the columns before hiding
-            if (dataGridView1.Columns.Contains("PatientID"))
-            {
-                dataGridView1.Columns["PatientID"].Visible = false;
-            }
-
-            // Change header text for FullName
-            if (dataGridView1.Columns["FullName"] != null)
-                dataGridView1.Columns["FullName"].HeaderText = "Patient Name";
-                dataGridView1.Columns["FullName"].ReadOnly = true;
-
-            // Hide "Age" column if it exists
-            if (dataGridView1.Columns.Contains("Age"))
-                dataGridView1.Columns["Age"].Visible = false;
-
-
-        }
+       
 
         private void LoadFamilyHistory()
         {
@@ -397,11 +346,20 @@ namespace Healtcare_Patient_Application
 
         private void FamHisDeleteBT_Click(object sender, EventArgs e)
         {
-            FHDBOperations.DeleteFamilyHistoryInfo(this);
-            SetViewMode();
-            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
-                "User marked the family history record as deleted");
+            if (deletedCB.Checked)
+            {
+                FHDBOperations.DeleteFamilyHistoryInfo(this);
+                SetViewMode();
+                LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
+                    "User marked the family history record as deleted");
 
+
+            }
+            else
+            {
+                MessageBox.Show("Family History record is not deleted.");
+            }
+            
 
         }
 

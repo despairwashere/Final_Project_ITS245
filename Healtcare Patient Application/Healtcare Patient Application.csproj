@@ -119,6 +119,7 @@
     <Compile Include="AllergyHistoryForm.Designer.cs">
       <DependentUpon>AllergyHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataOperations\AllergyDBOperations.cs" />
     <Compile Include="DataOperations\FHDBOperations.cs" />
     <Compile Include="DataOperations\GMHDBOperations.cs" />
     <Compile Include="DataOperations\LogAccessForm.cs" />

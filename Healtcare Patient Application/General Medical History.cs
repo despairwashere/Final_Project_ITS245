@@ -19,7 +19,7 @@ namespace Healtcare_Patient_Application
         private string patientID; // Holds patient id 
         private string patientName;
         private string age;
-        private string generalMedicalHistoryID;
+       
 
         public string PatientID { get; set; }
         public string PatientName { get; set; }
@@ -182,7 +182,7 @@ namespace Healtcare_Patient_Application
         private void GMH_Load(object sender, EventArgs e)
         {
             SetViewMode();
-            LoadPatientData();
+            GMHDBOperations.GetGeneralMedicalInfo(this);
             DisplayPatientData();
             
 
@@ -542,76 +542,34 @@ namespace Healtcare_Patient_Application
                 MessageBox.Show("No changes to undo.");
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Ensure that a valid row is clicked (excluding the header).
-            if (e.RowIndex >= 0)
-            {
-                // Retrieve the selected row.
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-                // Get the patient's name and age from the row.
-                patientName = row.Cells["FullName"].Value.ToString();
-                age = row.Cells["Age"].Value.ToString();
-                patientID = row.Cells["PatientID"].Value.ToString();
-                PatientID = patientID;
-               
-
-                // Update the labels to display the name and age.
-                Patient_Name.Text = patientName;
-                PatientAgeLB.Text = "Age: " + age;
-
-                try
-                {
-                    GMHDBOperations.GetGeneralMedicalInfo(this);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error retr record: {ex.Message}");
-                }
-
-
-            }
-
-
-
-        }
-
-        private void LoadPatientData()
-        {
-            DataTable patientData = GMHDBOperations.PatientData();
-
-            if (patientData.Columns.Contains("DOB"))
-                patientData.Columns["DOB"].ColumnMapping = MappingType.Hidden;
-
-            // Set the DataGridView's data source
-            dataGridView1.DataSource = patientData;
-
-            // Ensure DataGridView contains the columns before hiding
-            if (dataGridView1.Columns.Contains("PatientID"))
-            {
-                dataGridView1.Columns["PatientID"].Visible = false;
-            }
-
-            // Change header text for FullName
-            if (dataGridView1.Columns["FullName"] != null)
-                dataGridView1.Columns["FullName"].HeaderText = "Patient Name";
-
-            // Hide "Age" column if it exists
-            if (dataGridView1.Columns.Contains("Age"))
-                dataGridView1.Columns["Age"].Visible = false;
-
-
-        }
+            
 
         private void DeleteBT_Click(object sender, EventArgs e)
         {
-            GMHDBOperations.DeleteGeneralMedicalInfo(this);
-            SetViewMode();
-            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "General Medical History Form",
-                "User deleted a General Medical History Record.");
+            if (DeletedCB.Checked)
+            {
+
+                GMHDBOperations.DeleteGeneralMedicalInfo(this);
+                SetViewMode();
+                LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "General Medical History Form",
+                    "User deleted a General Medical History Record.");
+            }
+            else
+            {
+                MessageBox.Show("General Medical History record is not deleted.");
+            }
+        }
+
+        private void PatientSelectFormBT_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the previous form (e.g., MainForm or PatientSelectionForm)
+            PatientSelectionForm selectionForm = new PatientSelectionForm();
+
+            // Show the previous form
+            selectionForm.Show();
+
+            // Close or hide the current form
+            this.Close();
         }
     }
 }

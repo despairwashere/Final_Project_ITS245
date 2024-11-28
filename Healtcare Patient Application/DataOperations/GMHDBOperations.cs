@@ -150,32 +150,6 @@ namespace Healthcare_Patient_Application.DataOperations
 
 
 
-        public static DataTable PatientData()
-        {
-            DataTable dt = new DataTable();
-            using (MySqlConnection connection = MakeConnection())
-            {
-                try
-                {
-                    using (MySqlCommand command = new MySqlCommand("GetPatientData", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                        {
-                            adapter.Fill(dt);
-                            
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while retrieving patient data: {ex.Message}");
-                }
-            }
-            return dt;
-        }
-
         public static void GetGeneralMedicalInfo (GMH form)
         {
             using (MySqlConnection connection = MakeConnection())

@@ -60,6 +60,8 @@ namespace Healtcare_Patient_Application
             this.MensesMonthlyNochoice = new System.Windows.Forms.CheckBox();
             this.MensesNoLB = new System.Windows.Forms.Label();
             this.MensesMonthlyYeschoice = new System.Windows.Forms.CheckBox();
+            this.DeletedCB = new System.Windows.Forms.CheckBox();
+            this.DeletedLB = new System.Windows.Forms.Label();
             this.MensesFreqTB = new System.Windows.Forms.TextBox();
             this.MensesFreqLB = new System.Windows.Forms.Label();
             this.MedHistoryTB = new System.Windows.Forms.TextBox();
@@ -86,13 +88,9 @@ namespace Healtcare_Patient_Application
             this.GoToFamilyHistoryBT = new System.Windows.Forms.Button();
             this.PatientAgeLB = new System.Windows.Forms.Label();
             this.GoToLoginPageBT = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SelectPatientLB = new System.Windows.Forms.Label();
-            this.DeletedCB = new System.Windows.Forms.CheckBox();
-            this.DeletedLB = new System.Windows.Forms.Label();
+            this.PatientSelectFormBT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -405,6 +403,25 @@ namespace Healtcare_Patient_Application
             this.MensesMonthlyYeschoice.TabIndex = 41;
             this.MensesMonthlyYeschoice.UseVisualStyleBackColor = true;
             // 
+            // DeletedCB
+            // 
+            this.DeletedCB.AutoSize = true;
+            this.DeletedCB.Location = new System.Drawing.Point(569, 397);
+            this.DeletedCB.Name = "DeletedCB";
+            this.DeletedCB.Size = new System.Drawing.Size(15, 14);
+            this.DeletedCB.TabIndex = 40;
+            this.DeletedCB.UseVisualStyleBackColor = true;
+            // 
+            // DeletedLB
+            // 
+            this.DeletedLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeletedLB.Location = new System.Drawing.Point(531, 372);
+            this.DeletedLB.Name = "DeletedLB";
+            this.DeletedLB.Size = new System.Drawing.Size(100, 23);
+            this.DeletedLB.TabIndex = 31;
+            this.DeletedLB.Text = "Deleted ";
+            this.DeletedLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MensesFreqTB
             // 
             this.MensesFreqTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -643,7 +660,7 @@ namespace Healtcare_Patient_Application
             this.PatientAgeLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PatientAgeLB.Location = new System.Drawing.Point(962, 20);
             this.PatientAgeLB.Name = "PatientAgeLB";
-            this.PatientAgeLB.Size = new System.Drawing.Size(169, 49);
+            this.PatientAgeLB.Size = new System.Drawing.Size(229, 49);
             this.PatientAgeLB.TabIndex = 11;
             this.PatientAgeLB.Text = "Patient\'s Age";
             this.PatientAgeLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -655,47 +672,20 @@ namespace Healtcare_Patient_Application
             this.GoToLoginPageBT.Name = "GoToLoginPageBT";
             this.GoToLoginPageBT.Size = new System.Drawing.Size(126, 44);
             this.GoToLoginPageBT.TabIndex = 12;
-            this.GoToLoginPageBT.Text = "Go To Login Page";
+            this.GoToLoginPageBT.Text = "Go To Loign Page";
             this.GoToLoginPageBT.UseVisualStyleBackColor = true;
             this.GoToLoginPageBT.Click += new System.EventHandler(this.GoToLoginPageBT_Click);
             // 
-            // dataGridView1
+            // PatientSelectFormBT
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1437, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 433);
-            this.dataGridView1.TabIndex = 13;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // SelectPatientLB
-            // 
-            this.SelectPatientLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectPatientLB.Location = new System.Drawing.Point(1470, 79);
-            this.SelectPatientLB.Name = "SelectPatientLB";
-            this.SelectPatientLB.Size = new System.Drawing.Size(169, 49);
-            this.SelectPatientLB.TabIndex = 14;
-            this.SelectPatientLB.Text = "Select Patient";
-            this.SelectPatientLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DeletedCB
-            // 
-            this.DeletedCB.AutoSize = true;
-            this.DeletedCB.Location = new System.Drawing.Point(569, 397);
-            this.DeletedCB.Name = "DeletedCB";
-            this.DeletedCB.Size = new System.Drawing.Size(15, 14);
-            this.DeletedCB.TabIndex = 40;
-            this.DeletedCB.UseVisualStyleBackColor = true;
-            // 
-            // DeletedLB
-            // 
-            this.DeletedLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeletedLB.Location = new System.Drawing.Point(531, 372);
-            this.DeletedLB.Name = "DeletedLB";
-            this.DeletedLB.Size = new System.Drawing.Size(100, 23);
-            this.DeletedLB.TabIndex = 31;
-            this.DeletedLB.Text = "Deleted ";
-            this.DeletedLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientSelectFormBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientSelectFormBT.Location = new System.Drawing.Point(32, 339);
+            this.PatientSelectFormBT.Name = "PatientSelectFormBT";
+            this.PatientSelectFormBT.Size = new System.Drawing.Size(126, 44);
+            this.PatientSelectFormBT.TabIndex = 15;
+            this.PatientSelectFormBT.Text = "Patient Selection";
+            this.PatientSelectFormBT.UseVisualStyleBackColor = true;
+            this.PatientSelectFormBT.Click += new System.EventHandler(this.PatientSelectFormBT_Click);
             // 
             // GMH
             // 
@@ -703,8 +693,7 @@ namespace Healtcare_Patient_Application
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1689, 719);
-            this.Controls.Add(this.SelectPatientLB);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.PatientSelectFormBT);
             this.Controls.Add(this.GoToLoginPageBT);
             this.Controls.Add(this.PatientAgeLB);
             this.Controls.Add(this.GoToFamilyHistoryBT);
@@ -723,7 +712,6 @@ namespace Healtcare_Patient_Application
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -787,10 +775,9 @@ namespace Healtcare_Patient_Application
         private CheckBox MensesMonthlyYeschoice;
         private CheckBox MensesMonthlyNochoice;
         private Label MensesNoLB;
-        private DataGridView dataGridView1;
-        private Label SelectPatientLB;
         private CheckBox DeletedCB;
         private Label DeletedLB;
+        private Button PatientSelectFormBT;
     }
 }
 
