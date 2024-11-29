@@ -239,6 +239,6 @@ namespace Healtcare_Patient_Application
             form.PatientAgeFB = patientAge;
             form.Show();
             this.Hide();
-        }
+        } 
     }
 }
