@@ -40,6 +40,7 @@
             this.GoToAllergyFormBT = new System.Windows.Forms.Button();
             this.GoToGMHBT = new System.Windows.Forms.Button();
             this.GoToFamilyHistoryBT = new System.Windows.Forms.Button();
+            this.PatientSummaryBT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,12 +194,25 @@
             this.GoToFamilyHistoryBT.UseVisualStyleBackColor = true;
             this.GoToFamilyHistoryBT.Click += new System.EventHandler(this.GoToFamilyHistoryBT_Click);
             // 
+            // PatientSummaryBT
+            // 
+            this.PatientSummaryBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientSummaryBT.Location = new System.Drawing.Point(993, 475);
+            this.PatientSummaryBT.Margin = new System.Windows.Forms.Padding(2);
+            this.PatientSummaryBT.Name = "PatientSummaryBT";
+            this.PatientSummaryBT.Size = new System.Drawing.Size(185, 43);
+            this.PatientSummaryBT.TabIndex = 17;
+            this.PatientSummaryBT.Text = "Patient Summary";
+            this.PatientSummaryBT.UseVisualStyleBackColor = true;
+            this.PatientSummaryBT.Click += new System.EventHandler(this.PatientSummaryBT_Click);
+            // 
             // PatientSelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 593);
+            this.Controls.Add(this.PatientSummaryBT);
             this.Controls.Add(this.GoToFamilyHistoryBT);
             this.Controls.Add(this.GoToGMHBT);
             this.Controls.Add(this.GoToAllergyFormBT);
@@ -235,5 +249,6 @@
         private System.Windows.Forms.Button GoToAllergyFormBT;
         private System.Windows.Forms.Button GoToGMHBT;
         private System.Windows.Forms.Button GoToFamilyHistoryBT;
+        private System.Windows.Forms.Button PatientSummaryBT;
     }
 }

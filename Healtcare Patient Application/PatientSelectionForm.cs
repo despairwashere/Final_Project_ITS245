@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,12 @@ namespace Healtcare_Patient_Application
         private int patientId;
         private string patientName;
         private string patientAge;
+
+        public int PatientIdSF { get; set; }
+
+
+
+
 
 
         public PatientSelectionForm()
@@ -77,6 +84,8 @@ namespace Healtcare_Patient_Application
         private void dataGridViewPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
+
         }
 
         private void txtSearchPatient_TextChanged(object sender, EventArgs e)
@@ -94,7 +103,7 @@ namespace Healtcare_Patient_Application
             {
                 using (MySqlConnection conn = GMHDBOperations.MakeConnection())
                 {
-                    
+
                     string query = "SELECT PatientID, PtLastName, PtFirstName, PtHomePhone, DOB FROM patientdemographics";
                     if (!string.IsNullOrWhiteSpace(searchTerm))
                     {
@@ -136,7 +145,7 @@ namespace Healtcare_Patient_Application
             }
             else
             {
-                
+
                 return -1;
             }
         }
@@ -154,6 +163,7 @@ namespace Healtcare_Patient_Application
             DataGridViewRow selectedRow = dataGridViewPatients.SelectedRows[0];
             patientId = Convert.ToInt32(selectedRow.Cells["PatientID"].Value);
 
+
             // Example: You can store the selected patient ID for use in another form (e.g., Patient Demographics)
             PatientDemographicsForm demographicsForm = new PatientDemographicsForm(patientId);
             demographicsForm.Show();
@@ -162,7 +172,7 @@ namespace Healtcare_Patient_Application
 
         private void PatientSelectionForm_Load_1(object sender, EventArgs e)
         {
-             // Call the code to populate the DataGridView
+            // Call the code to populate the DataGridView
         }
 
         private void GoToAllergyFormBT_Click(object sender, EventArgs e)
@@ -170,7 +180,7 @@ namespace Healtcare_Patient_Application
 
 
             StorePatientDetails();
-            AllergyHistoryForm allergyform = new AllergyHistoryForm(patientId, patientName, patientAge);   
+            AllergyHistoryForm allergyform = new AllergyHistoryForm(patientId, patientName, patientAge);
             allergyform.Show();
             this.Hide();
         }
@@ -196,7 +206,7 @@ namespace Healtcare_Patient_Application
                 int age = CalculateAge(dob);
                 patientAge = age.ToString();
 
-                
+
             }
             else
             {
@@ -225,7 +235,7 @@ namespace Healtcare_Patient_Application
             form.PatientID = Convert.ToString(patientId);
             form.PatientName = patientName;
             form.PatientAge = patientAge;
-            form.Show(); 
+            form.Show();
             this.Hide();
 
         }
@@ -239,6 +249,27 @@ namespace Healtcare_Patient_Application
             form.PatientAgeFB = patientAge;
             form.Show();
             this.Hide();
-        } 
+        }
+
+        private void PatientSummaryBT_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewPatients.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a patient from the list.", "Select Patient", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected row's patient ID
+            DataGridViewRow selectedRow = dataGridViewPatients.SelectedRows[0];
+            patientId = Convert.ToInt32(selectedRow.Cells["PatientID"].Value);
+            PatientIdSF = patientId;
+
+            // Debug Message (optional)
+            MessageBox.Show($"PatientId assigned: {PatientIdSF}");
+
+            PatientSummary.GeneratePatientReport(this);
+
+
+        }
     }
 }
