@@ -571,5 +571,14 @@ namespace Healtcare_Patient_Application
             // Close or hide the current form
             this.Close();
         }
+
+        private void BTAllergyForm_Click(object sender, EventArgs e)
+        {
+            int patientID = Convert.ToInt32(PatientID);
+            
+            AllergyHistoryForm allergyform = new AllergyHistoryForm(patientID, PatientName, PatientAge);
+            allergyform.Show();
+            this.Hide();
+        }
     }
 }
