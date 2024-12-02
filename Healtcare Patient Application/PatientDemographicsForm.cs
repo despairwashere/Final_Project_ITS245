@@ -16,21 +16,61 @@ namespace Healtcare_Patient_Application
     public partial class PatientDemographicsForm : Form
     {
         private int? _patientId = null;
+        private bool _isViewMode = false; // Indicates if the form is in View mode
+        private bool _isModifyMode = false; // Indicates if the form is in Modify mode
 
 
-        public PatientDemographicsForm(int? patientId = null)
+        public PatientDemographicsForm(int? patientId = null, bool isViewMode = false, bool isModifyMode = false)
         {
             InitializeComponent();
             this._patientId = patientId;
+            this._isViewMode = isViewMode;
+            this._isModifyMode = isModifyMode;
+
+            // Configure the form based on initial mode
+            ConfigureFormMode();
 
             if (patientId.HasValue)
             {
                 LoadPatientData(patientId.Value);
             }
-
-
         }
-
+        private void ConfigureFormMode()
+        {
+            if (_isViewMode)
+            {
+                SetControlsReadOnly(true); // Disable editing
+                btnAdd.Enabled = false;
+                btnSave.Enabled = false;
+                btnDelete.Enabled = false;
+                btnModify.Enabled = true; // Enable Modify button
+            }
+            else if (_isModifyMode)
+            {
+                SetControlsReadOnly(false); // Enable editing
+                txtPatientID.ReadOnly = true; // Prevent changes to Patient ID
+                btnAdd.Enabled = false; // Prevent adding new records in Modify mode
+                btnSave.Enabled = true; // Enable save
+            }
+        }
+        private void SetControlsReadOnly(bool isReadOnly)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    textBox.ReadOnly = isReadOnly;
+                }
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.Enabled = !isReadOnly;
+                }
+                else if (control is DateTimePicker dateTimePicker)
+                {
+                    dateTimePicker.Enabled = !isReadOnly;
+                }
+            }
+        }
         private void LoadPatientData(int patientId)
         {
             try
@@ -82,7 +122,7 @@ namespace Healtcare_Patient_Application
                             }
                             else
                             {
-                                MessageBox.Show("To Enter new patient data, click ok.");
+                                MessageBox.Show("No patient data found");
                             }
                         }
                     }
@@ -93,8 +133,17 @@ namespace Healtcare_Patient_Application
                 MessageBox.Show($"Error loading patient data: {ex.Message}");
             }
         }
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            // Enable Modify mode dynamically
+            _isModifyMode = true;
+            _isViewMode = false;
 
+            // Reconfigure the form
+            ConfigureFormMode();
 
+            MessageBox.Show("You can now modify and add new fields.");
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             // Create an instance of the previous form (e.g., MainForm or PatientSelectionForm)
@@ -114,174 +163,109 @@ namespace Healtcare_Patient_Application
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Collecting data from the controls
-            string firstName = txtFirstName.Text;
-            string middleName = txtMiddleName.Text;
-            string lastName = txtLastName.Text;
-            string gender = cboGender.SelectedItem.ToString();
-            DateTime dateOfBirth = dtpDateOfBirth.Value;
-            string ssn = txtSSN.Text;
-            string phoneNumber = txtPhoneNumber.Text;
-            string email = txtEmailAddress.Text;
-            string address = txtAddress.Text;
-            string city = txtCity.Text;
-            string state = cboState.SelectedItem.ToString();
-            string zipCode = txtZipCode.Text;
-            string emergencyContactPhone = txtEmergencyContactPhone.Text;
-            string suffix=txtSuffix.Text;
-            string country=txtCountry.Text;
-            string citizenship=txtCitizenship.Text;
-            string ethnicAssociation=txtEthnicAssociation.Text;
-            string religion=txtReligion.Text;
-            string currentPrimaryHCPId=txtCurrentPrimaryHCPId.Text;
-            string dateOfExpire=txtDateOfExpire.Text;
-            string comments=txtComments.Text;
-            string nextOfKin=txtNextOfKin.Text;
-            string nextOfKinRelationshipToPatient=txtNextOfKinRelationshipToPatient.Text;
-            string employmentStatus=txtEmploymentStatus.Text;
-            string maritalStatus=txtMaritalStatus.Text;
-            string previousLastName=txtPreviousLastName.Text;
-            string referral=txtReferral.Text;
-            DateTime dateEntered=dtpDateEntered.Value;
-            string hospitalMR=txtHospitalMR.Text;
+            try
+            {
+                using (MySqlConnection connection = GMHDBOperations.MakeConnection())
+                {
+                    if (_isModifyMode) // Handle updates
+                    {
+                        string query = @"
+                    UPDATE patientdemographics 
+                    SET PtFirstName = @PtFirstName, PtMiddleInitial = @PtMiddleInitial, PtLastName = @PtLastName, 
+                        Gender = @Gender, DOB = @DOB, SSN = @SSN, PtHomePhone = @PtHomePhone, 
+                        EmailAddress = @EmailAddress, HomeAddress = @HomeAddress, HomeCity = @HomeCity, 
+                        `HomeState/Province/Region` = @HomeState, HomeZip = @HomeZip, 
+                        PtPreviousLastName = @PtPreviousLastName, Suffix = @Suffix, Country = @Country, 
+                        Citizenship = @Citizenship, EthnicAssociation = @EthnicAssociation, Religion = @Religion, 
+                        MaritalStatus = @MaritalStatus, EmploymentStatus = @EmploymentStatus, 
+                        DateofExpire = @DateofExpire, Referral = @Referral, NextOfKinID = @NextOfKinID, 
+                        NextOfKinRelationshipToPatient = @NextOfKinRelationship, CurrentPrimaryHCPId = @HCPId, 
+                        DateEntered = @DateEntered, Comments = @Comments, EmergencyPhoneNumber = @EmergencyPhone 
+                    WHERE patientId = @PatientID";
 
-            
+                        using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                        {
+                            AddPatientParameters(cmd); // Method to add parameters from form fields
+                            cmd.Parameters.AddWithValue("@PatientID", _patientId);
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Patient record updated successfully.");
+                        }
+                    }
+                    else // Handle new record insertions
+                    {
+                        string query = @"
+                    INSERT INTO patientdemographics (
+                        PtFirstName, PtMiddleInitial, PtLastName, Gender, DOB, SSN, PtHomePhone, 
+                        EmailAddress, HomeAddress, HomeCity, `HomeState/Province/Region`, HomeZip, 
+                        PtPreviousLastName, Suffix, Country, Citizenship, EthnicAssociation, Religion, 
+                        MaritalStatus, EmploymentStatus, DateofExpire, Referral, NextOfKinID, 
+                        NextOfKinRelationshipToPatient, CurrentPrimaryHCPId, DateEntered, Comments, 
+                        EmergencyPhoneNumber
+                    ) 
+                    VALUES (
+                        @PtFirstName, @PtMiddleInitial, @PtLastName, @Gender, @DOB, @SSN, @PtHomePhone, 
+                        @EmailAddress, @HomeAddress, @HomeCity, @HomeState, @HomeZip, @PtPreviousLastName, 
+                        @Suffix, @Country, @Citizenship, @EthnicAssociation, @Religion, @MaritalStatus, 
+                        @EmploymentStatus, @DateofExpire, @Referral, @NextOfKinID, @NextOfKinRelationship, 
+                        @HCPId, @DateEntered, @Comments, @EmergencyPhone)";
+
+                        using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                        {
+                            AddPatientParameters(cmd); // Method to add parameters from form fields
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("New patient record added successfully.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving patient data: {ex.Message}");
+            }
+        }
+        private void AddPatientParameters(MySqlCommand cmd)
+        {
+            cmd.Parameters.AddWithValue("@PtFirstName", txtFirstName.Text);
+            cmd.Parameters.AddWithValue("@PtMiddleInitial", txtMiddleName.Text);
+            cmd.Parameters.AddWithValue("@PtLastName", txtLastName.Text);
+            cmd.Parameters.AddWithValue("@Gender", cboGender.SelectedItem?.ToString());
+            cmd.Parameters.AddWithValue("@DOB", dtpDateOfBirth.Value);
+            cmd.Parameters.AddWithValue("@SSN", txtSSN.Text);
+            cmd.Parameters.AddWithValue("@PtHomePhone", txtPhoneNumber.Text);
+            cmd.Parameters.AddWithValue("@EmailAddress", txtEmailAddress.Text);
+            cmd.Parameters.AddWithValue("@HomeAddress", txtAddress.Text);
+            cmd.Parameters.AddWithValue("@HomeCity", txtCity.Text);
+            cmd.Parameters.AddWithValue("@HomeState", cboState.SelectedItem?.ToString());
+            cmd.Parameters.AddWithValue("@HomeZip", txtZipCode.Text);
+            cmd.Parameters.AddWithValue("@PtPreviousLastName", txtPreviousLastName.Text);
+            cmd.Parameters.AddWithValue("@Suffix", txtSuffix.Text);
+            cmd.Parameters.AddWithValue("@Country", txtCountry.Text);
+            cmd.Parameters.AddWithValue("@Citizenship", txtCitizenship.Text);
+            cmd.Parameters.AddWithValue("@EthnicAssociation", txtEthnicAssociation.Text);
+            cmd.Parameters.AddWithValue("@Religion", txtReligion.Text);
+            cmd.Parameters.AddWithValue("@MaritalStatus", txtMaritalStatus.Text);
+            cmd.Parameters.AddWithValue("@EmploymentStatus", txtEmploymentStatus.Text);
+            cmd.Parameters.AddWithValue("@DateofExpire", txtDateOfExpire.Text);
+            cmd.Parameters.AddWithValue("@Referral", txtReferral.Text);
+            cmd.Parameters.AddWithValue("@NextOfKinID", txtNextOfKin.Text);
+            cmd.Parameters.AddWithValue("@NextOfKinRelationship", txtNextOfKinRelationshipToPatient.Text);
+            cmd.Parameters.AddWithValue("@HCPId", txtCurrentPrimaryHCPId.Text);
+            cmd.Parameters.AddWithValue("@DateEntered", dtpDateEntered.Value);
+            cmd.Parameters.AddWithValue("@Comments", txtComments.Text);
+            cmd.Parameters.AddWithValue("@EmergencyPhone", txtEmergencyContactPhone.Text);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Collect the data from the form controls
-                string firstName = txtFirstName.Text;
-                string middleName = txtMiddleName.Text;
-                string lastName = txtLastName.Text;
-                string gender = cboGender.SelectedItem.ToString();
-                DateTime dateOfBirth = dtpDateOfBirth.Value;
-                string ssn = txtSSN.Text;
-                string phoneNumber = txtPhoneNumber.Text;
-                string email = txtEmailAddress.Text;
-                string address = txtAddress.Text;
-                string city = txtCity.Text;
-                string state = cboState.SelectedItem.ToString();
-                string zipCode = txtZipCode.Text;
-                string emergencyContactPhone = txtEmergencyContactPhone.Text;
-                string suffix = txtSuffix.Text;
-                string country = txtCountry.Text;
-                string citizenship = txtCitizenship.Text;
-                string ethnicAssociation = txtEthnicAssociation.Text;
-                string religion = txtReligion.Text;
-                string currentPrimaryHCPId = txtCurrentPrimaryHCPId.Text;
-                string dateOfExpire = txtDateOfExpire.Text;
-                string comments = txtComments.Text;
-                string nextOfKin = txtNextOfKin.Text;
-                string nextOfKinRelationshipToPatient = txtNextOfKinRelationshipToPatient.Text;
-                string employmentStatus = txtEmploymentStatus.Text;
-                string maritalStatus = txtMaritalStatus.Text;
-                string previousLastName = txtPreviousLastName.Text;
-                string referral = txtReferral.Text;
-                DateTime dateEntered = dtpDateEntered.Value;
-                string hospitalMR = txtHospitalMR.Text;
+            _isModifyMode = false; // Set mode to Add
+            _isViewMode = false;
+            _patientId = null; // Clear any existing patient ID
 
-                // Check if PatientID exists (assuming it's either a TextBox or a hidden field)
-                int patientId;
-                bool isEdit = int.TryParse(txtPatientID.Text, out patientId);  // Assuming the PatientID is being passed for edit
-
-                // Determine the SQL query based on whether it's an insert or update
-                string query;
-                SqlCommand cmd;
-
-                // Check if the PatientID exists for updating or inserting new record
-                if (isEdit)
-                {
-                    // Update existing patient record
-                    // Check the Patient Demographics table for the correct column names
-                    query = @"UPDATE patientdemographics 
-                      SET firstName = @PtFirstName, middleName = @PtMiddleIntitial, lastName = @PtLastName, previousLastName=@PreviousLastName, gender = @Gender, suffix=@Suffix, country=@Country, 
-                          dateOfBirth = @DOB, ssn = @SSN, phoneNumber = @PtHomePhone, emailAddress = @EmailAddress,
-                          address = @HomeAddress, city = @HomeCity, state = @HomeState/Province/Region, zipCode = @HomeZip, hosptialMR=@HospitalMR#, 
-                          emergencyContactPhone = @EmergencyPhoneNumber, citizenship=@Cititzenship, ethnicAssociation=@EthnicAssociation, religion=@Religion, maritalStatus=@MaritalStatus,
-                          employmentStatus=@EmploymentStatus, dateOfExpire=@DateOfExpire, referral=@Referral, currentPrimartyHCPId=@CurrentPrimaryHCPId, comments=@Comments, dateEntered=@DateEntered,
-                          nextOfKin=@NextOfKinID, nextOfKinRelationshipToPatient=@NextOfKinRelationshipToPatient
-                      WHERE patientId = @patientId";
-                }
-                else
-                {
-                    // Insert new patient record
-                    query = @"INSERT INTO patientdemographics 
-                      (firstName, middleName, lastName, previousLastName, gender, suffix, country, citizenship, dateOfBirth, ssn, phoneNumber, emailAddress, 
-                       address, city, state, zipCode,emergencyContactPhone, ethnicAssociation, religion, maritalStatus, employmentStatus, dateOfExpire, referral, currentPrimaryHCPId, comments, dateEntered,
-                       nextOfKin, nextOfKinRelationshipToPatient) 
-                      VALUES (@PtFirstName, @PtMiddleInitial, @PtLastName,@PtPreviousLastName, @Gender, @Suffix, @Country, @Citizenship, @DOB, @SSN, @PtHomePhone,@EmailAddress,
-                              @HomeAddress, @HomeCity, @HomeState/Province/Region, @HomeZip, @EmergencyPhoneNumber, @EthnicAssociation, @Religion, @MaritalStatus, @EmploymentStatus, @DateOfExpire, @Referral, @CurrentPrimaryHCPId,
-                               @Comments, @DateEntered, @NextOfKinID, @NextOfKinRelationshipToPatient)";
-                }
-
-                // Create the SQL Command
-                using (SqlConnection conn = new SqlConnection("Server=127.0.0.1;Port=3306;Database=healthcareapplication;Uid=root;Pwd=password;"))
-                {
-                    
-                    cmd = new SqlCommand(query, conn);
-
-                    // Add parameters to the query (same for insert and update)
-                    cmd.Parameters.AddWithValue("@PtFirstName", firstName);
-                    cmd.Parameters.AddWithValue("@PtMiddleInitial", middleName);
-                    cmd.Parameters.AddWithValue("@PtLastName", lastName);
-                    cmd.Parameters.AddWithValue("@Gender", gender);
-                    cmd.Parameters.AddWithValue("@DOB", dateOfBirth);
-                    cmd.Parameters.AddWithValue("@SSN", ssn);
-                    cmd.Parameters.AddWithValue("@PtHomePhone", phoneNumber);
-                    cmd.Parameters.AddWithValue("@EmailAddress", email);
-                    cmd.Parameters.AddWithValue("@HomeAddress", address);
-                    cmd.Parameters.AddWithValue("@HomeCity", city);
-                    cmd.Parameters.AddWithValue("@HomeState/Province/Region", state);
-                    cmd.Parameters.AddWithValue("@HomeZip", zipCode);
-                    cmd.Parameters.AddWithValue("@EmergencyPhoneNumber", emergencyContactPhone);
-                    cmd.Parameters.AddWithValue("@PtPreviousLastName", previousLastName);
-                    cmd.Parameters.AddWithValue("@Suffix", suffix);
-                    cmd.Parameters.AddWithValue("@Country", country);
-                    cmd.Parameters.AddWithValue("@Citizenship", citizenship);
-                    cmd.Parameters.AddWithValue("@EthnicAssociation", ethnicAssociation);
-                    cmd.Parameters.AddWithValue("@Religion", religion);
-                    cmd.Parameters.AddWithValue("@MaritalStatus", maritalStatus);
-                    cmd.Parameters.AddWithValue("@EmploymentStatus", employmentStatus);
-                    cmd.Parameters.AddWithValue("@DateOfExpire", dateOfExpire);
-                    cmd.Parameters.AddWithValue("@Referral", referral);
-                    cmd.Parameters.AddWithValue("@CurrentPrimaryHCPId", currentPrimaryHCPId);
-                    cmd.Parameters.AddWithValue("@DateEntered", dateEntered);
-                    cmd.Parameters.AddWithValue("@NextOfKinID", nextOfKin);
-                    cmd.Parameters.AddWithValue("@NextOfKinRelationshipToPatient", nextOfKinRelationshipToPatient);
-                    cmd.Parameters.AddWithValue("@Comments", comments);
-
-                   
-
-                    if (isEdit)
-                    {
-                        // If updating an existing record, also add the PatientID to the parameters
-                        cmd.Parameters.AddWithValue("@patientId", patientId);
-                    }
-
-                    // Execute the query
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Show a message indicating success
-                if (isEdit)
-                {
-                    MessageBox.Show("Patient record updated successfully.");
-                }
-                else
-                {
-                    MessageBox.Show("New patient record added successfully.");
-                }
-
-                // Optionally, clear fields after the operation
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
+            ClearFields(); // Reset the form fields for new entry
+            SetControlsReadOnly(false); // Enable editing
+            txtPatientID.ReadOnly = true; // Prevent manual entry of Patient ID
+            MessageBox.Show("Ready to add a new patient record.");
         }
 
         // Helper method to clear form fields (optional)

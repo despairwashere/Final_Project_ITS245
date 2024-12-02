@@ -97,6 +97,7 @@
             this.dtpDateEntered = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.txtComments = new System.Windows.Forms.TextBox();
+            this.btnModify = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -808,12 +809,23 @@
             this.txtComments.Size = new System.Drawing.Size(379, 426);
             this.txtComments.TabIndex = 86;
             // 
+            // btnModify
+            // 
+            this.btnModify.Location = new System.Drawing.Point(1223, 408);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 40);
+            this.btnModify.TabIndex = 87;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
             // PatientDemographicsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1802, 920);
+            this.Controls.Add(this.btnModify);
             this.Controls.Add(this.txtComments);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.dtpDateEntered);
@@ -962,5 +974,6 @@
         private System.Windows.Forms.DateTimePicker dtpDateEntered;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtComments;
+        private System.Windows.Forms.Button btnModify;
     }
 }
