@@ -400,5 +400,13 @@ namespace Healtcare_Patient_Application
         {
 
         }
+
+        private void btnAllergyRecords_Click(object sender, EventArgs e)
+        {
+            StorePatientDetails();
+            AllergyHistoryForm allergyform = new AllergyHistoryForm(patientId, patientName, patientAge);
+            allergyform.Show();
+            this.Hide();
+        }
     }
 }

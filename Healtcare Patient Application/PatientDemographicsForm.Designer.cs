@@ -754,6 +754,7 @@
             this.btnAllergyRecords.TabIndex = 80;
             this.btnAllergyRecords.Text = "Allergy Records";
             this.btnAllergyRecords.UseVisualStyleBackColor = true;
+            this.btnAllergyRecords.Click += new System.EventHandler(this.btnAllergyRecords_Click);
             // 
             // label15
             // 

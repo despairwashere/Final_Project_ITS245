@@ -300,5 +300,10 @@ namespace Healtcare_Patient_Application
             // Close or hide the current form
             this.Close();
         }
+
+        private void txtAllergen_Text_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
