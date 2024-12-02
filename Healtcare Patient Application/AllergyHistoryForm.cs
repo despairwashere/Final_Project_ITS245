@@ -309,7 +309,11 @@ namespace Healtcare_Patient_Application
 
         private void btnPatientDemographics_Click(object sender, EventArgs e)
         {
-            
+            int patientID = PatientIDAllergy;
+            PatientDemographicsForm form = new PatientDemographicsForm(patientID);
+            form.Show();
+            this.Hide();
+
         }
 
         private void btnGeneralMedicalHistory_Click(object sender, EventArgs e)
@@ -318,7 +322,7 @@ namespace Healtcare_Patient_Application
             GMH form = new GMH();
             form.PatientID = Convert.ToString(PatientIDAllergy);
             form.PatientName = $"{ PatientNameLB.Text}";
-            form.PatientAge = $"{PatientAgeLB}";
+            form.PatientAge = $"{PatientAgeLB.Text}";
             form.Show();
             this.Hide();
         }
@@ -328,7 +332,7 @@ namespace Healtcare_Patient_Application
             Family_History_Form form = new Family_History_Form();
             form.PatientIDFB = Convert.ToString(PatientIDAllergy);
             form.PatientNameFB = $"{PatientNameLB.Text}";
-            form.PatientAgeFB = $"{PatientAgeLB}";
+            form.PatientAgeFB = $"{PatientAgeLB.Text}";
             form.Show();
             this.Hide();
         }

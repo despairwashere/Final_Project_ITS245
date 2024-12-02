@@ -10,7 +10,7 @@ namespace Healtcare_Patient_Application.DataOperations
     public static class LogAccessForm
     {
         private static readonly string logFilePath =
-                @"C:\Users\jalge\OneDrive\Documents\ITS-245 Final Project\Healtcare Patient Application\FormAccessLog.txt"; // Path to the log file
+                @"D:\ITS-245 Final Project\Healtcare Patient Application\FormAccessLog.txt"; // Path to the log file
 
         public static class FormAccessLogger
         {

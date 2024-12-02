@@ -218,8 +218,8 @@ namespace Healtcare_Patient_Application
 
         private void GoToLoginPageBT_Click(object sender, EventArgs e)
         {
-            Form Login = new Login_Form();
-            Login.Show();
+            PatientSelectionForm select = new PatientSelectionForm();
+            select.Show();
             this.Hide();
             LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Family History Form",
                 "User went to the Login Form");
@@ -366,6 +366,22 @@ namespace Healtcare_Patient_Application
         private void MajorDisordersTB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Allergy_HistoryBTN_Click(object sender, EventArgs e)
+        {
+            int patientId = Convert.ToInt32(PatientIDFB);
+            AllergyHistoryForm form = new AllergyHistoryForm(patientId, PatientNameFB, PatientAgeFB);
+            form.Show();
+            this.Hide();
+        }
+
+        private void BTNPatientDemographics_Click(object sender, EventArgs e)
+        {
+            int patientID = Convert.ToInt32(PatientIDFB);
+            PatientDemographicsForm form = new PatientDemographicsForm(patientID);
+            form.Show();
+            this.Hide();
         }
     }
 }
