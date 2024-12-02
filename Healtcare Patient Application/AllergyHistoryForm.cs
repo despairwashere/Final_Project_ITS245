@@ -306,5 +306,20 @@ namespace Healtcare_Patient_Application
         {
 
         }
+
+        private void btnPatientDemographics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGeneralMedicalHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFamilyHistory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
