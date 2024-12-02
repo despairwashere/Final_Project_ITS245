@@ -449,9 +449,9 @@ namespace Healtcare_Patient_Application
         private void GoToFamilyHistoryBT_Click(object sender, EventArgs e)
         {
             Family_History_Form family = new Family_History_Form();
-            family.PatientIDFB = patientID;
-            family.PatientNameFB = patientName;
-            family.PatientAgeFB = age;
+            family.PatientIDFB = PatientID;
+            family.PatientNameFB = PatientName;
+            family.PatientAgeFB = PatientAge;
             family.Show();
             this.Hide();
         }

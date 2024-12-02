@@ -28,6 +28,7 @@ namespace Healtcare_Patient_Application
             this._patientId = patientId;
             this._isViewMode = isViewMode;
             this._isModifyMode = isModifyMode;
+            
 
             // Configure the form based on initial mode
             ConfigureFormMode();
