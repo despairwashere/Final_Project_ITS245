@@ -87,7 +87,7 @@ namespace Healtcare_Patient_Application
             this.DeleteBT = new System.Windows.Forms.Button();
             this.GoToFamilyHistoryBT = new System.Windows.Forms.Button();
             this.PatientAgeLB = new System.Windows.Forms.Label();
-            this.GoToLoginPageBT = new System.Windows.Forms.Button();
+            this.PatientDemographicsBTN = new System.Windows.Forms.Button();
             this.PatientSelectFormBT = new System.Windows.Forms.Button();
             this.BTAllergyForm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -122,7 +122,7 @@ namespace Healtcare_Patient_Application
             this.panel1.Controls.Add(this.TobaccoQuantityLB);
             this.panel1.Controls.Add(this.TobaccoLB);
             this.panel1.Location = new System.Drawing.Point(257, 134);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(777, 658);
             this.panel1.TabIndex = 0;
@@ -131,7 +131,7 @@ namespace Healtcare_Patient_Application
             // 
             this.DrugDurationTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrugDurationTB.Location = new System.Drawing.Point(157, 423);
-            this.DrugDurationTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DrugDurationTB.Margin = new System.Windows.Forms.Padding(4);
             this.DrugDurationTB.Multiline = true;
             this.DrugDurationTB.Name = "DrugDurationTB";
             this.DrugDurationTB.Size = new System.Drawing.Size(596, 50);
@@ -152,7 +152,7 @@ namespace Healtcare_Patient_Application
             // 
             this.RHTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RHTB.Location = new System.Drawing.Point(157, 537);
-            this.RHTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RHTB.Margin = new System.Windows.Forms.Padding(4);
             this.RHTB.Name = "RHTB";
             this.RHTB.Size = new System.Drawing.Size(489, 26);
             this.RHTB.TabIndex = 20;
@@ -161,7 +161,7 @@ namespace Healtcare_Patient_Application
             // 
             this.BloodTypeTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BloodTypeTB.Location = new System.Drawing.Point(157, 489);
-            this.BloodTypeTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BloodTypeTB.Margin = new System.Windows.Forms.Padding(4);
             this.BloodTypeTB.Name = "BloodTypeTB";
             this.BloodTypeTB.Size = new System.Drawing.Size(489, 26);
             this.BloodTypeTB.TabIndex = 19;
@@ -170,7 +170,7 @@ namespace Healtcare_Patient_Application
             // 
             this.DrugTypeTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrugTypeTB.Location = new System.Drawing.Point(157, 295);
-            this.DrugTypeTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DrugTypeTB.Margin = new System.Windows.Forms.Padding(4);
             this.DrugTypeTB.Multiline = true;
             this.DrugTypeTB.Name = "DrugTypeTB";
             this.DrugTypeTB.Size = new System.Drawing.Size(576, 101);
@@ -180,7 +180,7 @@ namespace Healtcare_Patient_Application
             // 
             this.DrugTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrugTB.Location = new System.Drawing.Point(157, 261);
-            this.DrugTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DrugTB.Margin = new System.Windows.Forms.Padding(4);
             this.DrugTB.Name = "DrugTB";
             this.DrugTB.Size = new System.Drawing.Size(489, 26);
             this.DrugTB.TabIndex = 17;
@@ -189,7 +189,7 @@ namespace Healtcare_Patient_Application
             // 
             this.LMPTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LMPTB.Location = new System.Drawing.Point(157, 571);
-            this.LMPTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LMPTB.Margin = new System.Windows.Forms.Padding(4);
             this.LMPTB.Multiline = true;
             this.LMPTB.Name = "LMPTB";
             this.LMPTB.Size = new System.Drawing.Size(596, 50);
@@ -199,7 +199,7 @@ namespace Healtcare_Patient_Application
             // 
             this.AlcoholDurTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlcoholDurTB.Location = new System.Drawing.Point(157, 226);
-            this.AlcoholDurTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AlcoholDurTB.Margin = new System.Windows.Forms.Padding(4);
             this.AlcoholDurTB.Name = "AlcoholDurTB";
             this.AlcoholDurTB.Size = new System.Drawing.Size(576, 26);
             this.AlcoholDurTB.TabIndex = 16;
@@ -208,7 +208,7 @@ namespace Healtcare_Patient_Application
             // 
             this.AlcoholQuanTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlcoholQuanTB.Location = new System.Drawing.Point(157, 192);
-            this.AlcoholQuanTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AlcoholQuanTB.Margin = new System.Windows.Forms.Padding(4);
             this.AlcoholQuanTB.Name = "AlcoholQuanTB";
             this.AlcoholQuanTB.Size = new System.Drawing.Size(576, 26);
             this.AlcoholQuanTB.TabIndex = 15;
@@ -217,7 +217,7 @@ namespace Healtcare_Patient_Application
             // 
             this.DrinkAlcoholTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrinkAlcoholTB.Location = new System.Drawing.Point(157, 158);
-            this.DrinkAlcoholTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DrinkAlcoholTB.Margin = new System.Windows.Forms.Padding(4);
             this.DrinkAlcoholTB.Name = "DrinkAlcoholTB";
             this.DrinkAlcoholTB.Size = new System.Drawing.Size(576, 26);
             this.DrinkAlcoholTB.TabIndex = 14;
@@ -237,7 +237,7 @@ namespace Healtcare_Patient_Application
             // 
             this.TobaccoDurationTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TobaccoDurationTB.Location = new System.Drawing.Point(157, 123);
-            this.TobaccoDurationTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TobaccoDurationTB.Margin = new System.Windows.Forms.Padding(4);
             this.TobaccoDurationTB.Name = "TobaccoDurationTB";
             this.TobaccoDurationTB.Size = new System.Drawing.Size(576, 26);
             this.TobaccoDurationTB.TabIndex = 13;
@@ -246,7 +246,7 @@ namespace Healtcare_Patient_Application
             // 
             this.TobaccoQuanTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TobaccoQuanTB.Location = new System.Drawing.Point(157, 89);
-            this.TobaccoQuanTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TobaccoQuanTB.Margin = new System.Windows.Forms.Padding(4);
             this.TobaccoQuanTB.Name = "TobaccoQuanTB";
             this.TobaccoQuanTB.Size = new System.Drawing.Size(576, 26);
             this.TobaccoQuanTB.TabIndex = 12;
@@ -255,7 +255,7 @@ namespace Healtcare_Patient_Application
             // 
             this.TobaccoTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TobaccoTB.Location = new System.Drawing.Point(157, 58);
-            this.TobaccoTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TobaccoTB.Margin = new System.Windows.Forms.Padding(4);
             this.TobaccoTB.Name = "TobaccoTB";
             this.TobaccoTB.Size = new System.Drawing.Size(576, 26);
             this.TobaccoTB.TabIndex = 11;
@@ -396,7 +396,7 @@ namespace Healtcare_Patient_Application
             this.panel2.Controls.Add(this.EducationLB);
             this.panel2.Controls.Add(this.MaritalStatusLB);
             this.panel2.Location = new System.Drawing.Point(1037, 134);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(847, 658);
             this.panel2.TabIndex = 1;
@@ -406,7 +406,7 @@ namespace Healtcare_Patient_Application
             // 
             this.MensesMonthlyNochoice.AutoSize = true;
             this.MensesMonthlyNochoice.Location = new System.Drawing.Point(296, 340);
-            this.MensesMonthlyNochoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MensesMonthlyNochoice.Margin = new System.Windows.Forms.Padding(4);
             this.MensesMonthlyNochoice.Name = "MensesMonthlyNochoice";
             this.MensesMonthlyNochoice.Size = new System.Drawing.Size(18, 17);
             this.MensesMonthlyNochoice.TabIndex = 43;
@@ -427,7 +427,7 @@ namespace Healtcare_Patient_Application
             // 
             this.MensesMonthlyYeschoice.AutoSize = true;
             this.MensesMonthlyYeschoice.Location = new System.Drawing.Point(216, 340);
-            this.MensesMonthlyYeschoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MensesMonthlyYeschoice.Margin = new System.Windows.Forms.Padding(4);
             this.MensesMonthlyYeschoice.Name = "MensesMonthlyYeschoice";
             this.MensesMonthlyYeschoice.Size = new System.Drawing.Size(18, 17);
             this.MensesMonthlyYeschoice.TabIndex = 41;
@@ -437,7 +437,7 @@ namespace Healtcare_Patient_Application
             // 
             this.DeletedCB.AutoSize = true;
             this.DeletedCB.Location = new System.Drawing.Point(759, 489);
-            this.DeletedCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeletedCB.Margin = new System.Windows.Forms.Padding(4);
             this.DeletedCB.Name = "DeletedCB";
             this.DeletedCB.Size = new System.Drawing.Size(18, 17);
             this.DeletedCB.TabIndex = 40;
@@ -458,7 +458,7 @@ namespace Healtcare_Patient_Application
             // 
             this.MensesFreqTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MensesFreqTB.Location = new System.Drawing.Point(204, 370);
-            this.MensesFreqTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MensesFreqTB.Margin = new System.Windows.Forms.Padding(4);
             this.MensesFreqTB.Name = "MensesFreqTB";
             this.MensesFreqTB.Size = new System.Drawing.Size(576, 26);
             this.MensesFreqTB.TabIndex = 38;
@@ -478,7 +478,7 @@ namespace Healtcare_Patient_Application
             // 
             this.MedHistoryTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MedHistoryTB.Location = new System.Drawing.Point(32, 471);
-            this.MedHistoryTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MedHistoryTB.Margin = new System.Windows.Forms.Padding(4);
             this.MedHistoryTB.Multiline = true;
             this.MedHistoryTB.Name = "MedHistoryTB";
             this.MedHistoryTB.Size = new System.Drawing.Size(637, 79);
@@ -499,7 +499,7 @@ namespace Healtcare_Patient_Application
             // 
             this.HXTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HXTB.Location = new System.Drawing.Point(173, 412);
-            this.HXTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HXTB.Margin = new System.Windows.Forms.Padding(4);
             this.HXTB.Name = "HXTB";
             this.HXTB.Size = new System.Drawing.Size(576, 26);
             this.HXTB.TabIndex = 34;
@@ -530,7 +530,7 @@ namespace Healtcare_Patient_Application
             // 
             this.BehavioralHistoryTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BehavioralHistoryTB.Location = new System.Drawing.Point(173, 244);
-            this.BehavioralHistoryTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BehavioralHistoryTB.Margin = new System.Windows.Forms.Padding(4);
             this.BehavioralHistoryTB.Multiline = true;
             this.BehavioralHistoryTB.Name = "BehavioralHistoryTB";
             this.BehavioralHistoryTB.Size = new System.Drawing.Size(637, 79);
@@ -551,7 +551,7 @@ namespace Healtcare_Patient_Application
             // 
             this.DietaryTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DietaryTB.Location = new System.Drawing.Point(173, 145);
-            this.DietaryTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DietaryTB.Margin = new System.Windows.Forms.Padding(4);
             this.DietaryTB.Multiline = true;
             this.DietaryTB.Name = "DietaryTB";
             this.DietaryTB.Size = new System.Drawing.Size(637, 79);
@@ -561,7 +561,7 @@ namespace Healtcare_Patient_Application
             // 
             this.EducationLevelTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EducationLevelTB.Location = new System.Drawing.Point(173, 108);
-            this.EducationLevelTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EducationLevelTB.Margin = new System.Windows.Forms.Padding(4);
             this.EducationLevelTB.Name = "EducationLevelTB";
             this.EducationLevelTB.Size = new System.Drawing.Size(576, 26);
             this.EducationLevelTB.TabIndex = 23;
@@ -570,7 +570,7 @@ namespace Healtcare_Patient_Application
             // 
             this.NumChildrenTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumChildrenTB.Location = new System.Drawing.Point(173, 74);
-            this.NumChildrenTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NumChildrenTB.Margin = new System.Windows.Forms.Padding(4);
             this.NumChildrenTB.Name = "NumChildrenTB";
             this.NumChildrenTB.Size = new System.Drawing.Size(103, 26);
             this.NumChildrenTB.TabIndex = 22;
@@ -579,7 +579,7 @@ namespace Healtcare_Patient_Application
             // 
             this.MaritalStatusTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaritalStatusTB.Location = new System.Drawing.Point(173, 39);
-            this.MaritalStatusTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaritalStatusTB.Margin = new System.Windows.Forms.Padding(4);
             this.MaritalStatusTB.Name = "MaritalStatusTB";
             this.MaritalStatusTB.Size = new System.Drawing.Size(576, 26);
             this.MaritalStatusTB.TabIndex = 21;
@@ -643,7 +643,7 @@ namespace Healtcare_Patient_Application
             // 
             this.AddBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBT.Location = new System.Drawing.Point(435, 816);
-            this.AddBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddBT.Margin = new System.Windows.Forms.Padding(4);
             this.AddBT.Name = "AddBT";
             this.AddBT.Size = new System.Drawing.Size(201, 39);
             this.AddBT.TabIndex = 3;
@@ -655,7 +655,7 @@ namespace Healtcare_Patient_Application
             // 
             this.ModifyBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModifyBT.Location = new System.Drawing.Point(745, 816);
-            this.ModifyBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ModifyBT.Margin = new System.Windows.Forms.Padding(4);
             this.ModifyBT.Name = "ModifyBT";
             this.ModifyBT.Size = new System.Drawing.Size(201, 39);
             this.ModifyBT.TabIndex = 4;
@@ -667,7 +667,7 @@ namespace Healtcare_Patient_Application
             // 
             this.SaveBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBT.Location = new System.Drawing.Point(1056, 816);
-            this.SaveBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveBT.Margin = new System.Windows.Forms.Padding(4);
             this.SaveBT.Name = "SaveBT";
             this.SaveBT.Size = new System.Drawing.Size(201, 39);
             this.SaveBT.TabIndex = 5;
@@ -679,7 +679,7 @@ namespace Healtcare_Patient_Application
             // 
             this.UndoBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UndoBT.Location = new System.Drawing.Point(1335, 816);
-            this.UndoBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UndoBT.Margin = new System.Windows.Forms.Padding(4);
             this.UndoBT.Name = "UndoBT";
             this.UndoBT.Size = new System.Drawing.Size(201, 39);
             this.UndoBT.TabIndex = 6;
@@ -691,7 +691,7 @@ namespace Healtcare_Patient_Application
             // 
             this.DeleteBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBT.Location = new System.Drawing.Point(1633, 816);
-            this.DeleteBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteBT.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteBT.Name = "DeleteBT";
             this.DeleteBT.Size = new System.Drawing.Size(201, 39);
             this.DeleteBT.TabIndex = 7;
@@ -703,7 +703,7 @@ namespace Healtcare_Patient_Application
             // 
             this.GoToFamilyHistoryBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoToFamilyHistoryBT.Location = new System.Drawing.Point(43, 134);
-            this.GoToFamilyHistoryBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GoToFamilyHistoryBT.Margin = new System.Windows.Forms.Padding(4);
             this.GoToFamilyHistoryBT.Name = "GoToFamilyHistoryBT";
             this.GoToFamilyHistoryBT.Size = new System.Drawing.Size(168, 54);
             this.GoToFamilyHistoryBT.TabIndex = 8;
@@ -722,23 +722,23 @@ namespace Healtcare_Patient_Application
             this.PatientAgeLB.Text = "Patient\'s Age";
             this.PatientAgeLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // GoToLoginPageBT
+            // PatientDemographicsBTN
             // 
-            this.GoToLoginPageBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToLoginPageBT.Location = new System.Drawing.Point(43, 385);
-            this.GoToLoginPageBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.GoToLoginPageBT.Name = "GoToLoginPageBT";
-            this.GoToLoginPageBT.Size = new System.Drawing.Size(168, 54);
-            this.GoToLoginPageBT.TabIndex = 12;
-            this.GoToLoginPageBT.Text = "Go To Loign Page";
-            this.GoToLoginPageBT.UseVisualStyleBackColor = true;
-            this.GoToLoginPageBT.Click += new System.EventHandler(this.GoToLoginPageBT_Click);
+            this.PatientDemographicsBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientDemographicsBTN.Location = new System.Drawing.Point(43, 306);
+            this.PatientDemographicsBTN.Margin = new System.Windows.Forms.Padding(4);
+            this.PatientDemographicsBTN.Name = "PatientDemographicsBTN";
+            this.PatientDemographicsBTN.Size = new System.Drawing.Size(168, 54);
+            this.PatientDemographicsBTN.TabIndex = 12;
+            this.PatientDemographicsBTN.Text = "Patient Demographics";
+            this.PatientDemographicsBTN.UseVisualStyleBackColor = true;
+            this.PatientDemographicsBTN.Click += new System.EventHandler(this.PatientDemographicsBTN_Click);
             // 
             // PatientSelectFormBT
             // 
             this.PatientSelectFormBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PatientSelectFormBT.Location = new System.Drawing.Point(43, 469);
-            this.PatientSelectFormBT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PatientSelectFormBT.Location = new System.Drawing.Point(43, 396);
+            this.PatientSelectFormBT.Margin = new System.Windows.Forms.Padding(4);
             this.PatientSelectFormBT.Name = "PatientSelectFormBT";
             this.PatientSelectFormBT.Size = new System.Drawing.Size(168, 54);
             this.PatientSelectFormBT.TabIndex = 15;
@@ -766,7 +766,7 @@ namespace Healtcare_Patient_Application
             this.ClientSize = new System.Drawing.Size(1924, 885);
             this.Controls.Add(this.BTAllergyForm);
             this.Controls.Add(this.PatientSelectFormBT);
-            this.Controls.Add(this.GoToLoginPageBT);
+            this.Controls.Add(this.PatientDemographicsBTN);
             this.Controls.Add(this.PatientAgeLB);
             this.Controls.Add(this.GoToFamilyHistoryBT);
             this.Controls.Add(this.DeleteBT);
@@ -777,7 +777,7 @@ namespace Healtcare_Patient_Application
             this.Controls.Add(this.Patient_Name);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GMH";
             this.Text = "General Medical History";
             this.Load += new System.EventHandler(this.GMH_Load);
@@ -839,7 +839,7 @@ namespace Healtcare_Patient_Application
         
         private Button GoToFamilyHistoryBT;
         private Label PatientAgeLB;
-        private Button GoToLoginPageBT;
+        private Button PatientDemographicsBTN;
         private TextBox MensesFreqTB;
         private Label MensesFreqLB;
         private TextBox DrugDurationTB;

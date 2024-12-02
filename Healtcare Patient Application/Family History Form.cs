@@ -209,9 +209,9 @@ namespace Healtcare_Patient_Application
         private void GoToGenMedicalHistoryBT_Click(object sender, EventArgs e)
         {
             GMH Gen_history = new GMH();
-            Gen_history.PatientName = patientName;
-            Gen_history.PatientAge = age;
-            Gen_history.PatientID = patientID;
+            Gen_history.PatientName = PatientNameFB;
+            Gen_history.PatientAge = PatientAgeFB;
+            Gen_history.PatientID = PatientIDFB;
             Gen_history.Show();
             this.Hide();
         }
@@ -383,5 +383,7 @@ namespace Healtcare_Patient_Application
             form.Show();
             this.Hide();
         }
+
+        
     }
 }

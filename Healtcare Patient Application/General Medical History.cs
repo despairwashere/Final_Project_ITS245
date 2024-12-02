@@ -456,12 +456,7 @@ namespace Healtcare_Patient_Application
             this.Hide();
         }
 
-        private void GoToLoginPageBT_Click(object sender, EventArgs e)
-        {
-            Form Login = new Login_Form();
-            Login.Show();
-            this.Hide();
-        }
+        
 
         private void MMYCB_CheckedChanged(object sender, EventArgs e)
         {
@@ -578,6 +573,14 @@ namespace Healtcare_Patient_Application
             
             AllergyHistoryForm allergyform = new AllergyHistoryForm(patientID, PatientName, PatientAge);
             allergyform.Show();
+            this.Hide();
+        }
+
+        private void PatientDemographicsBTN_Click(object sender, EventArgs e)
+        {
+            int patientID = Convert.ToInt32(PatientID);
+            PatientDemographicsForm form = new PatientDemographicsForm(patientID);
+            form.Show();
             this.Hide();
         }
     }

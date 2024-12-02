@@ -53,6 +53,7 @@ namespace Healtcare_Patient_Application
         public AllergyHistoryForm(int patientID, string patientName, string patientAge)
         {
             InitializeComponent();
+            LogAccessForm.FormAccessLogger.LogFormAccess(LoginSession.GlobalSession.LoginID, "Allergy History Form");
             this.PatientIDAllergy = patientID;
             PatientNameLB.Text = patientName;
             PatientAgeLB.Text = patientAge;
@@ -181,6 +182,8 @@ namespace Healtcare_Patient_Application
         {
             Add_New_Rec = true;
             SetEditMode();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Allergy History Form",
+                "User clicked on the Add Button");
 
         }
 
@@ -188,6 +191,8 @@ namespace Healtcare_Patient_Application
         {
             Add_New_Rec = false;
             SetEditMode();
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Allergy History Form",
+                "User clicked on the Modify Button");
 
         }
 
@@ -206,6 +211,9 @@ namespace Healtcare_Patient_Application
                 MessageBox.Show("No changes to undo.");
             }
 
+            LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Allergy History Form",
+                "User clicked on the UnDo Button");
+
         }
 
         private void DeleteAllergyRecordBT_Click(object sender, EventArgs e)
@@ -214,6 +222,8 @@ namespace Healtcare_Patient_Application
             {
                 AllergyDBOperations.DeleteAllergyHistoryInfo(this);
                 SetViewMode();
+                LogAccessForm.LogUserAction(LoginSession.GlobalSession.LoginID, "Allergy History Form",
+                "User deleted a Allergy History Record");
             }
             else
             {
