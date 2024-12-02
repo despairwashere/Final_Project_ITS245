@@ -408,5 +408,50 @@ namespace Healtcare_Patient_Application
             this.Hide();
         }
 
+        private void btnGeneralMedical_Click(object sender, EventArgs e)
+        {
+            DateTime dateOfBirth = dtpDateOfBirth.Value;
+
+            // Calculate age in years
+            int age = DateTime.Now.Year - dateOfBirth.Year;
+
+            // Adjust if the birthday hasn't occurred yet this year
+            if (DateTime.Now < dateOfBirth.AddYears(age))
+            {
+                age--;
+            }
+            patientAge = age.ToString();
+
+            patientName = $"{txtFirstName.Text} {txtMiddleName.Text} {txtLastName.Text}";
+            GMH form = new GMH();
+            form.PatientID = Convert.ToString(_patientId.Value);
+            form.PatientName = patientName;
+            form.PatientAge = patientAge;
+            form.Show();
+            this.Hide();
+        }
+
+        private void btnFamilyHistory_Click(object sender, EventArgs e)
+        {
+            DateTime dateOfBirth = dtpDateOfBirth.Value;
+
+            // Calculate age in years
+            int age = DateTime.Now.Year - dateOfBirth.Year;
+
+            // Adjust if the birthday hasn't occurred yet this year
+            if (DateTime.Now < dateOfBirth.AddYears(age))
+            {
+                age--;
+            }
+            patientAge = age.ToString();
+
+            patientName = $"{txtFirstName.Text} {txtMiddleName.Text} {txtLastName.Text}";
+            Family_History_Form form = new Family_History_Form();
+            form.PatientIDFB = Convert.ToString(_patientId.Value);
+            form.PatientNameFB = patientName;
+            form.PatientAgeFB = patientAge;
+            form.Show();
+            this.Hide();
+        }
     }
 }
