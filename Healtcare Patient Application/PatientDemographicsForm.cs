@@ -18,6 +18,8 @@ namespace Healtcare_Patient_Application
         private int? _patientId = null;
         private bool _isViewMode = false; // Indicates if the form is in View mode
         private bool _isModifyMode = false; // Indicates if the form is in Modify mode
+        private string patientName;
+        private string patientAge;
 
 
         public PatientDemographicsForm(int? patientId = null, bool isViewMode = false, bool isModifyMode = false)
@@ -93,7 +95,7 @@ namespace Healtcare_Patient_Application
                                 txtPatientID.Text = reader["patientId"].ToString();
                                 txtFirstName.Text = reader["PtFirstName"].ToString();
                                 txtMiddleName.Text = reader["PtMiddleInitial"].ToString();
-                                txtLastName.Text = reader["PtLastName"].ToString();
+                                txtLastName.Text = reader["PtLastName"].ToString(); 
                                 cboGender.SelectedItem = reader["Gender"].ToString();
                                 dtpDateOfBirth.Value = Convert.ToDateTime(reader["DOB"]);
                                 txtSSN.Text = reader["SSN"].ToString();
@@ -133,6 +135,7 @@ namespace Healtcare_Patient_Application
                 MessageBox.Show($"Error loading patient data: {ex.Message}");
             }
         }
+      
         private void btnModify_Click(object sender, EventArgs e)
         {
             // Enable Modify mode dynamically
@@ -387,8 +390,19 @@ namespace Healtcare_Patient_Application
 
         private void btnAllergyRecords_Click(object sender, EventArgs e)
         {
-            StorePatientDetails();
-            AllergyHistoryForm allergyform = new AllergyHistoryForm(patientId, patientName, patientAge);
+            DateTime dateOfBirth = dtpDateOfBirth.Value;
+
+            // Calculate age in years
+            int age = DateTime.Now.Year - dateOfBirth.Year;
+
+            // Adjust if the birthday hasn't occurred yet this year
+            if (DateTime.Now < dateOfBirth.AddYears(age))
+            {
+                age--;
+            }
+            patientAge = age.ToString();
+            patientName = $"{txtFirstName.Text} {txtMiddleName.Text} {txtLastName.Text}";
+            AllergyHistoryForm allergyform = new AllergyHistoryForm(_patientId.Value, patientName, patientAge);
             allergyform.Show();
             this.Hide();
         }

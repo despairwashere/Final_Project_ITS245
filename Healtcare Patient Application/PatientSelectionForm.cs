@@ -24,9 +24,6 @@ namespace Healtcare_Patient_Application
 
 
 
-
-
-
         public PatientSelectionForm()
         {
             InitializeComponent();

@@ -65,6 +65,7 @@ namespace Healtcare_Patient_Application
             SetViewMode();
             LoadAllergyHistory();
             
+            
 
         }
 
