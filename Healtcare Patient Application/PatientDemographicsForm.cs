@@ -63,6 +63,21 @@ namespace Healtcare_Patient_Application
                                 txtCity.Text = reader["HomeCity"].ToString();
                                 cboState.SelectedItem = reader["HomeState/Province/Region"].ToString();
                                 txtZipCode.Text = reader["HomeZip"].ToString();
+                                txtPreviousLastName.Text = reader["PtPreviousLastName"].ToString() ;
+                                txtSuffix.Text = reader["Suffix"].ToString();
+                                txtCountry.Text = reader["Country"].ToString();
+                                txtCitizenship.Text = reader["Citizenship"].ToString();
+                                txtEthnicAssociation.Text = reader["EthnicAssociation"].ToString();
+                                txtReligion.Text = reader["Religion"].ToString();
+                                txtMaritalStatus.Text = reader["MaritalStatus"].ToString();
+                                txtEmploymentStatus.Text = reader["EmploymentStatus"].ToString();
+                                txtDateOfExpire.Text = reader["DateofExpire"].ToString();
+                                txtReferral.Text = reader["Referral"].ToString();
+                                txtNextOfKin.Text = reader["NextOfKin"].ToString();
+                                txtNextOfKinRelationshipToPatient.Text = reader["NextOfKinRelationshipToPatient"].ToString();
+                                txtCurrentPrimaryHCPId.Text = reader["CurrentPrimaryHCPId"].ToString();
+                                dtpDateEntered.Value = Convert.ToDateTime(reader["DateEntered"]);
+                                txtComments.Text = reader["Comments"].ToString();
                                 //txtEmergencyContactName.Text = reader["emergencyContactName"].ToString();
                                 //txtEmergencyContactRelationship.Text = reader["emergencyContactRelationship"].ToString();
                                 //txtEmergencyContactPhone.Text = reader["EmergencyPhoneNumber"].ToString();
@@ -345,6 +360,16 @@ namespace Healtcare_Patient_Application
         }
 
         private void PatientDemographicsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
