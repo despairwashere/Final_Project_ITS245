@@ -99,7 +99,7 @@ namespace Healtcare_Patient_Application.DataOperations
                         command.Parameters.AddWithValue("p_AllergyDescription", GetParameterValue(form.Allergy_Description));
 
                         command.Parameters.AddWithValue("p_AllergyStartDate", Convert.ToString(form.AllergyStartDate));
-                        command.Parameters.AddWithValue("p_AllergyEndDate", Convert.ToString(form.AllergyEndDate));
+                        command.Parameters.AddWithValue("p_AllergyEndDate", GetParameterValue(form.AllergyEndDate));
                         
 
 

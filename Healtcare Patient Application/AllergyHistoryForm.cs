@@ -31,10 +31,10 @@ namespace Healtcare_Patient_Application
             set { AllergyStartDateDTP.Value = value; }
         }
 
-        public DateTime AllergyEndDate
+        public string AllergyEndDate
         {
-            get { return AllergyEndDateDTP.Value; }
-            set { AllergyEndDateDTP.Value = value; }
+            get { return txtAllergyEndDate.Text; }
+            set { txtAllergyEndDate.Text = value; }
         }
 
         public bool Deleted
@@ -80,7 +80,7 @@ namespace Healtcare_Patient_Application
                 txtAllergen_Text.Text = row.Cells["Allergen"].Value.ToString();
                 txtAllergyDescription_Text.Text = row.Cells["AllergyDescription"].Value.ToString();
                 AllergyStartDateDTP.Value = Convert.ToDateTime(row.Cells["AllergyStartDate"].Value);
-                AllergyEndDateDTP.Value = Convert.ToDateTime(row.Cells["AllergyEndDate"].Value);
+                txtAllergyEndDate.Text = row.Cells["AllergyEndDate"].Value.ToString();
 
                 allergyID = Convert.ToInt32(row.Cells["AllergyID"].Value);
 
@@ -198,7 +198,7 @@ namespace Healtcare_Patient_Application
                 txtAllergen_Text.Text = originalValues[0];
                 txtAllergyDescription_Text.Text = originalValues[1];
                 AllergyStartDateDTP.Value = DateTime.Parse(originalValues[2]);
-                AllergyEndDateDTP.Value = DateTime.Parse(originalValues[3]);
+                txtAllergyEndDate.Text = originalValues[3];
                
             }
             else
@@ -235,9 +235,9 @@ namespace Healtcare_Patient_Application
             AllergyStartDateDTP.BackColor = Color.LightGray;
             AllergyStartDateDTP.Value = DateTime.Now;
 
-            AllergyEndDateDTP.Enabled = false;
-            AllergyEndDateDTP.BackColor = Color.LightGray;
-            AllergyEndDateDTP.Value = DateTime.Now;
+            txtAllergyEndDate.Enabled = false;
+            txtAllergyEndDate.BackColor = Color.LightGray;
+            txtAllergyEndDate.Clear();
 
             txtAllergyDescription_Text.Enabled = false;
             txtAllergyDescription_Text.BackColor = Color.LightGray;
@@ -262,8 +262,8 @@ namespace Healtcare_Patient_Application
             AllergyStartDateDTP.BackColor = Color.White;
             
 
-            AllergyEndDateDTP.Enabled = true;
-            AllergyEndDateDTP.BackColor = Color.White;
+            txtAllergyEndDate.Enabled = true;
+            txtAllergyEndDate.BackColor = Color.White;
             
 
             txtAllergyDescription_Text.Enabled = true;
@@ -285,7 +285,7 @@ namespace Healtcare_Patient_Application
             originalValues.Add(txtAllergen_Text.Text);
             originalValues.Add(txtAllergyDescription_Text.Text);
             originalValues.Add(Convert.ToString(AllergyStartDateDTP.Value));
-            originalValues.Add(Convert.ToString(AllergyEndDateDTP.Value));
+            originalValues.Add(txtAllergyEndDate.Text);
 
 
 
