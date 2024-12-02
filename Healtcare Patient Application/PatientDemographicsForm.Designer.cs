@@ -59,23 +59,8 @@
             this.txtZipCode = new System.Windows.Forms.TextBox();
             this.cboState = new System.Windows.Forms.ComboBox();
             this.lblEmergencyContactName = new System.Windows.Forms.Label();
-            this.txtEmergencyContactName = new System.Windows.Forms.TextBox();
-            this.lblEmergencyContactRelationship = new System.Windows.Forms.Label();
-            this.txtEmergencyContactRelationship = new System.Windows.Forms.TextBox();
             this.lblEmergencyContactPhone = new System.Windows.Forms.Label();
             this.txtEmergencyContactPhone = new System.Windows.Forms.TextBox();
-            this.lblInsuranceProvider = new System.Windows.Forms.Label();
-            this.txtInsuranceProvider = new System.Windows.Forms.TextBox();
-            this.lblPolicyNumber = new System.Windows.Forms.Label();
-            this.txtPolicyNumber = new System.Windows.Forms.TextBox();
-            this.lblGroupNumber = new System.Windows.Forms.Label();
-            this.txtGroupNumber = new System.Windows.Forms.TextBox();
-            this.lblKnownAllergies = new System.Windows.Forms.Label();
-            this.txtAllergies = new System.Windows.Forms.TextBox();
-            this.lblCurrentMedications = new System.Windows.Forms.Label();
-            this.txtMedications = new System.Windows.Forms.TextBox();
-            this.lblMedicalConditions = new System.Windows.Forms.Label();
-            this.txtMedicalConditions = new System.Windows.Forms.TextBox();
             this.lblPatientID = new System.Windows.Forms.Label();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -490,39 +475,14 @@
             this.lblEmergencyContactName.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmergencyContactName.Location = new System.Drawing.Point(1479, 22);
             this.lblEmergencyContactName.Name = "lblEmergencyContactName";
-            this.lblEmergencyContactName.Size = new System.Drawing.Size(192, 18);
+            this.lblEmergencyContactName.Size = new System.Drawing.Size(0, 18);
             this.lblEmergencyContactName.TabIndex = 33;
-            this.lblEmergencyContactName.Text = "Emergency Contact Name";
-            // 
-            // txtEmergencyContactName
-            // 
-            this.txtEmergencyContactName.Location = new System.Drawing.Point(1484, 45);
-            this.txtEmergencyContactName.Name = "txtEmergencyContactName";
-            this.txtEmergencyContactName.Size = new System.Drawing.Size(318, 26);
-            this.txtEmergencyContactName.TabIndex = 34;
-            // 
-            // lblEmergencyContactRelationship
-            // 
-            this.lblEmergencyContactRelationship.AutoSize = true;
-            this.lblEmergencyContactRelationship.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmergencyContactRelationship.Location = new System.Drawing.Point(1484, 78);
-            this.lblEmergencyContactRelationship.Name = "lblEmergencyContactRelationship";
-            this.lblEmergencyContactRelationship.Size = new System.Drawing.Size(237, 18);
-            this.lblEmergencyContactRelationship.TabIndex = 35;
-            this.lblEmergencyContactRelationship.Text = "Emergency Contact Relationship";
-            // 
-            // txtEmergencyContactRelationship
-            // 
-            this.txtEmergencyContactRelationship.Location = new System.Drawing.Point(1484, 100);
-            this.txtEmergencyContactRelationship.Name = "txtEmergencyContactRelationship";
-            this.txtEmergencyContactRelationship.Size = new System.Drawing.Size(318, 26);
-            this.txtEmergencyContactRelationship.TabIndex = 36;
             // 
             // lblEmergencyContactPhone
             // 
             this.lblEmergencyContactPhone.AutoSize = true;
             this.lblEmergencyContactPhone.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmergencyContactPhone.Location = new System.Drawing.Point(1484, 132);
+            this.lblEmergencyContactPhone.Location = new System.Drawing.Point(1479, 22);
             this.lblEmergencyContactPhone.Name = "lblEmergencyContactPhone";
             this.lblEmergencyContactPhone.Size = new System.Drawing.Size(194, 18);
             this.lblEmergencyContactPhone.TabIndex = 37;
@@ -530,112 +490,10 @@
             // 
             // txtEmergencyContactPhone
             // 
-            this.txtEmergencyContactPhone.Location = new System.Drawing.Point(1484, 155);
+            this.txtEmergencyContactPhone.Location = new System.Drawing.Point(1482, 45);
             this.txtEmergencyContactPhone.Name = "txtEmergencyContactPhone";
             this.txtEmergencyContactPhone.Size = new System.Drawing.Size(318, 26);
             this.txtEmergencyContactPhone.TabIndex = 38;
-            // 
-            // lblInsuranceProvider
-            // 
-            this.lblInsuranceProvider.AutoSize = true;
-            this.lblInsuranceProvider.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInsuranceProvider.Location = new System.Drawing.Point(1484, 189);
-            this.lblInsuranceProvider.Name = "lblInsuranceProvider";
-            this.lblInsuranceProvider.Size = new System.Drawing.Size(145, 18);
-            this.lblInsuranceProvider.TabIndex = 39;
-            this.lblInsuranceProvider.Text = "Insurance Provider";
-            // 
-            // txtInsuranceProvider
-            // 
-            this.txtInsuranceProvider.Location = new System.Drawing.Point(1484, 215);
-            this.txtInsuranceProvider.Name = "txtInsuranceProvider";
-            this.txtInsuranceProvider.Size = new System.Drawing.Size(318, 26);
-            this.txtInsuranceProvider.TabIndex = 40;
-            // 
-            // lblPolicyNumber
-            // 
-            this.lblPolicyNumber.AutoSize = true;
-            this.lblPolicyNumber.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPolicyNumber.Location = new System.Drawing.Point(1484, 249);
-            this.lblPolicyNumber.Name = "lblPolicyNumber";
-            this.lblPolicyNumber.Size = new System.Drawing.Size(113, 18);
-            this.lblPolicyNumber.TabIndex = 41;
-            this.lblPolicyNumber.Text = "Policy Number";
-            // 
-            // txtPolicyNumber
-            // 
-            this.txtPolicyNumber.Location = new System.Drawing.Point(1484, 272);
-            this.txtPolicyNumber.Name = "txtPolicyNumber";
-            this.txtPolicyNumber.Size = new System.Drawing.Size(318, 26);
-            this.txtPolicyNumber.TabIndex = 42;
-            // 
-            // lblGroupNumber
-            // 
-            this.lblGroupNumber.AutoSize = true;
-            this.lblGroupNumber.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroupNumber.Location = new System.Drawing.Point(1484, 306);
-            this.lblGroupNumber.Name = "lblGroupNumber";
-            this.lblGroupNumber.Size = new System.Drawing.Size(116, 18);
-            this.lblGroupNumber.TabIndex = 43;
-            this.lblGroupNumber.Text = "Group Number";
-            // 
-            // txtGroupNumber
-            // 
-            this.txtGroupNumber.Location = new System.Drawing.Point(1484, 328);
-            this.txtGroupNumber.Name = "txtGroupNumber";
-            this.txtGroupNumber.Size = new System.Drawing.Size(318, 26);
-            this.txtGroupNumber.TabIndex = 44;
-            // 
-            // lblKnownAllergies
-            // 
-            this.lblKnownAllergies.AutoSize = true;
-            this.lblKnownAllergies.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKnownAllergies.Location = new System.Drawing.Point(1484, 362);
-            this.lblKnownAllergies.Name = "lblKnownAllergies";
-            this.lblKnownAllergies.Size = new System.Drawing.Size(122, 18);
-            this.lblKnownAllergies.TabIndex = 45;
-            this.lblKnownAllergies.Text = "Known Allergies";
-            // 
-            // txtAllergies
-            // 
-            this.txtAllergies.Location = new System.Drawing.Point(1484, 385);
-            this.txtAllergies.Name = "txtAllergies";
-            this.txtAllergies.Size = new System.Drawing.Size(318, 26);
-            this.txtAllergies.TabIndex = 46;
-            // 
-            // lblCurrentMedications
-            // 
-            this.lblCurrentMedications.AutoSize = true;
-            this.lblCurrentMedications.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentMedications.Location = new System.Drawing.Point(1484, 418);
-            this.lblCurrentMedications.Name = "lblCurrentMedications";
-            this.lblCurrentMedications.Size = new System.Drawing.Size(153, 18);
-            this.lblCurrentMedications.TabIndex = 47;
-            this.lblCurrentMedications.Text = "Current Medications";
-            // 
-            // txtMedications
-            // 
-            this.txtMedications.Location = new System.Drawing.Point(1484, 442);
-            this.txtMedications.Name = "txtMedications";
-            this.txtMedications.Size = new System.Drawing.Size(318, 26);
-            this.txtMedications.TabIndex = 48;
-            // 
-            // lblMedicalConditions
-            // 
-            this.lblMedicalConditions.AutoSize = true;
-            this.lblMedicalConditions.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicalConditions.Location = new System.Drawing.Point(1484, 475);
-            this.lblMedicalConditions.Name = "lblMedicalConditions";
-            this.lblMedicalConditions.Size = new System.Drawing.Size(141, 18);
-            this.lblMedicalConditions.TabIndex = 49;
-            this.lblMedicalConditions.Text = "Medical Conditions";
-            // 
-            // txtMedicalConditions
-            // 
-            this.txtMedicalConditions.Location = new System.Drawing.Point(1484, 498);
-            this.txtMedicalConditions.Name = "txtMedicalConditions";
-            this.txtMedicalConditions.Size = new System.Drawing.Size(318, 26);
-            this.txtMedicalConditions.TabIndex = 50;
             // 
             // lblPatientID
             // 
@@ -658,7 +516,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1483, 527);
+            this.label2.Location = new System.Drawing.Point(1479, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 18);
             this.label2.TabIndex = 53;
@@ -683,7 +541,7 @@
             // 
             // txtEthnicAssociation
             // 
-            this.txtEthnicAssociation.Location = new System.Drawing.Point(1484, 548);
+            this.txtEthnicAssociation.Location = new System.Drawing.Point(1482, 94);
             this.txtEthnicAssociation.Name = "txtEthnicAssociation";
             this.txtEthnicAssociation.Size = new System.Drawing.Size(318, 26);
             this.txtEthnicAssociation.TabIndex = 56;
@@ -693,7 +551,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(852, 98);
+            this.label4.Location = new System.Drawing.Point(1477, 430);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 18);
             this.label4.TabIndex = 57;
@@ -701,9 +559,9 @@
             // 
             // txtHospitalMR
             // 
-            this.txtHospitalMR.Location = new System.Drawing.Point(807, 123);
+            this.txtHospitalMR.Location = new System.Drawing.Point(1480, 451);
             this.txtHospitalMR.Name = "txtHospitalMR";
-            this.txtHospitalMR.Size = new System.Drawing.Size(204, 26);
+            this.txtHospitalMR.Size = new System.Drawing.Size(320, 26);
             this.txtHospitalMR.TabIndex = 58;
             // 
             // label5
@@ -727,7 +585,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(852, 152);
+            this.label6.Location = new System.Drawing.Point(1477, 532);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 18);
             this.label6.TabIndex = 61;
@@ -735,16 +593,16 @@
             // 
             // txtDateOfExpire
             // 
-            this.txtDateOfExpire.Location = new System.Drawing.Point(807, 173);
+            this.txtDateOfExpire.Location = new System.Drawing.Point(1480, 557);
             this.txtDateOfExpire.Name = "txtDateOfExpire";
-            this.txtDateOfExpire.Size = new System.Drawing.Size(204, 26);
+            this.txtDateOfExpire.Size = new System.Drawing.Size(320, 26);
             this.txtDateOfExpire.TabIndex = 62;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1481, 627);
+            this.label7.Location = new System.Drawing.Point(1483, 181);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 18);
             this.label7.TabIndex = 63;
@@ -753,7 +611,7 @@
             // 
             // txtReferral
             // 
-            this.txtReferral.Location = new System.Drawing.Point(1482, 648);
+            this.txtReferral.Location = new System.Drawing.Point(1480, 202);
             this.txtReferral.Name = "txtReferral";
             this.txtReferral.Size = new System.Drawing.Size(320, 26);
             this.txtReferral.TabIndex = 64;
@@ -762,7 +620,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1484, 577);
+            this.label8.Location = new System.Drawing.Point(1483, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 18);
             this.label8.TabIndex = 65;
@@ -770,7 +628,7 @@
             // 
             // txtReligion
             // 
-            this.txtReligion.Location = new System.Drawing.Point(1482, 598);
+            this.txtReligion.Location = new System.Drawing.Point(1482, 148);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.Size = new System.Drawing.Size(320, 26);
             this.txtReligion.TabIndex = 66;
@@ -779,15 +637,16 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1481, 679);
+            this.label9.Location = new System.Drawing.Point(1477, 227);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 18);
             this.label9.TabIndex = 67;
             this.label9.Text = "Marital Status";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtMaritalStatus
             // 
-            this.txtMaritalStatus.Location = new System.Drawing.Point(1482, 696);
+            this.txtMaritalStatus.Location = new System.Drawing.Point(1480, 249);
             this.txtMaritalStatus.Name = "txtMaritalStatus";
             this.txtMaritalStatus.Size = new System.Drawing.Size(320, 26);
             this.txtMaritalStatus.TabIndex = 68;
@@ -796,15 +655,16 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1481, 725);
+            this.label10.Location = new System.Drawing.Point(1477, 281);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 18);
             this.label10.TabIndex = 69;
             this.label10.Text = "Employment Status";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtEmploymentStatus
             // 
-            this.txtEmploymentStatus.Location = new System.Drawing.Point(1482, 746);
+            this.txtEmploymentStatus.Location = new System.Drawing.Point(1480, 302);
             this.txtEmploymentStatus.Name = "txtEmploymentStatus";
             this.txtEmploymentStatus.Size = new System.Drawing.Size(320, 26);
             this.txtEmploymentStatus.TabIndex = 70;
@@ -847,7 +707,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1481, 775);
+            this.label13.Location = new System.Drawing.Point(1479, 333);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(92, 18);
             this.label13.TabIndex = 75;
@@ -855,7 +715,7 @@
             // 
             // txtNextOfKin
             // 
-            this.txtNextOfKin.Location = new System.Drawing.Point(1482, 792);
+            this.txtNextOfKin.Location = new System.Drawing.Point(1480, 351);
             this.txtNextOfKin.Name = "txtNextOfKin";
             this.txtNextOfKin.Size = new System.Drawing.Size(320, 26);
             this.txtNextOfKin.TabIndex = 76;
@@ -864,7 +724,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1479, 821);
+            this.label14.Location = new System.Drawing.Point(1477, 380);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(256, 18);
             this.label14.TabIndex = 77;
@@ -872,7 +732,7 @@
             // 
             // txtNextOfKinRelationshipToPatient
             // 
-            this.txtNextOfKinRelationshipToPatient.Location = new System.Drawing.Point(1482, 842);
+            this.txtNextOfKinRelationshipToPatient.Location = new System.Drawing.Point(1480, 401);
             this.txtNextOfKinRelationshipToPatient.Name = "txtNextOfKinRelationshipToPatient";
             this.txtNextOfKinRelationshipToPatient.Size = new System.Drawing.Size(320, 26);
             this.txtNextOfKinRelationshipToPatient.TabIndex = 78;
@@ -899,7 +759,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(771, 202);
+            this.label15.Location = new System.Drawing.Point(1477, 480);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(303, 18);
             this.label15.TabIndex = 81;
@@ -907,16 +767,16 @@
             // 
             // txtCurrentPrimaryHCPId
             // 
-            this.txtCurrentPrimaryHCPId.Location = new System.Drawing.Point(807, 223);
+            this.txtCurrentPrimaryHCPId.Location = new System.Drawing.Point(1480, 501);
             this.txtCurrentPrimaryHCPId.Name = "txtCurrentPrimaryHCPId";
-            this.txtCurrentPrimaryHCPId.Size = new System.Drawing.Size(204, 26);
+            this.txtCurrentPrimaryHCPId.Size = new System.Drawing.Size(320, 26);
             this.txtCurrentPrimaryHCPId.TabIndex = 82;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(859, 252);
+            this.label16.Location = new System.Drawing.Point(1481, 591);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(102, 18);
             this.label16.TabIndex = 83;
@@ -924,7 +784,7 @@
             // 
             // dtpDateEntered
             // 
-            this.dtpDateEntered.Location = new System.Drawing.Point(774, 273);
+            this.dtpDateEntered.Location = new System.Drawing.Point(1480, 614);
             this.dtpDateEntered.Name = "dtpDateEntered";
             this.dtpDateEntered.Size = new System.Drawing.Size(267, 26);
             this.dtpDateEntered.TabIndex = 84;
@@ -989,23 +849,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPatientID);
             this.Controls.Add(this.lblPatientID);
-            this.Controls.Add(this.txtMedicalConditions);
-            this.Controls.Add(this.lblMedicalConditions);
-            this.Controls.Add(this.txtMedications);
-            this.Controls.Add(this.lblCurrentMedications);
-            this.Controls.Add(this.txtAllergies);
-            this.Controls.Add(this.lblKnownAllergies);
-            this.Controls.Add(this.txtGroupNumber);
-            this.Controls.Add(this.lblGroupNumber);
-            this.Controls.Add(this.txtPolicyNumber);
-            this.Controls.Add(this.lblPolicyNumber);
-            this.Controls.Add(this.txtInsuranceProvider);
-            this.Controls.Add(this.lblInsuranceProvider);
             this.Controls.Add(this.txtEmergencyContactPhone);
             this.Controls.Add(this.lblEmergencyContactPhone);
-            this.Controls.Add(this.txtEmergencyContactRelationship);
-            this.Controls.Add(this.lblEmergencyContactRelationship);
-            this.Controls.Add(this.txtEmergencyContactName);
             this.Controls.Add(this.lblEmergencyContactName);
             this.Controls.Add(this.cboState);
             this.Controls.Add(this.txtZipCode);
@@ -1078,23 +923,8 @@
         private System.Windows.Forms.TextBox txtZipCode;
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label lblEmergencyContactName;
-        private System.Windows.Forms.TextBox txtEmergencyContactName;
-        private System.Windows.Forms.Label lblEmergencyContactRelationship;
-        private System.Windows.Forms.TextBox txtEmergencyContactRelationship;
         private System.Windows.Forms.Label lblEmergencyContactPhone;
         private System.Windows.Forms.TextBox txtEmergencyContactPhone;
-        private System.Windows.Forms.Label lblInsuranceProvider;
-        private System.Windows.Forms.TextBox txtInsuranceProvider;
-        private System.Windows.Forms.Label lblPolicyNumber;
-        private System.Windows.Forms.TextBox txtPolicyNumber;
-        private System.Windows.Forms.Label lblGroupNumber;
-        private System.Windows.Forms.TextBox txtGroupNumber;
-        private System.Windows.Forms.Label lblKnownAllergies;
-        private System.Windows.Forms.TextBox txtAllergies;
-        private System.Windows.Forms.Label lblCurrentMedications;
-        private System.Windows.Forms.TextBox txtMedications;
-        private System.Windows.Forms.Label lblMedicalConditions;
-        private System.Windows.Forms.TextBox txtMedicalConditions;
         private System.Windows.Forms.Label lblPatientID;
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.Label label2;

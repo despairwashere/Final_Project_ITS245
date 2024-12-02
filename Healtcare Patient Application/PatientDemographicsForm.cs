@@ -80,7 +80,7 @@ namespace Healtcare_Patient_Application
                                 txtComments.Text = reader["Comments"].ToString();
                                 //txtEmergencyContactName.Text = reader["emergencyContactName"].ToString();
                                 //txtEmergencyContactRelationship.Text = reader["emergencyContactRelationship"].ToString();
-                                //txtEmergencyContactPhone.Text = reader["EmergencyPhoneNumber"].ToString();
+                                txtEmergencyContactPhone.Text = reader["EmergencyPhoneNumber"].ToString();
                                 //txtInsuranceProvider.Text = reader["insuranceProvider"].ToString();
                                 //txtPolicyNumber.Text = reader["policyNumber"].ToString();                       // Match to the specific column in Patient Demographics
                                 //txtGroupNumber.Text = reader["groupNumber"].ToString();
@@ -370,6 +370,16 @@ namespace Healtcare_Patient_Application
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }
