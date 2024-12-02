@@ -78,15 +78,7 @@ namespace Healtcare_Patient_Application
                                 txtCurrentPrimaryHCPId.Text = reader["CurrentPrimaryHCPId"].ToString();
                                 dtpDateEntered.Value = Convert.ToDateTime(reader["DateEntered"]);
                                 txtComments.Text = reader["Comments"].ToString();
-                                //txtEmergencyContactName.Text = reader["emergencyContactName"].ToString();
-                                //txtEmergencyContactRelationship.Text = reader["emergencyContactRelationship"].ToString();
                                 txtEmergencyContactPhone.Text = reader["EmergencyPhoneNumber"].ToString();
-                                //txtInsuranceProvider.Text = reader["insuranceProvider"].ToString();
-                                //txtPolicyNumber.Text = reader["policyNumber"].ToString();                       // Match to the specific column in Patient Demographics
-                                //txtGroupNumber.Text = reader["groupNumber"].ToString();
-                                //txtAllergies.Text = reader["allergies"].ToString();
-                                //txtMedications.Text = reader["medications"].ToString();
-                                //txtMedicalConditions.Text = reader["medicalConditions"].ToString();
                             }
                             else
                             {
@@ -129,25 +121,13 @@ namespace Healtcare_Patient_Application
             string gender = cboGender.SelectedItem.ToString();
             DateTime dateOfBirth = dtpDateOfBirth.Value;
             string ssn = txtSSN.Text;
-
             string phoneNumber = txtPhoneNumber.Text;
             string email = txtEmailAddress.Text;
             string address = txtAddress.Text;
             string city = txtCity.Text;
             string state = cboState.SelectedItem.ToString();
             string zipCode = txtZipCode.Text;
-
-            string emergencyContactName = txtEmergencyContactName.Text;
-            string emergencyContactRelationship = txtEmergencyContactRelationship.Text;
             string emergencyContactPhone = txtEmergencyContactPhone.Text;
-
-            string insuranceProvider = txtInsuranceProvider.Text;
-            string policyNumber = txtPolicyNumber.Text;
-            string groupNumber = txtGroupNumber.Text;
-
-            string allergies = txtAllergies.Text;
-            string medications = txtMedications.Text;
-            string medicalConditions = txtMedicalConditions.Text;
 
             
         }
@@ -169,15 +149,7 @@ namespace Healtcare_Patient_Application
                 string city = txtCity.Text;
                 string state = cboState.SelectedItem.ToString();
                 string zipCode = txtZipCode.Text;
-                string emergencyContactName = txtEmergencyContactName.Text;
-                string emergencyContactRelationship = txtEmergencyContactRelationship.Text;
                 string emergencyContactPhone = txtEmergencyContactPhone.Text;
-                string insuranceProvider = txtInsuranceProvider.Text;
-                string policyNumber = txtPolicyNumber.Text;
-                string groupNumber = txtGroupNumber.Text;
-                string allergies = txtAllergies.Text;
-                string medications = txtMedications.Text;
-                string medicalConditions = txtMedicalConditions.Text;
 
                 // Check if PatientID exists (assuming it's either a TextBox or a hidden field)
                 int patientId;
@@ -196,10 +168,7 @@ namespace Healtcare_Patient_Application
                       SET firstName = @firstName, middleName = @middleName, lastName = @lastName, gender = @gender,
                           dateOfBirth = @dateOfBirth, ssn = @ssn, phoneNumber = @phoneNumber, emailAddress = @emailAddress,
                           address = @address, city = @city, state = @state, zipCode = @zipCode,
-                          emergencyContactName = @emergencyContactName, emergencyContactRelationship = @emergencyContactRelationship,
-                          emergencyContactPhone = @emergencyContactPhone, insuranceProvider = @insuranceProvider,
-                          policyNumber = @policyNumber, groupNumber = @groupNumber, allergies = @allergies,
-                          medications = @medications, medicalConditions = @medicalConditions
+                          emergencyContactPhone = @emergencyContactPhone
                       WHERE patientId = @patientId";
                 }
                 else
@@ -207,13 +176,9 @@ namespace Healtcare_Patient_Application
                     // Insert new patient record
                     query = @"INSERT INTO patientdemographics 
                       (firstName, middleName, lastName, gender, dateOfBirth, ssn, phoneNumber, emailAddress, 
-                       address, city, state, zipCode, emergencyContactName, emergencyContactRelationship, 
-                       emergencyContactPhone, insuranceProvider, policyNumber, groupNumber, allergies, 
-                       medications, medicalConditions) 
+                       address, city, state, zipCode,emergencyContactPhone) 
                       VALUES (@firstName, @middleName, @lastName, @gender, @dateOfBirth, @ssn, @phoneNumber, 
-                              @emailAddress, @address, @city, @state, @zipCode, @emergencyContactName, 
-                              @emergencyContactRelationship, @emergencyContactPhone, @insuranceProvider, 
-                              @policyNumber, @groupNumber, @allergies, @medications, @medicalConditions)";
+                              @emailAddress, @address, @city, @state, @zipCode,@emergencyContactPhone)";
                 }
 
                 // Create the SQL Command
@@ -235,15 +200,8 @@ namespace Healtcare_Patient_Application
                     cmd.Parameters.AddWithValue("@city", city);
                     cmd.Parameters.AddWithValue("@state", state);
                     cmd.Parameters.AddWithValue("@zipCode", zipCode);
-                    cmd.Parameters.AddWithValue("@emergencyContactName", emergencyContactName);
-                    cmd.Parameters.AddWithValue("@emergencyContactRelationship", emergencyContactRelationship);
                     cmd.Parameters.AddWithValue("@emergencyContactPhone", emergencyContactPhone);
-                    cmd.Parameters.AddWithValue("@insuranceProvider", insuranceProvider);
-                    cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
-                    cmd.Parameters.AddWithValue("@groupNumber", groupNumber);
-                    cmd.Parameters.AddWithValue("@allergies", allergies);
-                    cmd.Parameters.AddWithValue("@medications", medications);
-                    cmd.Parameters.AddWithValue("@medicalConditions", medicalConditions);
+                   
 
                     if (isEdit)
                     {
@@ -289,16 +247,8 @@ namespace Healtcare_Patient_Application
             txtCity.Clear();
             cboState.SelectedIndex = -1;
             txtZipCode.Clear();
-            txtEmergencyContactName.Clear();
-            txtEmergencyContactRelationship.Clear();
             txtEmergencyContactPhone.Clear();
-            txtInsuranceProvider.Clear();
-            txtPolicyNumber.Clear();
-            txtGroupNumber.Clear();
-            txtAllergies.Clear();
-            txtMedications.Clear();
-            txtMedicalConditions.Clear();
-            txtPatientID.Clear();  // Clear PatientID for new records
+             // Clear PatientID for new records
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
