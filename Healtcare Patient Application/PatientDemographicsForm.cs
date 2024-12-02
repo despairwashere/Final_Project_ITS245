@@ -390,10 +390,23 @@ namespace Healtcare_Patient_Application
 
         private void btnAllergyRecords_Click(object sender, EventArgs e)
         {
-            StorePatientDetails();
-            AllergyHistoryForm allergyform = new AllergyHistoryForm(patientId, patientName, patientAge);
+            DateTime dateOfBirth = dtpDateOfBirth.Value;
+
+            // Calculate age in years
+            int age = DateTime.Now.Year - dateOfBirth.Year;
+
+            // Adjust if the birthday hasn't occurred yet this year
+            if (DateTime.Now < dateOfBirth.AddYears(age))
+            {
+                age--;
+            }
+            patientAge = age.ToString();
+
+            patientName = $"{txtFirstName.Text} {txtMiddleName.Text} {txtLastName.Text}";
+            AllergyHistoryForm allergyform = new AllergyHistoryForm(_patientId.Value, patientName, patientAge);
             allergyform.Show();
             this.Hide();
         }
+
     }
 }

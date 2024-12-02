@@ -177,7 +177,7 @@
             this.btnFamilyHistory.TabIndex = 10;
             this.btnFamilyHistory.Text = "Family History";
             this.btnFamilyHistory.UseVisualStyleBackColor = true;
-            this.btnFamilyHistory.Click += new System.EventHandler(this.btnFamilyHistory_Click);
+           
             // 
             // label1
             // 
@@ -747,7 +747,7 @@
             this.btnGeneralMedical.TabIndex = 79;
             this.btnGeneralMedical.Text = "General Medical";
             this.btnGeneralMedical.UseVisualStyleBackColor = true;
-            this.btnGeneralMedical.Click += new System.EventHandler(this.btnGeneralMedical_Click);
+            
             // 
             // btnAllergyRecords
             // 
