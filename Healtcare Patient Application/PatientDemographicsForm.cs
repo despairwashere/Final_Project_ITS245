@@ -73,7 +73,7 @@ namespace Healtcare_Patient_Application
                                 txtEmploymentStatus.Text = reader["EmploymentStatus"].ToString();
                                 txtDateOfExpire.Text = reader["DateofExpire"].ToString();
                                 txtReferral.Text = reader["Referral"].ToString();
-                                txtNextOfKin.Text = reader["NextOfKin"].ToString();
+                                txtNextOfKin.Text = reader["NextOfKinID"].ToString();
                                 txtNextOfKinRelationshipToPatient.Text = reader["NextOfKinRelationshipToPatient"].ToString();
                                 txtCurrentPrimaryHCPId.Text = reader["CurrentPrimaryHCPId"].ToString();
                                 dtpDateEntered.Value = Convert.ToDateTime(reader["DateEntered"]);
@@ -202,7 +202,7 @@ namespace Healtcare_Patient_Application
                           address = @HomeAddress, city = @HomeCity, state = @HomeState/Province/Region, zipCode = @HomeZip, hosptialMR=@HospitalMR#, 
                           emergencyContactPhone = @EmergencyPhoneNumber, citizenship=@Cititzenship, ethnicAssociation=@EthnicAssociation, religion=@Religion, maritalStatus=@MaritalStatus,
                           employmentStatus=@EmploymentStatus, dateOfExpire=@DateOfExpire, referral=@Referral, currentPrimartyHCPId=@CurrentPrimaryHCPId, comments=@Comments, dateEntered=@DateEntered,
-                          nextOfKin=@NextOfKin, nextOfKinRelationshipToPatient=@NextOfKinRelationshipToPatient
+                          nextOfKin=@NextOfKinID, nextOfKinRelationshipToPatient=@NextOfKinRelationshipToPatient
                       WHERE patientId = @patientId";
                 }
                 else
@@ -214,7 +214,7 @@ namespace Healtcare_Patient_Application
                        nextOfKin, nextOfKinRelationshipToPatient) 
                       VALUES (@PtFirstName, @PtMiddleInitial, @PtLastName,@PtPreviousLastName, @Gender, @Suffix, @Country, @Citizenship, @DOB, @SSN, @PtHomePhone,@EmailAddress,
                               @HomeAddress, @HomeCity, @HomeState/Province/Region, @HomeZip, @EmergencyPhoneNumber, @EthnicAssociation, @Religion, @MaritalStatus, @EmploymentStatus, @DateOfExpire, @Referral, @CurrentPrimaryHCPId,
-                               @Comments, @DateEntered, @NextOfKin, @NextOfKinRelationshipToPatient)";
+                               @Comments, @DateEntered, @NextOfKinID, @NextOfKinRelationshipToPatient)";
                 }
 
                 // Create the SQL Command
@@ -249,7 +249,7 @@ namespace Healtcare_Patient_Application
                     cmd.Parameters.AddWithValue("@Referral", referral);
                     cmd.Parameters.AddWithValue("@CurrentPrimaryHCPId", currentPrimaryHCPId);
                     cmd.Parameters.AddWithValue("@DateEntered", dateEntered);
-                    cmd.Parameters.AddWithValue("@NextOfKin", nextOfKin);
+                    cmd.Parameters.AddWithValue("@NextOfKinID", nextOfKin);
                     cmd.Parameters.AddWithValue("@NextOfKinRelationshipToPatient", nextOfKinRelationshipToPatient);
                     cmd.Parameters.AddWithValue("@Comments", comments);
 
