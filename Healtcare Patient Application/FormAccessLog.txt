@@ -1,3 +1,33 @@
 
 
 12/2/2024 12:18:03 PM: User 1 accessed Login_Form
+12/4/2024 10:03:57 AM: User 1 accessed Login_Form
+12/4/2024 10:04:08 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:04:51 AM: User 1 performed action: User clicked the Add Button
+12/4/2024 10:06:05 AM: User 1 performed action: User saved a new Patient Demographics record
+12/4/2024 10:06:21 AM: User 1 accessed Family History Form
+12/4/2024 10:07:15 AM: User 1 accessed Login_Form
+12/4/2024 10:07:20 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:09:42 AM: User 1 accessed Login_Form
+12/4/2024 10:10:06 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:10:32 AM: User 1 performed action: User clicked the Modify Button
+12/4/2024 10:12:44 AM: User 1 accessed Login_Form
+12/4/2024 10:12:49 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:12:53 AM: User 1 performed action: User clicked the Modify Button
+12/4/2024 10:18:51 AM: User 1 accessed Login_Form
+12/4/2024 10:18:58 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:19:02 AM: User 1 performed action: User clicked the Modify Button
+12/4/2024 10:24:55 AM: User 1 accessed Login_Form
+12/4/2024 10:25:01 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:25:04 AM: User 1 performed action: User clicked the Modify Button
+12/4/2024 10:30:41 AM: User 1 accessed Login_Form
+12/4/2024 10:30:46 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:30:50 AM: User 1 performed action: User clicked the Modify Button
+12/4/2024 10:35:14 AM: User 1 accessed Login_Form
+12/4/2024 10:35:18 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:35:23 AM: User 1 performed action: User clicked the Modify Button
+12/4/2024 10:38:47 AM: User 1 accessed Login_Form
+12/4/2024 10:38:58 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:39:02 AM: User 1 performed action: User clicked the Modify Button
+12/4/2024 10:39:26 AM: User 1 accessed Patient Demographics Form
+12/4/2024 10:39:33 AM: User 1 performed action: User clicked the Add Button
