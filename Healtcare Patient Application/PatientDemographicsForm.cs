@@ -256,11 +256,37 @@ namespace Healtcare_Patient_Application
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving patient data: {ex.Message}");
+                Console.WriteLine($"Error saving patient data: {ex.Message}");
             }
+        }
+        private bool IsValidName(string name)
+        {
+            // Regular expression to match only uppercase and lowercase letters
+            return System.Text.RegularExpressions.Regex.IsMatch(name, @"^[a-zA-Z]+$");
         }
         private void AddPatientParameters(MySqlCommand cmd)
         {
+            // Validate First Name
+            if (!IsValidName(txtFirstName.Text))
+            {
+                MessageBox.Show("First Name can only contain uppercase and lowercase letters.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validate Middle Initial (can be empty, but if provided must be a single letter)
+            if (!string.IsNullOrEmpty(txtMiddleName.Text) && !IsValidName(txtMiddleName.Text))
+            {
+                MessageBox.Show("Middle Initial can only contain a single uppercase or lowercase letter.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validate Last Name
+            if (!IsValidName(txtLastName.Text))
+            {
+                MessageBox.Show("Last Name can only contain uppercase and lowercase letters.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             cmd.Parameters.AddWithValue("@PtFirstName", txtFirstName.Text);
             cmd.Parameters.AddWithValue("@PtMiddleInitial", txtMiddleName.Text);
             cmd.Parameters.AddWithValue("@PtLastName", txtLastName.Text);

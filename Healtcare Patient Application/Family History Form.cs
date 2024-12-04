@@ -53,9 +53,7 @@ namespace Healtcare_Patient_Application
         public string FamilyID {  get; set; }
         
 
-        private string patientID; // Holds patient id 
-        private string patientName;
-        private string age;
+       
         private string familyID;
         
 

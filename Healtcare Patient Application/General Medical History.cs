@@ -16,9 +16,7 @@ namespace Healtcare_Patient_Application
     {
         //This is to test Git commits
 
-        private string patientID; // Holds patient id 
-        private string patientName;
-        private string age;
+        
        
 
         public string PatientID { get; set; }
