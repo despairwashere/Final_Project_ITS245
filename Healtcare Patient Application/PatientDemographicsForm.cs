@@ -58,7 +58,7 @@ namespace Healtcare_Patient_Application
                 SetControlsReadOnly(true); // Disable editing
                 btnAdd.Enabled = false;
                 btnSave.Enabled = false;
-                btnDelete.Enabled = false;
+                btnDelete.Enabled = true;
                 BTNUnDo.Enabled = false;
                 btnModify.Enabled = true; // Enable Modify button
                 txtPatientID.ReadOnly = true;
@@ -159,7 +159,7 @@ namespace Healtcare_Patient_Application
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading patient data: {ex.Message}");
+                Console.WriteLine($"Error loading patient data: {ex.Message}");
             }
         }
       
@@ -386,13 +386,13 @@ namespace Healtcare_Patient_Application
                     if (dialogResult == DialogResult.Yes)
                     {
                         // Set up the DELETE SQL query
-                        string query = "DELETE FROM patientdemographics WHERE patientId = @patientId";
+                        string query = "UPDATE patientdemographics SET deleted = 1 WHERE patientId = @patientId";
 
                         // Execute the query
-                        using (SqlConnection conn = new SqlConnection("your_connection_string"))
+                        using (MySqlConnection conn = GMHDBOperations.MakeConnection())
                         {
-                            conn.Open();
-                            using (SqlCommand cmd = new SqlCommand(query, conn))
+                            
+                            using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
                                 // Add the PatientID as a parameter to the SQL command
                                 cmd.Parameters.AddWithValue("@patientId", patientId);
@@ -403,7 +403,7 @@ namespace Healtcare_Patient_Application
                                 // Check if any rows were affected (i.e., if the record was found and deleted)
                                 if (rowsAffected > 0)
                                 {
-                                    MessageBox.Show("Patient record deleted successfully.");
+                                    MessageBox.Show("Patient record marked as deleted successfully.");
                                 }
                                 else
                                 {
@@ -456,6 +456,13 @@ namespace Healtcare_Patient_Application
 
         private void btnAllergyRecords_Click(object sender, EventArgs e)
         {
+            // Validate that the necessary fields are filled
+            if (dtpDateOfBirth.Value == null || string.IsNullOrWhiteSpace(txtFirstName.Text) || 
+                string.IsNullOrWhiteSpace(txtLastName.Text) || !_patientId.HasValue)
+            {
+                MessageBox.Show("Select a Patient from the Patient Selection Form. Press the Back button to go back to the Patient Selection Form");
+                return;
+            }
             DateTime dateOfBirth = dtpDateOfBirth.Value;
 
             // Calculate age in years
@@ -476,6 +483,13 @@ namespace Healtcare_Patient_Application
 
         private void btnGeneralMedical_Click(object sender, EventArgs e)
         {
+            // Validate that the necessary fields are filled
+            if (dtpDateOfBirth.Value == null || string.IsNullOrWhiteSpace(txtFirstName.Text) ||
+                string.IsNullOrWhiteSpace(txtLastName.Text) || !_patientId.HasValue)
+            {
+                MessageBox.Show("Select a Patient from the Patient Selection Form. Press the Back button to go back to the Patient Selection Form");
+                return;
+            }
             DateTime dateOfBirth = dtpDateOfBirth.Value;
 
             // Calculate age in years
@@ -499,7 +513,14 @@ namespace Healtcare_Patient_Application
 
         private void btnFamilyHistory_Click(object sender, EventArgs e)
         {
-            
+            // Validate that the necessary fields are filled
+            if (dtpDateOfBirth.Value == null || string.IsNullOrWhiteSpace(txtFirstName.Text) ||
+                string.IsNullOrWhiteSpace(txtLastName.Text) || !_patientId.HasValue)
+            {
+                MessageBox.Show("Select a Patient from the Patient Selection Form. Press the Back button to go back to the Patient Selection Form");
+                return;
+            }
+
 
             DateTime dateOfBirth = dtpDateOfBirth.Value;
 
